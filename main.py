@@ -8,10 +8,10 @@ class Eva(QMainWindow):
     def __init__(self):
         super(Eva,self).__init__()
         self.load = loadUi('ui/EvaSystem.ui',self)
-##############################hide Buttons#############################################33        
+############################## hide Buttons #############################################33        
         self.load.btn_reduce.hide()
         self.load.slide_close_btn.hide()
-#################Deberia Funcionar en windows############################################3
+################# Deberia Funcionar en windows ############################################3
         # self.gripSize = 10
         # self.grip = QSizeGrip(self)
         # self.grip.resize(self.gripSize, self.gripSize)
