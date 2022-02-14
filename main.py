@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QSizeGrip,QHeaderView
 from PyQt5.QtCore import QPropertyAnimation,QEasingCurve
 from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
@@ -8,14 +8,14 @@ class Eva(QMainWindow):
     def __init__(self):
         super(Eva,self).__init__()
         self.load = loadUi('ui/EvaSystem.ui',self)
-############################## hide Buttons #############################################33        
+############################## hide Buttons ###########################################    
         self.load.btn_reduce.hide()
         self.load.btn_menu.hide()
-################# Deberia Funcionar en windows ############################################3
-        # self.gripSize = 10
-        # self.grip = QSizeGrip(self)
-        # self.grip.resize(self.gripSize, self.gripSize)
-#####################botones de cerrar minimizar y expandir############################3
+#################   Deberia Funcionar en windows   ########################################
+        self.gripSize = 10
+        self.grip = QSizeGrip(self)
+        self.grip.resize(self.gripSize, self.gripSize)
+#####################    botones de cerrar minimizar y expandir   ###########################
         iconClose = QtGui.QIcon()
         iconClose.addPixmap(QtGui.QPixmap("iconos/icons/x.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.load.btn_close.setIcon(iconClose)
@@ -28,7 +28,7 @@ class Eva(QMainWindow):
         self.load.slide_close_btn.clicked.connect(self.MenuHideAndShow)
         self.load.show()
         
-################################Buttoms Event###################################
+################################   Buttoms Event    ###################################
 
         self.load.btn_costosygastos.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.stk_CostosGastos))
         
@@ -43,7 +43,7 @@ class Eva(QMainWindow):
 
         self.load.btn_domicilios.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.Domicilios_stk))
 
-########################iconos#############################################################3 
+########################  icons    #########################################################
         iconExpand = QtGui.QIcon()
         iconExpand.addPixmap(QtGui.QPixmap("iconos/icons/maximize.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.load.btn_expand.setIcon(iconExpand)
@@ -140,6 +140,9 @@ class Eva(QMainWindow):
         self.load.btn_busisness.setIcon(iconBtnbusisness)
 
 
+############ Prueba ##########################3
+
+        self.load.table_proveedor.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
 
 
@@ -152,9 +155,7 @@ class Eva(QMainWindow):
 
 
 
-
-
-
+#################  functions section  ##############################
 
     def MenuHideAndShow(self):
         if True:

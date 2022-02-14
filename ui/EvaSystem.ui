@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>859</width>
+    <width>740</width>
     <height>597</height>
    </rect>
   </property>
@@ -153,7 +153,7 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>282</width>
+               <width>197</width>
                <height>349</height>
               </rect>
              </property>
@@ -241,7 +241,7 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>282</width>
+               <width>197</width>
                <height>349</height>
               </rect>
              </property>
@@ -293,8 +293,8 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>282</width>
-               <height>349</height>
+               <width>240</width>
+               <height>335</height>
               </rect>
              </property>
              <attribute name="icon">
@@ -319,7 +319,7 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>282</width>
+               <width>197</width>
                <height>349</height>
               </rect>
              </property>
@@ -709,16 +709,305 @@ QPushButton:hover{
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>5</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="Domicilios_stk"/>
-            <widget class="QWidget" name="stk_Proveedores"/>
+            <widget class="QWidget" name="stk_Proveedores">
+             <layout class="QVBoxLayout" name="verticalLayout_26">
+              <item>
+               <widget class="QFrame" name="frame_24">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_27">
+                 <item>
+                  <widget class="QScrollArea" name="scrollArea_4">
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                   </property>
+                   <property name="widgetResizable">
+                    <bool>true</bool>
+                   </property>
+                   <widget class="QWidget" name="scrollAreaWidgetContents_5">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>546</width>
+                      <height>439</height>
+                     </rect>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_28">
+                     <item>
+                      <widget class="QFrame" name="frame_23">
+                       <property name="acceptDrops">
+                        <bool>true</bool>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">*{
+	padding:13px;
+}
+
+QLineEdit{
+	border-bottom:2px solid #efb810;
+}
+
+QLineEdit:hover{
+	background-color: rgba(9,5,13,.7)	
+}
+QRadioButton,QCheckBox{
+	background-color:rgba(128,128,128,.5);
+	border-radius:50px;
+}
+QDateEdit{
+	background-color:rgba(255,255,255,.3);
+	color:#000
+}</string>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_19">
+                        <item>
+                         <widget class="QFrame" name="frame_25">
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_20">
+                           <item>
+                            <layout class="QFormLayout" name="formLayout_3">
+                             <item row="0" column="0">
+                              <widget class="QLabel" name="insertarProveedorLabel">
+                               <property name="text">
+                                <string>Insertar Proveedor</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="0" column="1">
+                              <widget class="QLineEdit" name="insertarProveedorLineEdit"/>
+                             </item>
+                             <item row="3" column="0">
+                              <widget class="QLabel" name="tipoDeProductosLabel">
+                               <property name="text">
+                                <string>Tipo De Producto</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="3" column="1">
+                              <widget class="QLineEdit" name="tipoDeProductosLineEdit"/>
+                             </item>
+                             <item row="2" column="0">
+                              <widget class="QLabel" name="otroTipoLabel">
+                               <property name="text">
+                                <string>otro tipo</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="2" column="1">
+                              <widget class="QCheckBox" name="otroTipoCheckBox">
+                               <property name="text">
+                                <string>Agregar Otro producto</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="1" column="0">
+                              <widget class="QLabel" name="eligeQueProductoLabel">
+                               <property name="text">
+                                <string>elige Que Producto</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="1" column="1">
+                              <widget class="QComboBox" name="eligeQueProductoComboBox">
+                               <property name="styleSheet">
+                                <string notr="true">QComboBox{
+	background-color:#000;
+}
+
+QComboBox::BackgroundColorRole{
+	background-color:#000;
+}
+
+QComboBox::FontRole{
+	background-color:#000;
+}</string>
+                               </property>
+                               <property name="editable">
+                                <bool>false</bool>
+                               </property>
+                               <item>
+                                <property name="text">
+                                 <string>Limpieza</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>Alimentos</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>Alimentos enlatados</string>
+                                </property>
+                               </item>
+                               <item>
+                                <property name="text">
+                                 <string>Empaques</string>
+                                </property>
+                               </item>
+                              </widget>
+                             </item>
+                             <item row="4" column="0">
+                              <widget class="QLabel" name="label_6">
+                               <property name="text">
+                                <string>Nuevo tipo</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="4" column="1">
+                              <widget class="QPushButton" name="pushButton_4">
+                               <property name="text">
+                                <string>Agregar</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item alignment="Qt::AlignTop">
+                         <widget class="QFrame" name="frame_26">
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>70</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_21">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <widget class="QLineEdit" name="lineEdit_2"/>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="pushButton_3">
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="icon">
+                              <iconset resource="../../DomiGPS/icons.qrc">
+                               <normaloff>:/icons/search.svg</normaloff>:/icons/search.svg</iconset>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="frame_27">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_29">
+                        <item>
+                         <widget class="QScrollArea" name="scrollArea_5">
+                          <property name="widgetResizable">
+                           <bool>true</bool>
+                          </property>
+                          <widget class="QWidget" name="scrollAreaWidgetContents_6">
+                           <property name="geometry">
+                            <rect>
+                             <x>0</x>
+                             <y>0</y>
+                             <width>496</width>
+                             <height>86</height>
+                            </rect>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_30">
+                            <item>
+                             <widget class="QTableWidget" name="table_proveedor">
+                              <column>
+                               <property name="text">
+                                <string>Proveedor</string>
+                               </property>
+                              </column>
+                              <column>
+                               <property name="text">
+                                <string>Tipo de Producto</string>
+                               </property>
+                              </column>
+                              <column>
+                               <property name="text">
+                                <string>Productos</string>
+                               </property>
+                              </column>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
             <widget class="QWidget" name="stk_CostosGastos">
              <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
                <widget class="QTabWidget" name="tabWidget">
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab">
                  <attribute name="title">
@@ -734,7 +1023,7 @@ QPushButton:hover{
                      <property name="geometry">
                       <rect>
                        <x>0</x>
-                       <y>-75</y>
+                       <y>-61</y>
                        <width>531</width>
                        <height>475</height>
                       </rect>
@@ -1057,32 +1346,45 @@ QDateEdit{
                  <attribute name="title">
                   <string>ProductosCosto</string>
                  </attribute>
-                 <widget class="QWidget" name="formLayoutWidget">
-                  <property name="geometry">
-                   <rect>
-                    <x>70</x>
-                    <y>50</y>
-                    <width>160</width>
-                    <height>80</height>
-                   </rect>
-                  </property>
-                  <layout class="QFormLayout" name="formLayout_3">
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="panLabel">
-                     <property name="text">
-                      <string>pan</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="1">
-                    <widget class="QLineEdit" name="panLineEdit">
-                     <property name="text">
-                      <string>10$</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
+                 <layout class="QVBoxLayout" name="verticalLayout_23">
+                  <item>
+                   <widget class="QFrame" name="frame_22">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_24">
+                     <item>
+                      <widget class="QScrollArea" name="scrollArea_3">
+                       <property name="widgetResizable">
+                        <bool>true</bool>
+                       </property>
+                       <widget class="QWidget" name="scrollAreaWidgetContents_3">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>0</y>
+                          <width>430</width>
+                          <height>396</height>
+                         </rect>
+                        </property>
+                        <layout class="QVBoxLayout" name="verticalLayout_25">
+                         <item>
+                          <widget class="QStackedWidget" name="stackedWidget_2">
+                           <widget class="QWidget" name="stk2_PaginaPrincipal"/>
+                           <widget class="QWidget" name="page_2"/>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </widget>
               </item>
@@ -1123,8 +1425,8 @@ QDateEdit{
                     <property name="geometry">
                      <rect>
                       <x>0</x>
-                      <y>0</y>
-                      <width>491</width>
+                      <y>-449</y>
+                      <width>457</width>
                       <height>1233</height>
                      </rect>
                     </property>
@@ -1150,7 +1452,7 @@ QDateEdit{
                         <cursorShape>PointingHandCursor</cursorShape>
                        </property>
                        <property name="currentIndex">
-                        <number>1</number>
+                        <number>0</number>
                        </property>
                        <widget class="QWidget" name="qwidget">
                         <attribute name="title">
