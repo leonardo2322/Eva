@@ -140,10 +140,13 @@ class Eva(QMainWindow):
         self.load.btn_busisness.setIcon(iconBtnbusisness)
 
 
-############ Prueba ##########################3
+        self.load.btn_search_proveedores.setIcon(iconBtnSearchCostos)
+
+############ Tables Strectchs ##########################3
 
         self.load.table_proveedor.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
+        self.load.Table_inventary_home.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
 
 
@@ -191,6 +194,8 @@ class Eva(QMainWindow):
         self.showMaximized()
         self.load.btn_expand.hide()
         self.load.btn_reduce.show()
+
+        
 if __name__=="__main__":
     app = QApplication(sys.argv)
 
