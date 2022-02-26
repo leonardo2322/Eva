@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>767</width>
-    <height>597</height>
+    <width>574</width>
+    <height>574</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -106,7 +106,7 @@ color:#fff;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+             <iconset>
               <normaloff>:/cct/remove_paper.png</normaloff>:/cct/remove_paper.png</iconset>
             </property>
             <property name="iconSize">
@@ -153,12 +153,12 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>224</width>
-               <height>349</height>
+               <width>192</width>
+               <height>334</height>
               </rect>
              </property>
              <attribute name="icon">
-              <iconset resource="../../DomiGPS/icons.qrc">
+              <iconset>
                <normaloff>:/icons/chevron-down.svg</normaloff>:/icons/chevron-down.svg</iconset>
              </attribute>
              <attribute name="label">
@@ -174,7 +174,7 @@ QPushButton:hover{
                  <string>Hogar</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/icons.qrc">
+                 <iconset>
                   <normaloff>:/icons/home.svg</normaloff>:/icons/home.svg</iconset>
                 </property>
                </widget>
@@ -185,7 +185,7 @@ QPushButton:hover{
                  <string>Tu Empresa</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+                 <iconset>
                   <normaloff>:/cct/negocios.png</normaloff>:/cct/negocios.png</iconset>
                 </property>
                </widget>
@@ -196,7 +196,7 @@ QPushButton:hover{
                  <string>Costos Y Gastos</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+                 <iconset>
                   <normaloff>:/cct/presupuesto.png</normaloff>:/cct/presupuesto.png</iconset>
                 </property>
                </widget>
@@ -207,7 +207,7 @@ QPushButton:hover{
                  <string>Clientes</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+                 <iconset>
                   <normaloff>:/cct/Clientes.png</normaloff>:/cct/Clientes.png</iconset>
                 </property>
                </widget>
@@ -218,7 +218,7 @@ QPushButton:hover{
                  <string>Proveedores</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+                 <iconset>
                   <normaloff>:/cct/proveedor.png</normaloff>:/cct/proveedor.png</iconset>
                 </property>
                </widget>
@@ -229,7 +229,7 @@ QPushButton:hover{
                  <string>Domicilios</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+                 <iconset>
                   <normaloff>:/cct/repartidor.png</normaloff>:/cct/repartidor.png</iconset>
                 </property>
                </widget>
@@ -241,12 +241,12 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>224</width>
-               <height>349</height>
+               <width>192</width>
+               <height>334</height>
               </rect>
              </property>
              <attribute name="icon">
-              <iconset resource="../../DomiGPS/icons.qrc">
+              <iconset>
                <normaloff>:/icons/chevron-down.svg</normaloff>:/icons/chevron-down.svg</iconset>
              </attribute>
              <attribute name="label">
@@ -259,7 +259,7 @@ QPushButton:hover{
                  <string>Agregar Usuario</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/icons.qrc">
+                 <iconset>
                   <normaloff>:/icons/user-plus.svg</normaloff>:/icons/user-plus.svg</iconset>
                 </property>
                </widget>
@@ -270,7 +270,7 @@ QPushButton:hover{
                  <string>Editar Usuario</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/icons.qrc">
+                 <iconset>
                   <normaloff>:/icons/users.svg</normaloff>:/icons/users.svg</iconset>
                 </property>
                </widget>
@@ -281,7 +281,7 @@ QPushButton:hover{
                  <string>Eliminar Usuario</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/icons.qrc">
+                 <iconset>
                   <normaloff>:/icons/user-x.svg</normaloff>:/icons/user-x.svg</iconset>
                 </property>
                </widget>
@@ -294,11 +294,11 @@ QPushButton:hover{
                <x>0</x>
                <y>0</y>
                <width>240</width>
-               <height>335</height>
+               <height>320</height>
               </rect>
              </property>
              <attribute name="icon">
-              <iconset resource="../../DomiGPS/icons.qrc">
+              <iconset>
                <normaloff>:/icons/chevron-down.svg</normaloff>:/icons/chevron-down.svg</iconset>
              </attribute>
              <attribute name="label">
@@ -319,12 +319,12 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>224</width>
-               <height>349</height>
+               <width>192</width>
+               <height>334</height>
               </rect>
              </property>
              <attribute name="icon">
-              <iconset resource="../../DomiGPS/icons.qrc">
+              <iconset>
                <normaloff>:/icons/chevron-down.svg</normaloff>:/icons/chevron-down.svg</iconset>
              </attribute>
              <attribute name="label">
@@ -337,7 +337,7 @@ QPushButton:hover{
                  <string>Restaurantes</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+                 <iconset>
                   <normaloff>:/cct/utensilios-de-restaurante.png</normaloff>:/cct/utensilios-de-restaurante.png</iconset>
                 </property>
                </widget>
@@ -348,7 +348,7 @@ QPushButton:hover{
                  <string>Tiendas</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+                 <iconset>
                   <normaloff>:/cct/grow-shop.png</normaloff>:/cct/grow-shop.png</iconset>
                 </property>
                </widget>
@@ -359,7 +359,7 @@ QPushButton:hover{
                  <string>Comidas Rapidas</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+                 <iconset>
                   <normaloff>:/cct/comida.png</normaloff>:/cct/comida.png</iconset>
                 </property>
                </widget>
@@ -370,7 +370,7 @@ QPushButton:hover{
                  <string>Negocio</string>
                 </property>
                 <property name="icon">
-                 <iconset resource="../../DomiGPS/iconosPrincipales.qrc">
+                 <iconset>
                   <normaloff>:/cct/negocios.png</normaloff>:/cct/negocios.png</iconset>
                 </property>
                </widget>
@@ -484,7 +484,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../../DomiGPS/icons.qrc">
+                <iconset>
                  <normaloff>:/icons/chevron-left.svg</normaloff>:/icons/chevron-left.svg</iconset>
                </property>
                <property name="iconSize">
@@ -509,7 +509,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../../DomiGPS/icons.qrc">
+                <iconset>
                  <normaloff>:/icons/menu.svg</normaloff>:/icons/menu.svg</iconset>
                </property>
                <property name="iconSize">
@@ -553,7 +553,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="../../DomiGPS/icons.qrc">:/icons/user.svg</pixmap>
+                <pixmap>:/icons/user.svg</pixmap>
                </property>
               </widget>
              </item>
@@ -605,7 +605,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../../DomiGPS/icons.qrc">
+                <iconset>
                  <normaloff>:/icons/minus.svg</normaloff>:/icons/minus.svg</iconset>
                </property>
                <property name="iconSize">
@@ -630,7 +630,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../../DomiGPS/icons.qrc">
+                <iconset>
                  <normaloff>:/icons/minimize-2.svg</normaloff>:/icons/minimize-2.svg</iconset>
                </property>
                <property name="iconSize">
@@ -655,7 +655,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../../DomiGPS/icons.qrc">
+                <iconset>
                  <normaloff>:/icons/maximize.svg</normaloff>:/icons/maximize.svg</iconset>
                </property>
                <property name="iconSize">
@@ -680,7 +680,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../../DomiGPS/icons.qrc">
+                <iconset>
                  <normaloff>:/icons/x.svg</normaloff>:/icons/x.svg</iconset>
                </property>
                <property name="iconSize">
@@ -742,9 +742,9 @@ QPushButton:hover{
                    <widget class="QWidget" name="scrollAreaWidgetContents_5">
                     <property name="geometry">
                      <rect>
-                      <x>0</x>
+                      <x>-130</x>
                       <y>0</y>
-                      <width>546</width>
+                      <width>553</width>
                       <height>439</height>
                      </rect>
                     </property>
@@ -803,30 +803,6 @@ QDateEdit{
                              <item row="0" column="1">
                               <widget class="QLineEdit" name="insertarProveedorLineEdit"/>
                              </item>
-                             <item row="3" column="0">
-                              <widget class="QLabel" name="tipoDeProductosLabel">
-                               <property name="text">
-                                <string>Tipo De Producto</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item row="3" column="1">
-                              <widget class="QLineEdit" name="tipoDeProductosLineEdit"/>
-                             </item>
-                             <item row="2" column="0">
-                              <widget class="QLabel" name="otroTipoLabel">
-                               <property name="text">
-                                <string>otro tipo</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item row="2" column="1">
-                              <widget class="QCheckBox" name="otroTipoCheckBox">
-                               <property name="text">
-                                <string>Agregar Otro producto</string>
-                               </property>
-                              </widget>
-                             </item>
                              <item row="1" column="0">
                               <widget class="QLabel" name="eligeQueProductoLabel">
                                <property name="text">
@@ -873,6 +849,30 @@ QComboBox::FontRole{
                                 </property>
                                </item>
                               </widget>
+                             </item>
+                             <item row="2" column="0">
+                              <widget class="QLabel" name="otroTipoLabel">
+                               <property name="text">
+                                <string>otro tipo</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="2" column="1">
+                              <widget class="QCheckBox" name="otroTipoCheckBox">
+                               <property name="text">
+                                <string>Agregar Otro producto</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="3" column="0">
+                              <widget class="QLabel" name="tipoDeProductosLabel">
+                               <property name="text">
+                                <string>Tipo De Producto</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="3" column="1">
+                              <widget class="QLineEdit" name="tipoDeProductosLineEdit"/>
                              </item>
                              <item row="4" column="0">
                               <widget class="QLabel" name="label_6">
@@ -932,7 +932,7 @@ QComboBox::FontRole{
                               <string/>
                              </property>
                              <property name="icon">
-                              <iconset resource="../../DomiGPS/icons.qrc">
+                              <iconset>
                                <normaloff>:/icons/search.svg</normaloff>:/icons/search.svg</iconset>
                              </property>
                             </widget>
@@ -962,7 +962,7 @@ QComboBox::FontRole{
                             <rect>
                              <x>0</x>
                              <y>0</y>
-                             <width>496</width>
+                             <width>503</width>
                              <height>86</height>
                             </rect>
                            </property>
@@ -1007,7 +1007,7 @@ QComboBox::FontRole{
               <item>
                <widget class="QTabWidget" name="tabWidget">
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab">
                  <attribute name="title">
@@ -1022,10 +1022,10 @@ QComboBox::FontRole{
                     <widget class="QWidget" name="scrollAreaWidgetContents">
                      <property name="geometry">
                       <rect>
-                       <x>0</x>
-                       <y>0</y>
-                       <width>531</width>
-                       <height>475</height>
+                       <x>-154</x>
+                       <y>-181</y>
+                       <width>513</width>
+                       <height>1211</height>
                       </rect>
                      </property>
                      <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1110,7 +1110,7 @@ QLineEdit:hover{
                                <string/>
                               </property>
                               <property name="icon">
-                               <iconset resource="../../DomiGPS/icons.qrc">
+                               <iconset>
                                 <normaloff>:/icons/search.svg</normaloff>:/icons/search.svg</iconset>
                               </property>
                              </widget>
@@ -1237,6 +1237,24 @@ QDateEdit{
                               <item row="2" column="1">
                                <widget class="QLineEdit" name="costoLineEdit"/>
                               </item>
+                              <item row="3" column="1">
+                               <widget class="QPushButton" name="btn_insert_data_in_cyg">
+                                <property name="styleSheet">
+                                 <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                                </property>
+                                <property name="text">
+                                 <string>Insertar Datos</string>
+                                </property>
+                               </widget>
+                              </item>
                              </layout>
                             </item>
                            </layout>
@@ -1255,6 +1273,108 @@ QDateEdit{
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_11">
                          <item>
+                          <widget class="QFrame" name="frame_30">
+                           <property name="styleSheet">
+                            <string notr="true">*{
+	padding:13px;
+}
+
+QLineEdit{
+	border-bottom:2px solid #efb810;
+}
+
+QLineEdit:hover{
+	background-color: rgba(9,5,13,.7)	
+}
+QRadioButton,QCheckBox{
+	background-color:rgba(128,128,128,.5);
+	border-radius:50px;
+}
+QDateEdit{
+	background-color:rgba(255,255,255,.3);
+	color:#000
+}
+QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                           </property>
+                           <property name="frameShape">
+                            <enum>QFrame::StyledPanel</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_36">
+                            <item>
+                             <layout class="QGridLayout" name="gridLayout_3" rowstretch="0,0,0" columnstretch="0,0">
+                              <property name="leftMargin">
+                               <number>10</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>10</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>10</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>10</number>
+                              </property>
+                              <property name="horizontalSpacing">
+                               <number>10</number>
+                              </property>
+                              <item row="1" column="0">
+                               <widget class="QLabel" name="label_8">
+                                <property name="text">
+                                 <string>Nombre</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item row="0" column="1">
+                               <widget class="QLineEdit" name="lnEdit_ID_Delete_Cyg"/>
+                              </item>
+                              <item row="0" column="0">
+                               <widget class="QLabel" name="label_7">
+                                <property name="text">
+                                 <string>ID</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item row="1" column="1">
+                               <widget class="QLineEdit" name="lineEdit_6"/>
+                              </item>
+                              <item row="2" column="1">
+                               <widget class="QPushButton" name="btn_delete_cyg">
+                                <property name="text">
+                                 <string>Eliminar</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item row="2" column="0">
+                               <widget class="QLabel" name="label_10">
+                                <property name="text">
+                                 <string>Introducir nombre o ID para eliminar</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLabel" name="label_11">
+                           <property name="text">
+                            <string>selecciona como deseas ver la tabla un elemento o todos</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
                           <widget class="QFrame" name="frame_21">
                            <property name="frameShape">
                             <enum>QFrame::StyledPanel</enum>
@@ -1262,9 +1382,70 @@ QDateEdit{
                            <property name="frameShadow">
                             <enum>QFrame::Raised</enum>
                            </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_21">
+                           <layout class="QVBoxLayout" name="verticalLayout_21" stretch="0,0,0,0">
+                            <property name="spacing">
+                             <number>0</number>
+                            </property>
+                            <property name="leftMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="topMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="rightMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="bottomMargin">
+                             <number>0</number>
+                            </property>
                             <item>
-                             <widget class="QTableWidget" name="tableWidget_2">
+                             <widget class="QComboBox" name="cbb_data_table_products">
+                              <property name="maximumSize">
+                               <size>
+                                <width>150</width>
+                                <height>16777215</height>
+                               </size>
+                              </property>
+                              <item>
+                               <property name="text">
+                                <string>Primer Elemento</string>
+                               </property>
+                              </item>
+                              <item>
+                               <property name="text">
+                                <string>Ultimo Elemento</string>
+                               </property>
+                              </item>
+                              <item>
+                               <property name="text">
+                                <string>Todos</string>
+                               </property>
+                              </item>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QTableWidget" name="tbl_data_products">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>550</height>
+                               </size>
+                              </property>
+                              <property name="sizeIncrement">
+                               <size>
+                                <width>0</width>
+                                <height>0</height>
+                               </size>
+                              </property>
+                              <property name="baseSize">
+                               <size>
+                                <width>0</width>
+                                <height>0</height>
+                               </size>
+                              </property>
+                              <attribute name="verticalHeaderStretchLastSection">
+                               <bool>true</bool>
+                              </attribute>
                               <column>
                                <property name="text">
                                 <string>ID</string>
@@ -1378,8 +1559,8 @@ QDateEdit{
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>462</width>
-                          <height>414</height>
+                          <width>301</width>
+                          <height>418</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_25">
@@ -1424,8 +1605,8 @@ QDateEdit{
                                  <rect>
                                   <x>0</x>
                                   <y>0</y>
-                                  <width>444</width>
-                                  <height>414</height>
+                                  <width>380</width>
+                                  <height>404</height>
                                  </rect>
                                 </property>
                                 <layout class="QVBoxLayout" name="verticalLayout_32">
@@ -1509,7 +1690,7 @@ QDateEdit{
                                       <item row="2" column="0">
                                        <widget class="QLabel" name="costoFinalLabel">
                                         <property name="text">
-                                         <string>Costo Final</string>
+                                         <string>Costo Venta</string>
                                         </property>
                                        </widget>
                                       </item>
@@ -1580,7 +1761,7 @@ QPushButton:hover{
                                         <rect>
                                          <x>0</x>
                                          <y>0</y>
-                                         <width>403</width>
+                                         <width>339</width>
                                          <height>86</height>
                                         </rect>
                                        </property>
@@ -1669,7 +1850,7 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>457</width>
+                      <width>429</width>
                       <height>1233</height>
                      </rect>
                     </property>
@@ -1775,7 +1956,7 @@ QLineEdit:hover{
                                   <string/>
                                  </property>
                                  <property name="icon">
-                                  <iconset resource="../../DomiGPS/icons.qrc">
+                                  <iconset>
                                    <normaloff>:/icons/search.svg</normaloff>:/icons/search.svg</iconset>
                                  </property>
                                 </widget>
@@ -2196,7 +2377,7 @@ QLineEdit:hover{
                                   <string/>
                                  </property>
                                  <property name="icon">
-                                  <iconset resource="../../DomiGPS/icons.qrc">
+                                  <iconset>
                                    <normaloff>:/icons/search.svg</normaloff>:/icons/search.svg</iconset>
                                  </property>
                                 </widget>
@@ -2305,6 +2486,19 @@ QLineEdit:hover{
                <string>busisnes</string>
               </property>
              </widget>
+             <widget class="QLabel" name="label_9">
+              <property name="geometry">
+               <rect>
+                <x>10</x>
+                <y>60</y>
+                <width>511</width>
+                <height>16</height>
+               </rect>
+              </property>
+              <property name="text">
+               <string>aqui pienso poner la seccion de ver como va mi empresa </string>
+              </property>
+             </widget>
             </widget>
            </widget>
           </item>
@@ -2386,7 +2580,7 @@ QLineEdit:hover{
                 <string>Eva</string>
                </property>
                <property name="icon">
-                <iconset resource="../../DomiGPS/icons.qrc">
+                <iconset>
                  <normaloff>:/icons/activity.svg</normaloff>:/icons/activity.svg</iconset>
                </property>
                <property name="iconSize">
@@ -2414,8 +2608,8 @@ QLineEdit:hover{
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../../DomiGPS/icons.qrc"/>
   <include location="../../DomiGPS/iconosPrincipales.qrc"/>
+  <include location="../../DomiGPS/icons.qrc"/>
  </resources>
  <connections/>
 </ui>

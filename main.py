@@ -1,12 +1,23 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QSizeGrip,QHeaderView
-from PyQt5.QtCore import QPropertyAnimation,QEasingCurve
+from PyQt5.QtWidgets import (QApplication,
+        QMainWindow, QSizeGrip,
+        QHeaderView,QMessageBox, 
+        QAbstractItemView, QTableWidgetItem)
+from PyQt5.QtCore import QPropertyAnimation,QEasingCurve, Qt
 from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
-
+import re
+from data.dbManage import DbUser
+import datetime
 class Eva(QMainWindow):
     def __init__(self):
         super(Eva,self).__init__()
+
+        self.db = DbUser()
+        self.patron = '[a-zA-Z]+'
+        self.patronNum = '[1-9]+[0-9]*'
+        self.regex = re
+
         self.load = loadUi('ui/EvaSystem.ui',self)
 ############################## hide Buttons ###########################################    
         self.load.btn_reduce.hide()
@@ -43,6 +54,9 @@ class Eva(QMainWindow):
 
         self.load.btn_domicilios.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.Domicilios_stk))
 
+        self.load.btn_delete_cyg.clicked.connect(self.DeleteDb)
+        self.load.btn_insert_data_in_cyg.clicked.connect(self.dbQueryesInsert)
+        self.load.cbb_data_table_products.currentIndexChanged.connect(self.TableEvents)
 ########################  icons    #########################################################
         iconExpand = QtGui.QIcon()
         iconExpand.addPixmap(QtGui.QPixmap("iconos/icons/maximize.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -148,17 +162,80 @@ class Eva(QMainWindow):
 
         self.load.Table_inventary_home.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
+        self.load.tbl_data_products.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        
+
+##### table #####################
 
 
+        
 
+    def TableEvents(self):
+        db = self.db.SelectFromDB()
+        listData = []
+        for Dts in db:
+            listData.append(Dts)
 
+        self.load.tbl_data_products.setSelectionBehavior(QAbstractItemView.SelectRows)    
+        self.load.tbl_data_products.clearContents()
+        self.load.tbl_data_products.setSelectionMode(QAbstractItemView.ContiguousSelection)
+        self.load.tbl_data_products.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.load.tbl_data_products.setTextElideMode(Qt.ElideRight)
 
+        self.load.tbl_data_products.resizeColumnsToContents()
+        currentIndex = self.load.cbb_data_table_products.currentIndex()
+        try:
+            if db:
+                if currentIndex == 0:
+                    self.arr = []
+                    for data in (db[0]):
+                        self.arr.append(data)
+                    for dat in self.arr:
+                        idDato = QTableWidgetItem(str(self.arr[0]))
+                        idDato.setTextAlignment(Qt.AlignCenter)
+                        self.load.tbl_data_products.setItem(0,0,idDato)
+                        self.load.tbl_data_products.setItem(0,1,QTableWidgetItem(self.arr[1]))
+                        self.load.tbl_data_products.setItem(0,2,QTableWidgetItem(self.arr[2]))
+                        self.load.tbl_data_products.setItem(0,3,QTableWidgetItem(str(self.arr[3])))
+                elif currentIndex == 1:
+                    fetchlastOne = []
+                    for d in (db[-1]):
+                        fetchlastOne.append(d)
+                    for dtb in fetchlastOne:
+                        
+                        idD= QTableWidgetItem(str(fetchlastOne[0])) 
+                        self.load.tbl_data_products.setItem(0,0,idD)
+                        self.load.tbl_data_products.setItem(0,1,QTableWidgetItem(fetchlastOne[1]))
+                        self.load.tbl_data_products.setItem(0,2,QTableWidgetItem(fetchlastOne[2]))
+                        self.load.tbl_data_products.setItem(0,3,QTableWidgetItem(str(fetchlastOne[3])))
+                elif currentIndex == 2:
+                    fila = 0
+                    for datos in db:
+                        self.load.tbl_data_products.setRowCount(fila + 1)
+                        
+                        idDato = QTableWidgetItem(str(datos[0]))
+                        idDato.setTextAlignment(Qt.AlignCenter)
 
-
-
-
-
+                        self.load.tbl_data_products.setItem(fila, 0, idDato)
+                        self.load.tbl_data_products.setItem(fila, 1, QTableWidgetItem(datos[1]))
+                        self.load.tbl_data_products.setItem(fila, 2, QTableWidgetItem(datos[2]))
+                        self.load.tbl_data_products.setItem(fila, 3, QTableWidgetItem(str(datos[3])))
+                        fila += 1
+                else:
+                    self.mensagges('ocurrio un error')
+            else:
+                self.mensagges('no se pudo conectar a la base de datos')
+        except:
+            self.mensagges('ocurrio un error')
 #################  functions section  ##############################
+
+    def mensagges(self, mensajeInf):
+        self.msj = QMessageBox()
+        self.msj.setWindowTitle('Informacio Del sistema')
+        self.msj.setText(mensajeInf)
+        self.msj.setIcon(QMessageBox.Information)
+        self.msj.exec_()
 
     def MenuHideAndShow(self):
         if True:
@@ -195,7 +272,53 @@ class Eva(QMainWindow):
         self.load.btn_expand.hide()
         self.load.btn_reduce.show()
 
+    def dbQueryesInsert(self):
         
+        patronResult = self.regex.compile(self.patron)
+        patronNum = self.regex.compile(self.patronNum)
+
+
+        try:
+            valorProducto = self.load.productoLineEdit.text().strip()
+            valorProveedor = self.load.proveedorLineEdit.text().strip()   
+            valorCosto = int(self.load.costoLineEdit.text().strip())
+
+            if  patronResult.match(self.load.productoLineEdit.text().strip()) is not None:
+                if patronResult.match(self.load.proveedorLineEdit.text().strip()) is not None:
+                    if patronNum.match(self.load.costoLineEdit.text().strip()) is not None:
+                        self.mensagges('los datos han sido instertados')               
+                        self.db.QueryInsert(valorProducto, valorProveedor, valorCosto)
+                                            
+                
+                    else:
+                        self.mensagges('tiene que insertar numeros sin comas solo digite numeros')
+                
+                else:
+                    self.mensagges('Solo puede insertar cadena de caracteres sin ningun caracter especial')
+            
+            else:
+                self.mensagges('Solo puede insertar cadena de caracteres sin ningun caracter especial')
+        except TypeError as e:
+            
+            return self.mensagges('ocurrio un error inesperado')
+        except TimeoutError:
+            return self.mensagges('es otro tipo de error')
+        except:
+            return self.mensagges('Error debe introducir datos en los 3 campos')
+
+        self.load.proveedorLineEdit.setText('')
+        self.load.productoLineEdit.setText('')
+        self.load.costoLineEdit.setText('')
+
+        
+        
+    def DeleteDb(self):
+        idcyg = self.load.lnEdit_ID_Delete_Cyg.text()
+
+        self.db.QueryDelete(idcyg)       
+
+        self.mensagges('Elemento borrado')
+
 if __name__=="__main__":
     app = QApplication(sys.argv)
 
