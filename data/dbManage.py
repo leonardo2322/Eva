@@ -27,8 +27,7 @@ class DbUser():
         return self.conexion, self.query
 
     def usersInit(self,*args):
-        usuario = args
-        print(type(usuario))
+        usuario = (args)
         try:
             sql = ''' SELECT * FROM usuarios WHERE usuario='%s' and passw='%s' '''%(usuario[0],usuario[1])
             connection = self.Conexion()
@@ -40,8 +39,11 @@ class DbUser():
             return self.datas
 
         except Error as e:
-            print('paso algo aca',e)
-        
+            print('ocurrio un error') 
+
+        except:
+            print('ocurrio un error') 
+            
         finally:
             connection[1].close()    
             connection[0].close()
