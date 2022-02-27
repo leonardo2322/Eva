@@ -1,6 +1,6 @@
 
 import psycopg2 as pg
-
+from psycopg2 import Error
 
 
 class DbUser():
@@ -19,13 +19,32 @@ class DbUser():
             self.conexion = self.posg.connect(**credentials)
             self.query = self.conexion.cursor()
             
-        except self.posg.Error as e:
+        except Error as e:
             print("ocurrio un error en la conexion", e)
         except:
             print('error interno abre el servidor de la bbdd')
             return 0
         return self.conexion, self.query
 
+    def usersInit(self,*args):
+        usuario = args
+        print(type(usuario))
+        try:
+            sql = ''' SELECT * FROM usuarios WHERE usuario='%s' and passw='%s' '''%(usuario[0],usuario[1])
+            connection = self.Conexion()
+
+            connection[1].execute(sql)
+            self.datas = connection[1].fetchone()
+            
+            connection[0].commit
+            return self.datas
+
+        except Error as e:
+            print('paso algo aca',e)
+        
+        finally:
+            connection[1].close()    
+            connection[0].close()
     def SelectFromDB(self, *arg, **kwargs):
         
         connection = self.Conexion()

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>574</width>
+    <width>595</width>
     <height>574</height>
    </rect>
   </property>
@@ -154,7 +154,7 @@ QPushButton:hover{
                <x>0</x>
                <y>0</y>
                <width>192</width>
-               <height>334</height>
+               <height>362</height>
               </rect>
              </property>
              <attribute name="icon">
@@ -242,7 +242,7 @@ QPushButton:hover{
                <x>0</x>
                <y>0</y>
                <width>192</width>
-               <height>334</height>
+               <height>362</height>
               </rect>
              </property>
              <attribute name="icon">
@@ -294,7 +294,7 @@ QPushButton:hover{
                <x>0</x>
                <y>0</y>
                <width>240</width>
-               <height>320</height>
+               <height>348</height>
               </rect>
              </property>
              <attribute name="icon">
@@ -309,69 +309,6 @@ QPushButton:hover{
                <widget class="QLabel" name="label_4">
                 <property name="text">
                  <string>este sistema estara en la opcion premiun</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-            <widget class="QWidget" name="page_6">
-             <property name="geometry">
-              <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>192</width>
-               <height>334</height>
-              </rect>
-             </property>
-             <attribute name="icon">
-              <iconset>
-               <normaloff>:/icons/chevron-down.svg</normaloff>:/icons/chevron-down.svg</iconset>
-             </attribute>
-             <attribute name="label">
-              <string>Otros Servicios</string>
-             </attribute>
-             <layout class="QVBoxLayout" name="verticalLayout_7">
-              <item>
-               <widget class="QPushButton" name="btn_restaurant">
-                <property name="text">
-                 <string>Restaurantes</string>
-                </property>
-                <property name="icon">
-                 <iconset>
-                  <normaloff>:/cct/utensilios-de-restaurante.png</normaloff>:/cct/utensilios-de-restaurante.png</iconset>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="btn_store">
-                <property name="text">
-                 <string>Tiendas</string>
-                </property>
-                <property name="icon">
-                 <iconset>
-                  <normaloff>:/cct/grow-shop.png</normaloff>:/cct/grow-shop.png</iconset>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="btn_fast_food">
-                <property name="text">
-                 <string>Comidas Rapidas</string>
-                </property>
-                <property name="icon">
-                 <iconset>
-                  <normaloff>:/cct/comida.png</normaloff>:/cct/comida.png</iconset>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="btn_business">
-                <property name="text">
-                 <string>Negocio</string>
-                </property>
-                <property name="icon">
-                 <iconset>
-                  <normaloff>:/cct/negocios.png</normaloff>:/cct/negocios.png</iconset>
                 </property>
                </widget>
               </item>
@@ -709,7 +646,7 @@ QPushButton:hover{
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>2</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="Domicilios_stk"/>
             <widget class="QWidget" name="stk_Proveedores">
@@ -742,8 +679,8 @@ QPushButton:hover{
                    <widget class="QWidget" name="scrollAreaWidgetContents_5">
                     <property name="geometry">
                      <rect>
-                      <x>-130</x>
-                      <y>0</y>
+                      <x>0</x>
+                      <y>-9</y>
                       <width>553</width>
                       <height>439</height>
                      </rect>
@@ -1022,8 +959,8 @@ QComboBox::FontRole{
                     <widget class="QWidget" name="scrollAreaWidgetContents">
                      <property name="geometry">
                       <rect>
-                       <x>-154</x>
-                       <y>-181</y>
+                       <x>-196</x>
+                       <y>-3</y>
                        <width>513</width>
                        <height>1211</height>
                       </rect>
@@ -1559,7 +1496,7 @@ QPushButton:hover{
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>301</width>
+                          <width>322</width>
                           <height>418</height>
                          </rect>
                         </property>

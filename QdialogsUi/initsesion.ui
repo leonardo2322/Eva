@@ -214,14 +214,7 @@ QLineEdit:hover{
             <item>
              <widget class="QPushButton" name="btn_sesion_minimize">
               <property name="styleSheet">
-               <string notr="true">QPushButton{ 
-	height:20px;
-	border:2px solid rgb(234,190,63);
-}
-
-QPushButton:hover{
-	background-color:#343434;
-}</string>
+               <string notr="true">height:20px;</string>
               </property>
               <property name="text">
                <string/>
@@ -231,14 +224,7 @@ QPushButton:hover{
             <item>
              <widget class="QPushButton" name="btn_sesion_destroy">
               <property name="styleSheet">
-               <string notr="true">QPushButton{ 
-	height:20px;
-	border:2px solid rgb(234,190,63);
-}
-
-QPushButton:hover{
-	background-color:#343434;
-}</string>
+               <string notr="true">height:20px;</string>
               </property>
               <property name="text">
                <string/>
@@ -298,7 +284,7 @@ QPushButton:hover{
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineEdit">
+             <widget class="QLineEdit" name="Input_user">
               <property name="inputMask">
                <string/>
               </property>
@@ -342,7 +328,7 @@ QPushButton:hover{
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineEdit_2">
+             <widget class="QLineEdit" name="Input_pass">
               <property name="echoMode">
                <enum>QLineEdit::Password</enum>
               </property>
@@ -355,7 +341,7 @@ QPushButton:hover{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="btn_init_sesion">
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
            </property>

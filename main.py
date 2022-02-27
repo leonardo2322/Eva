@@ -129,21 +129,9 @@ class Eva(QMainWindow):
         self.load.btn_user_edit.setIcon(iconBtnEdit)
 
         
-        iconBtnRestaurant = QtGui.QIcon()
-        iconBtnRestaurant.addPixmap(QtGui.QPixmap("iconos/utensilios-de-restaurante.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.load.btn_restaurant.setIcon(iconBtnRestaurant)
 
-        iconBtnstores = QtGui.QIcon()
-        iconBtnstores.addPixmap(QtGui.QPixmap("iconos/grow-shop.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.load.btn_store.setIcon(iconBtnstores)
 
-        iconBtnFastFood = QtGui.QIcon()
-        iconBtnFastFood.addPixmap(QtGui.QPixmap("iconos/comida.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.load.btn_fast_food.setIcon(iconBtnFastFood)
 
-        iconBtnbusiness = QtGui.QIcon()
-        iconBtnbusiness.addPixmap(QtGui.QPixmap("iconos/negocios.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.load.btn_business.setIcon(iconBtnbusiness)
         
         iconBtnSearchCostos = QtGui.QIcon()
         iconBtnSearchCostos.addPixmap(QtGui.QPixmap("iconos/icons/search.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)

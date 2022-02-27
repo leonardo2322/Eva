@@ -4,3 +4,7 @@ los productos mas resaltantes y los costos mas altos
 - se debera realizar el sistema dirigido a algo importante como Restaurantes para asi generar el proyecto con mejor con
 concordancia eficacia y eficiencia de manera que el producto este elaborado a tiempo y con lo que se requiere para gestionar y administrar 
 la empresa de la mejor manera
+
+-se debe realizar un script de manera que cuando se ejecute la aplicacion el sistema inicialize el servidor de postgres para que la base de datos responda de manera correcta y no envie errores
+
+-recordar eliminar la parte de varios negocios que quede habilitada la parte de restaurante
