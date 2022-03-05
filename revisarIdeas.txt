@@ -8,3 +8,10 @@ la empresa de la mejor manera
 -se debe realizar un script de manera que cuando se ejecute la aplicacion el sistema inicialize el servidor de postgres para que la base de datos responda de manera correcta y no envie errores
 
 -recordar eliminar la parte de varios negocios que quede habilitada la parte de restaurante
+
+-arrojar el porcentaje del valor del producto en un mexage box de esta manera   costo: 4800 ganancia: 3000 valor de venta: 7800
+
+-hacer una funcion u opcion donde va ir colocada si se quiere mirar que vale tal producto
+bien sea por el nombre
+
+-crear una tabla donde aparezcas todos los productos

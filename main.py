@@ -1,5 +1,4 @@
-import sys
-from PyQt5.QtWidgets import (QApplication,
+from PyQt5.QtWidgets import (
         QMainWindow, QSizeGrip,
         QHeaderView,QMessageBox, 
         QAbstractItemView, QTableWidgetItem)
@@ -8,16 +7,16 @@ from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
 import re
 from data.dbManage import DbUser
-import datetime
 class Eva(QMainWindow):
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         super(Eva,self).__init__()
 
         self.db = DbUser()
         self.patron = '[a-zA-Z]+'
         self.patronNum = '[1-9]+[0-9]*'
         self.regex = re
-
+        self.usuario = args
+        
         self.load = loadUi('ui/EvaSystem.ui',self)
 ############################## hide Buttons ###########################################    
         self.load.btn_reduce.hide()
@@ -156,7 +155,7 @@ class Eva(QMainWindow):
 
 ##### table #####################
 
-
+        self.load.user_lbl.setText(self.usuario[0])
         
 
     def TableEvents(self):
@@ -307,10 +306,3 @@ class Eva(QMainWindow):
 
         self.mensagges('Elemento borrado')
 
-if __name__=="__main__":
-    app = QApplication(sys.argv)
-
-    ventana= Eva()
-    ventana.show()
-
-    sys.exit(app.exec_())

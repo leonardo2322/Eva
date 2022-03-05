@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>595</width>
+    <width>789</width>
     <height>574</height>
    </rect>
   </property>
@@ -153,7 +153,7 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>192</width>
+               <width>209</width>
                <height>362</height>
               </rect>
              </property>
@@ -241,7 +241,7 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>192</width>
+               <width>209</width>
                <height>362</height>
               </rect>
              </property>
@@ -646,7 +646,7 @@ QPushButton:hover{
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>1</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="Domicilios_stk"/>
             <widget class="QWidget" name="stk_Proveedores">
@@ -680,7 +680,7 @@ QPushButton:hover{
                     <property name="geometry">
                      <rect>
                       <x>0</x>
-                      <y>-9</y>
+                      <y>0</y>
                       <width>553</width>
                       <height>439</height>
                      </rect>
@@ -944,7 +944,7 @@ QComboBox::FontRole{
               <item>
                <widget class="QTabWidget" name="tabWidget">
                 <property name="currentIndex">
-                 <number>0</number>
+                 <number>1</number>
                 </property>
                 <widget class="QWidget" name="tab">
                  <attribute name="title">
@@ -959,8 +959,8 @@ QComboBox::FontRole{
                     <widget class="QWidget" name="scrollAreaWidgetContents">
                      <property name="geometry">
                       <rect>
-                       <x>-196</x>
-                       <y>-3</y>
+                       <x>0</x>
+                       <y>0</y>
                        <width>513</width>
                        <height>1211</height>
                       </rect>
@@ -1496,7 +1496,7 @@ QPushButton:hover{
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>322</width>
+                          <width>499</width>
                           <height>418</height>
                          </rect>
                         </property>
@@ -1541,9 +1541,9 @@ QPushButton:hover{
                                 <property name="geometry">
                                  <rect>
                                   <x>0</x>
-                                  <y>0</y>
-                                  <width>380</width>
-                                  <height>404</height>
+                                  <y>-440</y>
+                                  <width>489</width>
+                                  <height>844</height>
                                  </rect>
                                 </property>
                                 <layout class="QVBoxLayout" name="verticalLayout_32">
@@ -1594,6 +1594,9 @@ QDateEdit{
                                     </property>
                                     <item>
                                      <layout class="QFormLayout" name="formLayout_4">
+                                      <property name="rightMargin">
+                                       <number>6</number>
+                                      </property>
                                       <item row="0" column="0">
                                        <widget class="QLabel" name="tituloDelProductoLabel">
                                         <property name="text">
@@ -1604,47 +1607,27 @@ QDateEdit{
                                       <item row="0" column="1">
                                        <widget class="QLineEdit" name="tituloDelProductoLineEdit"/>
                                       </item>
-                                      <item row="3" column="0">
-                                       <widget class="QLabel" name="queProductosUtilizasLabel">
-                                        <property name="text">
-                                         <string>Que Productos Manejas</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="3" column="1">
-                                       <widget class="QLineEdit" name="queProductosUtilizasLineEdit"/>
-                                      </item>
-                                      <item row="4" column="0">
-                                       <widget class="QLabel" name="tipoDeProductoLabel">
-                                        <property name="text">
-                                         <string>Tipo de Producto</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="4" column="1">
-                                       <widget class="QLineEdit" name="tipoDeProductoLineEdit"/>
-                                      </item>
-                                      <item row="2" column="0">
-                                       <widget class="QLabel" name="costoFinalLabel">
-                                        <property name="text">
-                                         <string>Costo Venta</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="2" column="1">
-                                       <widget class="QLineEdit" name="costoFinalLineEdit"/>
-                                      </item>
                                       <item row="1" column="0">
                                        <widget class="QLabel" name="conQueElementoLabel">
                                         <property name="text">
-                                         <string>Con Que elementos Se Prepara Tu Producto</string>
+                                         <string>ingrediente</string>
                                         </property>
                                        </widget>
                                       </item>
                                       <item row="1" column="1">
                                        <widget class="QLineEdit" name="conQueElementoLineEdit"/>
                                       </item>
-                                      <item row="5" column="1">
+                                      <item row="2" column="0">
+                                       <widget class="QLabel" name="costoFinalLabel">
+                                        <property name="text">
+                                         <string>Proveedor</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="2" column="1">
+                                       <widget class="QLineEdit" name="costoFinalLineEdit"/>
+                                      </item>
+                                      <item row="14" column="1">
                                        <widget class="QPushButton" name="pushButton_3">
                                         <property name="styleSheet">
                                          <string notr="true">QPushButton{
@@ -1658,7 +1641,152 @@ QPushButton:hover{
 }</string>
                                         </property>
                                         <property name="text">
-                                         <string>Introducir</string>
+                                         <string>Agregar a la base de datos</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="3" column="1">
+                                       <widget class="QLineEdit" name="lineEdit_3"/>
+                                      </item>
+                                      <item row="3" column="0">
+                                       <widget class="QLabel" name="label_12">
+                                        <property name="text">
+                                         <string>Ingrediente 2</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="4" column="1">
+                                       <widget class="QLineEdit" name="lineEdit_7"/>
+                                      </item>
+                                      <item row="4" column="0">
+                                       <widget class="QLabel" name="label_13">
+                                        <property name="text">
+                                         <string>Proveedor</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="5" column="1">
+                                       <widget class="QLineEdit" name="lineEdit_8"/>
+                                      </item>
+                                      <item row="5" column="0">
+                                       <widget class="QLabel" name="label_14">
+                                        <property name="text">
+                                         <string>Ingrediente 3</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="6" column="1">
+                                       <widget class="QLineEdit" name="lineEdit_9"/>
+                                      </item>
+                                      <item row="6" column="0">
+                                       <widget class="QLabel" name="label_15">
+                                        <property name="text">
+                                         <string>Proveedor</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="7" column="1">
+                                       <widget class="QLineEdit" name="lineEdit_10"/>
+                                      </item>
+                                      <item row="7" column="0">
+                                       <widget class="QLabel" name="label_16">
+                                        <property name="text">
+                                         <string>Ingrediente 4</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="8" column="1">
+                                       <widget class="QLineEdit" name="lineEdit_11"/>
+                                      </item>
+                                      <item row="8" column="0">
+                                       <widget class="QLabel" name="label_29">
+                                        <property name="text">
+                                         <string>Proveedor</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="9" column="1">
+                                       <widget class="QLineEdit" name="lineEdit_12"/>
+                                      </item>
+                                      <item row="9" column="0">
+                                       <widget class="QLabel" name="label_30">
+                                        <property name="text">
+                                         <string>Ingrediente 5</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="10" column="0">
+                                       <widget class="QLabel" name="label_31">
+                                        <property name="text">
+                                         <string>Cuantos ingredientes tiene tu producto de mas</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="10" column="1">
+                                       <widget class="QSpinBox" name="spinBox"/>
+                                      </item>
+                                      <item row="14" column="0">
+                                       <widget class="QPushButton" name="pushButton_5">
+                                        <property name="styleSheet">
+                                         <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                                        </property>
+                                        <property name="text">
+                                         <string>agregrar Nuevos  ingredientes</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="11" column="1">
+                                       <widget class="QDoubleSpinBox" name="doubleSpinBox">
+                                        <property name="stepType">
+                                         <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                                        </property>
+                                        <property name="value">
+                                         <double>10.000000000000000</double>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="11" column="0">
+                                       <widget class="QLabel" name="label_32">
+                                        <property name="text">
+                                         <string>Porcenaje de Produccion</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="12" column="1">
+                                       <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+                                      </item>
+                                      <item row="12" column="0">
+                                       <widget class="QLabel" name="label_33">
+                                        <property name="text">
+                                         <string>Porcentaje de perdida</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="13" column="1">
+                                       <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+                                        <property name="maximum">
+                                         <double>0.000000000000000</double>
+                                        </property>
+                                        <property name="stepType">
+                                         <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                                        </property>
+                                        <property name="value">
+                                         <double>0.000000000000000</double>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="13" column="0">
+                                       <widget class="QLabel" name="label_34">
+                                        <property name="text">
+                                         <string>Porcentaje de Ganancia</string>
                                         </property>
                                        </widget>
                                       </item>
@@ -1698,7 +1826,7 @@ QPushButton:hover{
                                         <rect>
                                          <x>0</x>
                                          <y>0</y>
-                                         <width>339</width>
+                                         <width>448</width>
                                          <height>86</height>
                                         </rect>
                                        </property>
@@ -1786,8 +1914,8 @@ QPushButton:hover{
                     <property name="geometry">
                      <rect>
                       <x>0</x>
-                      <y>0</y>
-                      <width>429</width>
+                      <y>-300</y>
+                      <width>494</width>
                       <height>1233</height>
                      </rect>
                     </property>
@@ -1813,7 +1941,7 @@ QPushButton:hover{
                         <cursorShape>PointingHandCursor</cursorShape>
                        </property>
                        <property name="currentIndex">
-                        <number>1</number>
+                        <number>0</number>
                        </property>
                        <widget class="QWidget" name="qwidget">
                         <attribute name="title">

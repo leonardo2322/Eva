@@ -1,7 +1,7 @@
 
 import psycopg2 as pg
 from psycopg2 import Error
-
+from passlib.hash import pbkdf2_sha256
 
 class DbUser():
     def __init__(self, *args, **kwargs):
@@ -28,18 +28,18 @@ class DbUser():
 
     def usersInit(self,*args):
         usuario = (args)
-        try:
-            sql = ''' SELECT * FROM usuarios WHERE usuario='%s' and passw='%s' '''%(usuario[0],usuario[1])
-            connection = self.Conexion()
+        
 
+        try:
+            sql = ''' SELECT * FROM usuarios WHERE usuario='%s' '''%(usuario)
+            connection = self.Conexion()
             connection[1].execute(sql)
             self.datas = connection[1].fetchone()
-            
-            connection[0].commit
+            connection[0].commit()
             return self.datas
 
         except Error as e:
-            print('ocurrio un error') 
+            print('ocurrio un error', e) 
 
         except:
             print('ocurrio un error') 
@@ -92,6 +92,8 @@ class DbUser():
             return e
         except:
             print('error de conexion con la base de datos')
+
+
     def QueryUpdate(self,*args, **kwargs):
         pass
 
