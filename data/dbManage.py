@@ -54,6 +54,7 @@ class DbUser():
         try:
             sqlSelect = ''' SELECT * FROM productoscyg  '''
             connection[1].execute(sqlSelect)
+            
             self.data = connection[1].fetchall()
             connection[0].commit()
             
@@ -70,7 +71,7 @@ class DbUser():
         connect = self.Conexion()
         costInt = int(costo)
         try:
-            sqlInsertData = ''' INSERT INTO productoscyg (materiaprima,proveedor,costo ) VALUES('%s','%s','%s') '''%(materiaprima, proveedor, costInt)  
+            sqlInsertData = ''' INSERT INTO productoscyg (producto,proveedor,costo ) VALUES('%s','%s','%s') '''%(materiaprima, proveedor, costInt)  
             connect[1].execute(sqlInsertData)
             connect[0].commit()
         except connect[0].Error as e:

@@ -15,3 +15,5 @@ la empresa de la mejor manera
 bien sea por el nombre
 
 -crear una tabla donde aparezcas todos los productos
+
+-con pandas obtener el valor de la compra con su ubicacion su producto comprado y asi meterlo dentro de una grafica de barras para saber y distinguir cual es mi fuerte

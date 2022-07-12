@@ -53,10 +53,17 @@ class Eva(QMainWindow):
 
         self.load.btn_domicilios.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.Domicilios_stk))
 
+        self.load.bt_rest.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.stk_Atencion_salon))
+
         self.load.btn_delete_cyg.clicked.connect(self.DeleteDb)
         self.load.btn_insert_data_in_cyg.clicked.connect(self.dbQueryesInsert)
         self.load.cbb_data_table_products.currentIndexChanged.connect(self.TableEvents)
 ########################  icons    #########################################################
+
+        iconResta = QtGui.QIcon()
+        iconResta.addPixmap(QtGui.QPixmap("iconos/utensilios-de-restaurante.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.load.bt_rest.setIcon(iconResta)
+
         iconExpand = QtGui.QIcon()
         iconExpand.addPixmap(QtGui.QPixmap("iconos/icons/maximize.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.load.btn_expand.setIcon(iconExpand)
@@ -131,17 +138,13 @@ class Eva(QMainWindow):
 
 
 
-        
-        iconBtnSearchCostos = QtGui.QIcon()
-        iconBtnSearchCostos.addPixmap(QtGui.QPixmap("iconos/icons/search.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.load.btn_search_in_costos.setIcon(iconBtnSearchCostos)
 
         iconBtnbusisness = QtGui.QIcon()
         iconBtnbusisness.addPixmap(QtGui.QPixmap("iconos/negocios.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.load.btn_busisness.setIcon(iconBtnbusisness)
 
 
-        self.load.btn_search_proveedores.setIcon(iconBtnSearchCostos)
+        # self.load.btn_search_proveedores.setIcon(iconBtnSearchCostos)
 
 ############ Tables Strectchs ##########################3
 
@@ -151,7 +154,15 @@ class Eva(QMainWindow):
 
         self.load.tbl_data_products.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-        
+        #table view tbview_int_clientes
+
+        self.load.tbview_int_clientes.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+
+        self.load.tbview_int_clientes.setSelectionBehavior(QAbstractItemView.SelectRows)    
+        self.load.tbview_int_clientes.clearContents()
+        self.load.tbview_int_clientes.setSelectionMode(QAbstractItemView.ContiguousSelection)
+        self.load.tbview_int_clientes.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.load.tbview_int_clientes.setTextElideMode(Qt.ElideRight)
 
 ##### table #####################
 
@@ -172,6 +183,8 @@ class Eva(QMainWindow):
 
         self.load.tbl_data_products.resizeColumnsToContents()
         currentIndex = self.load.cbb_data_table_products.currentIndex()
+
+
         try:
             if db:
                 if currentIndex == 0:
@@ -182,9 +195,10 @@ class Eva(QMainWindow):
                         idDato = QTableWidgetItem(str(self.arr[0]))
                         idDato.setTextAlignment(Qt.AlignCenter)
                         self.load.tbl_data_products.setItem(0,0,idDato)
-                        self.load.tbl_data_products.setItem(0,1,QTableWidgetItem(self.arr[1]))
+                        self.load.tbl_data_products.setItem(0,1, QTableWidgetItem(str(self.arr[1])))
                         self.load.tbl_data_products.setItem(0,2,QTableWidgetItem(self.arr[2]))
-                        self.load.tbl_data_products.setItem(0,3,QTableWidgetItem(str(self.arr[3])))
+                        self.load.tbl_data_products.setItem(0,3,QTableWidgetItem(self.arr[3]))
+                        self.load.tbl_data_products.setItem(0,4,QTableWidgetItem(str(self.arr[4])))
                 elif currentIndex == 1:
                     fetchlastOne = []
                     for d in (db[-1]):
@@ -193,28 +207,32 @@ class Eva(QMainWindow):
                         
                         idD= QTableWidgetItem(str(fetchlastOne[0])) 
                         self.load.tbl_data_products.setItem(0,0,idD)
-                        self.load.tbl_data_products.setItem(0,1,QTableWidgetItem(fetchlastOne[1]))
+                        self.load.tbl_data_products.setItem(0,1,QTableWidgetItem(str(fetchlastOne[1])))
                         self.load.tbl_data_products.setItem(0,2,QTableWidgetItem(fetchlastOne[2]))
-                        self.load.tbl_data_products.setItem(0,3,QTableWidgetItem(str(fetchlastOne[3])))
+                        self.load.tbl_data_products.setItem(0,3,QTableWidgetItem(fetchlastOne[3]))
+                        self.load.tbl_data_products.setItem(0,4,QTableWidgetItem(str(fetchlastOne[4])))
                 elif currentIndex == 2:
                     fila = 0
                     for datos in db:
                         self.load.tbl_data_products.setRowCount(fila + 1)
+                        self.load.tbl_data_products.setItem(fila,0,QTableWidgetItem(str(datos[0])))
+                        self.load.tbl_data_products.setItem(fila,1,QTableWidgetItem(str(datos[1])))
+                        self.load.tbl_data_products.setItem(fila,2,QTableWidgetItem(datos[2]))
+                        self.load.tbl_data_products.setItem(fila,3,QTableWidgetItem(datos[3]))
+                        self.load.tbl_data_products.setItem(fila,4,QTableWidgetItem(str(datos[4])))
+                        fila +=1    
                         
-                        idDato = QTableWidgetItem(str(datos[0]))
-                        idDato.setTextAlignment(Qt.AlignCenter)
+                            
+                    
 
-                        self.load.tbl_data_products.setItem(fila, 0, idDato)
-                        self.load.tbl_data_products.setItem(fila, 1, QTableWidgetItem(datos[1]))
-                        self.load.tbl_data_products.setItem(fila, 2, QTableWidgetItem(datos[2]))
-                        self.load.tbl_data_products.setItem(fila, 3, QTableWidgetItem(str(datos[3])))
-                        fila += 1
                 else:
-                    self.mensagges('ocurrio un error')
+                    self.mensagges('aqui ocurrio un error')
             else:
                 self.mensagges('no se pudo conectar a la base de datos')
         except:
-            self.mensagges('ocurrio un error')
+            self.mensagges('ocurrio un error try')
+
+
 #################  functions section  ##############################
 
     def mensagges(self, mensajeInf):

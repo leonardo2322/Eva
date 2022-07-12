@@ -5,18 +5,8 @@ from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
 from data.dbManage import DbUser
 from main import Eva
-from threading import Thread
 from passlib.hash import pbkdf2_sha256
 
-# class treadding(Thread):
-#     def __init__(self, windo):
-#         Thread.__init__(self)
-#         self.ventan = windo
-#         self.mostrar()
-#     def mostrar(self):
-#         Sesion.hide()
-#         self.ventan()
-#         self.start()
 
 class InitSesion(QDialog):
     def __init__(self):
@@ -61,7 +51,7 @@ class InitSesion(QDialog):
                         Eva.mensagges(self,'la contraseña son incorrectos')
                 else:
                     Eva.mensagges(self, 'el usuario es incorrecto')       
-            except:
+            except :
                 Eva.mensagges(self, 'ocurrio un error datos incorrectos')
                 
         else:
