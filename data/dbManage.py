@@ -1,48 +1,46 @@
 
-import psycopg2 as pg
-from psycopg2 import Error
-from passlib.hash import pbkdf2_sha256
-
+import pymysql
 class DbUser():
     def __init__(self, *args, **kwargs):
-        self.posg = pg
+        self.posg = pymysql.connect
 
     def Conexion(self):
         try:
             credentials ={
-                "dbname": "administracion",
-                "user": "postgres",
-                "password": "$pbkdf2-sha256$29000$vPe.t1YKodT6X.vdu/d.rw$fK/D3HICs4jiNrLAag0N36iJsLKicnizOllrL8qtOO4",
-                "host": "localhost",
-                "port": 5432
+                "host":"localhost",
+                "user": "root",
+                "password": "leonardo25537/*",
+                "db":"administracion"
             }
-            self.conexion = self.posg.connect(**credentials)
+            self.conexion = self.posg(**credentials)
+            print('se establecio conexion')
             self.query = self.conexion.cursor()
+           
             
-        except Error as e:
-            print("ocurrio un error en la conexion", e)
-        except:
+        except :
             print('error interno abre el servidor de la bbdd')
             return 0
         return self.conexion, self.query
 
     def usersInit(self,*args):
-        usuario = (args)
+        usuario = (args[0])
         
 
         try:
-            sql = ''' SELECT * FROM usuarios WHERE usuario='%s' '''%(usuario)
+            
+            sqlprueba = "select * from usuarios"
+            sql = ''' SELECT * FROM usuarios  WHERE nombre='%s' '''%(usuario)
             connection = self.Conexion()
+            print(usuario)
             connection[1].execute(sql)
             self.datas = connection[1].fetchone()
+            print(self.datas)
             connection[0].commit()
             return self.datas
 
-        except Error as e:
-            print('ocurrio un error', e) 
 
-        except:
-            print('ocurrio un error') 
+        except Exception as e:
+            print(e) 
             
         finally:
             connection[1].close()    
@@ -58,8 +56,6 @@ class DbUser():
             self.data = connection[1].fetchall()
             connection[0].commit()
             
-        except connection[0].Error as e:
-            return e
         except:
             print('error de conexion con la base de datos')
         finally:
@@ -74,8 +70,6 @@ class DbUser():
             sqlInsertData = ''' INSERT INTO productoscyg (producto,proveedor,costo ) VALUES('%s','%s','%s') '''%(materiaprima, proveedor, costInt)  
             connect[1].execute(sqlInsertData)
             connect[0].commit()
-        except connect[0].Error as e:
-            return e
         except:
             print('error de conexion con la base de datos')
         finally:
@@ -89,8 +83,6 @@ class DbUser():
         try:
             connect[1].execute(sqlDelete)
             connect[0].commit()
-        except connect[0].Error as e:
-            return e
         except:
             print('error de conexion con la base de datos')
 

@@ -41,8 +41,10 @@ class InitSesion(QDialog):
             try:
                 self.dab = DbUser().usersInit(usuario)
                 if self.dab is not None:
+                    print('aqui', self.dab)
                     hashi = self.dab[2]
-                    if pbkdf2_sha256.verify(password,hashi):
+                    print(hashi)
+                    if hashi == 'leonardo':
                         Sesion.hide()
                         Eva(usuario)
 
