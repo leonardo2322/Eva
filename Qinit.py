@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import (QApplication,
         QDialog)
 from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
-from data.dbManage import DbUser
+from data.dbManage import DbUser, db
 from main import Eva
 from passlib.hash import pbkdf2_sha256
 
@@ -40,11 +40,10 @@ class InitSesion(QDialog):
         if len(usuario) > 0 and len(password) > 0:
             try:
                 self.dab = DbUser().usersInit(usuario)
-                if self.dab is not None:
-                    print('aqui', self.dab)
+                if self.dab is not None and self.dab[1] == usuario:
                     hashi = self.dab[2]
-                    print(hashi)
-                    if hashi == 'leonardo':
+                    if hashi == password:
+                        db()
                         Sesion.hide()
                         Eva(usuario)
 

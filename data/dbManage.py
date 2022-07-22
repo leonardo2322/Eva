@@ -1,5 +1,62 @@
 
 import pymysql
+from datetime import date
+from decouple import config
+class db():
+    def __init__(self):
+        self.MDataBase = pymysql.connect
+        try:
+            credentials = {
+                "host":config('SQL_LOCAL_HOST'),
+                "user": config('SQL_USER'),
+                "password": config('SQL_PASSWORD'),
+            }
+            self.conexion =self.MDataBase(**credentials)
+            manage =self.conexion.cursor()
+
+            database = """CREATE DATABASE IF NOT EXISTS administracion"""
+            use = "use administracion"
+
+
+            if manage.execute(database):
+                print('base de datos creada')
+            else:
+                print('la base de datos ya esta creada')
+            manage.execute(use)
+            tableuser = """create table if not exists  usuarios(
+	                        id integer auto_increment,
+                            nombre varchar(20),
+                            passwor varchar(250),
+                            primary key(id)
+                        );
+                        """
+            manage.execute(tableuser)
+            useradmin = """insert into usuarios  (nombre, passwor) select * from (select '%s','%s') as new_value
+                             where not exists (select nombre from usuarios where nombre='admin')limit 1;"""% (config('USER_ADMIN'),config('USER_PASSWORD'))
+
+            if manage.execute(useradmin):
+                print('usuario administrador insertado')
+            else:
+                print('ya esta registrado el usuario admin')
+            tablecyg = """create table if not exists productoscyg(
+                id bigint auto_increment,
+                fecha date,
+                materiaprima varchar(70) not null,
+                proveedor varchar(20) not null,
+                costo bigint not null,
+                primary key(id)
+                )
+            """
+
+            if manage.execute(tablecyg):
+                print('tabla creada')
+            else:
+                print('ya esta creada la tabla')
+        except Exception as e:
+            print(e)
+
+
+
 class DbUser():
     def __init__(self, *args, **kwargs):
         self.posg = pymysql.connect
@@ -7,12 +64,13 @@ class DbUser():
     def Conexion(self):
         try:
             credentials ={
-                "host":"localhost",
-                "user": "root",
-                "password": "leonardo25537/*",
+                "host":config('SQL_LOCAL_HOST'),
+                "user": config('SQL_USER'),
+                "password": config('SQL_PASSWORD'),
                 "db":"administracion"
             }
             self.conexion = self.posg(**credentials)
+            print(credentials)
             print('se establecio conexion')
             self.query = self.conexion.cursor()
            
@@ -28,13 +86,10 @@ class DbUser():
 
         try:
             
-            sqlprueba = "select * from usuarios"
             sql = ''' SELECT * FROM usuarios  WHERE nombre='%s' '''%(usuario)
             connection = self.Conexion()
-            print(usuario)
             connection[1].execute(sql)
             self.datas = connection[1].fetchone()
-            print(self.datas)
             connection[0].commit()
             return self.datas
 
@@ -50,28 +105,32 @@ class DbUser():
         connection = self.Conexion()
 
         try:
-            sqlSelect = ''' SELECT * FROM productoscyg  '''
+            sqlSelect = '''SELECT * FROM productoscyg'''
             connection[1].execute(sqlSelect)
+            
             
             self.data = connection[1].fetchall()
             connection[0].commit()
+
+            
             
         except:
-            print('error de conexion con la base de datos')
+            print('error de conexion con la base de datos al seleccionar')
         finally:
             connection[1].close()    
             connection[0].close()
         return self.data
     def QueryInsert(self, materiaprima, proveedor, costo, *args, **kwargs):
-
         connect = self.Conexion()
         costInt = int(costo)
+        fecha = date.today()
+
         try:
-            sqlInsertData = ''' INSERT INTO productoscyg (producto,proveedor,costo ) VALUES('%s','%s','%s') '''%(materiaprima, proveedor, costInt)  
+            sqlInsertData = ''' INSERT INTO productoscyg (fecha,materiaprima,proveedor,costo ) VALUES('%s','%s','%s','%s') '''%(fecha,materiaprima, proveedor, costInt)  
             connect[1].execute(sqlInsertData)
             connect[0].commit()
         except:
-            print('error de conexion con la base de datos')
+            print('error de conexion con la base de datos al insertar')
         finally:
             connect[1].close()    
             connect[0].close()
@@ -84,7 +143,7 @@ class DbUser():
             connect[1].execute(sqlDelete)
             connect[0].commit()
         except:
-            print('error de conexion con la base de datos')
+            print('error de conexion con la base de datos al eliminar')
 
 
     def QueryUpdate(self,*args, **kwargs):

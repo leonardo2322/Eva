@@ -170,10 +170,12 @@ class Eva(QMainWindow):
         
 
     def TableEvents(self):
-        db = self.db.SelectFromDB()
+        dba = self.db.SelectFromDB()
+        print(dba)
         listData = []
-        for Dts in db:
+        for Dts in dba:
             listData.append(Dts)
+            print(Dts)
 
         self.load.tbl_data_products.setSelectionBehavior(QAbstractItemView.SelectRows)    
         self.load.tbl_data_products.clearContents()
@@ -186,11 +188,12 @@ class Eva(QMainWindow):
 
 
         try:
-            if db:
+            if dba:
                 if currentIndex == 0:
                     self.arr = []
-                    for data in (db[0]):
+                    for data in (dba[0]):
                         self.arr.append(data)
+                        print(data)
                     for dat in self.arr:
                         idDato = QTableWidgetItem(str(self.arr[0]))
                         idDato.setTextAlignment(Qt.AlignCenter)
@@ -201,7 +204,7 @@ class Eva(QMainWindow):
                         self.load.tbl_data_products.setItem(0,4,QTableWidgetItem(str(self.arr[4])))
                 elif currentIndex == 1:
                     fetchlastOne = []
-                    for d in (db[-1]):
+                    for d in (dba[-1]):
                         fetchlastOne.append(d)
                     for dtb in fetchlastOne:
                         
@@ -213,7 +216,8 @@ class Eva(QMainWindow):
                         self.load.tbl_data_products.setItem(0,4,QTableWidgetItem(str(fetchlastOne[4])))
                 elif currentIndex == 2:
                     fila = 0
-                    for datos in db:
+                    for datos in dba:
+                        print(datos)
                         self.load.tbl_data_products.setRowCount(fila + 1)
                         self.load.tbl_data_products.setItem(fila,0,QTableWidgetItem(str(datos[0])))
                         self.load.tbl_data_products.setItem(fila,1,QTableWidgetItem(str(datos[1])))
@@ -229,8 +233,9 @@ class Eva(QMainWindow):
                     self.mensagges('aqui ocurrio un error')
             else:
                 self.mensagges('no se pudo conectar a la base de datos')
-        except:
-            self.mensagges('ocurrio un error try')
+        except Exception as e:
+            print(e)
+            self.mensagges('ocurrio un error')
 
 
 #################  functions section  ##############################
