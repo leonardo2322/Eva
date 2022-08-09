@@ -1,15 +1,16 @@
 from PyQt5.QtWidgets import (
         QMainWindow, QSizeGrip,
         QHeaderView,QMessageBox, 
-        QAbstractItemView, QTableWidgetItem)
+        QAbstractItemView, QTableWidgetItem,QWidget,QDialog,QGridLayout)
 from PyQt5.QtCore import QPropertyAnimation,QEasingCurve, Qt
 from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
 import re
 from data.dbManage import DbUser
+from threading import Thread
 class Eva(QMainWindow):
-    def __init__(self, *args, **kwargs):
-        super(Eva,self).__init__()
+    def __init__(self, *args,parent=None, **kwargs):
+        super(Eva,self).__init__(parent)
 
         self.db = DbUser()
         self.patron = '[a-zA-Z]+'
@@ -37,7 +38,6 @@ class Eva(QMainWindow):
         self.load.btn_menu.clicked.connect(self.MenuHideAndShow)
         self.load.slide_close_btn.clicked.connect(self.MenuHideAndShow)
         self.load.show()
-        
 ################################   Buttoms Event    ###################################
 
         self.load.btn_costosygastos.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.stk_CostosGastos))
@@ -55,9 +55,13 @@ class Eva(QMainWindow):
 
         self.load.bt_rest.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.stk_Atencion_salon))
 
+        
+        self.load.btn_user_add.clicked.connect(WindowUserAdd)
+
         self.load.btn_delete_cyg.clicked.connect(self.DeleteDb)
         self.load.btn_insert_data_in_cyg.clicked.connect(self.dbQueryesInsert)
         self.load.cbb_data_table_products.currentIndexChanged.connect(self.TableEvents)
+
 ########################  icons    #########################################################
 
         iconResta = QtGui.QIcon()
@@ -329,3 +333,12 @@ class Eva(QMainWindow):
 
         self.mensagges('Elemento borrado')
 
+class WindowUserAdd(QMainWindow):
+    def __init__(self,parent=None):
+        super(WindowUserAdd,self).__init__()
+        # self.parent = parent
+        self.UI = loadUi("QdialogsUi/tableUserCreate.ui",self)
+        self.UI.show()
+
+        self.UI.closed.clicked.connect(lambda:self.close())
+        self.UI.minimized.clicked.connect(self.showMinimized)

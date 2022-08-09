@@ -1,7 +1,8 @@
 import sys
 from PyQt5.QtWidgets import (QApplication,
         QDialog)
-from PyQt5 import QtGui
+from PyQt5 import QtGui,uic
+
 from PyQt5.uic import loadUi 
 from data.dbManage import DbUser, db
 from main import Eva
@@ -27,6 +28,7 @@ class InitSesion(QDialog):
         self.ui.lbl_paper.setPixmap(QtGui.QPixmap("iconos/remove_paper.png"))
 
         self.ui.btn_init_sesion.clicked.connect(self.InitSesion)
+        self.ui.btn_init_sesion.setDefault(True)
         self.show()
 
 
@@ -49,12 +51,11 @@ class InitSesion(QDialog):
 
                         
                     else:
-                        Eva.mensagges(self,'la contraseña son incorrectos')
+                        Eva.mensagges(self,'la contraseña o el usuario son incorrectos')
                 else:
                     Eva.mensagges(self, 'el usuario es incorrecto')       
-            except :
-                Eva.mensagges(self, 'ocurrio un error datos incorrectos')
-                
+            except Exception as e:
+                print(e)                
         else:
             Eva.mensagges(self,'No hay datos Introduce tus datos')
 

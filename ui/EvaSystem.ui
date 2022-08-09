@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>956</width>
+    <width>878</width>
     <height>527</height>
    </rect>
   </property>
@@ -153,7 +153,7 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>192</width>
+               <width>282</width>
                <height>315</height>
               </rect>
              </property>
@@ -171,7 +171,7 @@ QPushButton:hover{
                  <string notr="true">border-radius:30px;</string>
                 </property>
                 <property name="text">
-                 <string>Hogar</string>
+                 <string>Agenda</string>
                 </property>
                 <property name="icon">
                  <iconset>
@@ -248,7 +248,7 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>192</width>
+               <width>282</width>
                <height>315</height>
               </rect>
              </property>
@@ -262,12 +262,27 @@ QPushButton:hover{
              <layout class="QVBoxLayout" name="verticalLayout_5">
               <item>
                <widget class="QPushButton" name="btn_user_add">
+                <property name="cursor">
+                 <cursorShape>ArrowCursor</cursorShape>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::StrongFocus</enum>
+                </property>
                 <property name="text">
                  <string>Agregar Usuario</string>
                 </property>
                 <property name="icon">
                  <iconset>
                   <normaloff>:/icons/user-plus.svg</normaloff>:/icons/user-plus.svg</iconset>
+                </property>
+                <property name="shortcut">
+                 <string/>
+                </property>
+                <property name="autoDefault">
+                 <bool>false</bool>
+                </property>
+                <property name="default">
+                 <bool>false</bool>
                 </property>
                </widget>
               </item>
@@ -300,8 +315,8 @@ QPushButton:hover{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>240</width>
-               <height>301</height>
+               <width>282</width>
+               <height>315</height>
               </rect>
              </property>
              <attribute name="icon">
@@ -653,7 +668,7 @@ QPushButton:hover{
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>2</number>
+             <number>6</number>
             </property>
             <widget class="QWidget" name="Domicilios_stk"/>
             <widget class="QWidget" name="stk_Proveedores">
@@ -688,7 +703,7 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>600</width>
+                      <width>553</width>
                       <height>439</height>
                      </rect>
                     </property>
@@ -906,7 +921,7 @@ QComboBox::FontRole{
                             <rect>
                              <x>0</x>
                              <y>0</y>
-                             <width>550</width>
+                             <width>100</width>
                              <height>86</height>
                             </rect>
                            </property>
@@ -951,7 +966,7 @@ QComboBox::FontRole{
               <item>
                <widget class="QTabWidget" name="tabWidget">
                 <property name="currentIndex">
-                 <number>1</number>
+                 <number>0</number>
                 </property>
                 <widget class="QWidget" name="tab">
                  <attribute name="title">
@@ -1504,8 +1519,8 @@ QPushButton:hover{
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>683</width>
-                          <height>371</height>
+                          <width>86</width>
+                          <height>68</height>
                          </rect>
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_25">
@@ -1549,9 +1564,9 @@ QPushButton:hover{
                                 <property name="geometry">
                                  <rect>
                                   <x>0</x>
-                                  <y>-473</y>
-                                  <width>651</width>
-                                  <height>844</height>
+                                  <y>0</y>
+                                  <width>489</width>
+                                  <height>494</height>
                                  </rect>
                                 </property>
                                 <layout class="QVBoxLayout" name="verticalLayout_32">
@@ -1635,105 +1650,64 @@ QDateEdit{
                                       <item row="2" column="1">
                                        <widget class="QLineEdit" name="costoFinalLineEdit"/>
                                       </item>
-                                      <item row="14" column="1">
-                                       <widget class="QPushButton" name="pushButton_3">
-                                        <property name="styleSheet">
-                                         <string notr="true">QPushButton{
-	border-radius:30px;
-	border: 2px solid #efb810;
-	padding:7px 0;
-}
-
-QPushButton:hover{
-	background-color: rgba(239,184,16,.5)
-}</string>
-                                        </property>
-                                        <property name="text">
-                                         <string>Agregar a la base de datos</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="3" column="1">
-                                       <widget class="QLineEdit" name="lineEdit_3"/>
-                                      </item>
                                       <item row="3" column="0">
-                                       <widget class="QLabel" name="label_12">
-                                        <property name="text">
-                                         <string>Ingrediente 2</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="4" column="1">
-                                       <widget class="QLineEdit" name="lineEdit_7"/>
-                                      </item>
-                                      <item row="4" column="0">
-                                       <widget class="QLabel" name="label_13">
-                                        <property name="text">
-                                         <string>Proveedor</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="5" column="1">
-                                       <widget class="QLineEdit" name="lineEdit_8"/>
-                                      </item>
-                                      <item row="5" column="0">
-                                       <widget class="QLabel" name="label_14">
-                                        <property name="text">
-                                         <string>Ingrediente 3</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="6" column="1">
-                                       <widget class="QLineEdit" name="lineEdit_9"/>
-                                      </item>
-                                      <item row="6" column="0">
-                                       <widget class="QLabel" name="label_15">
-                                        <property name="text">
-                                         <string>Proveedor</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="7" column="1">
-                                       <widget class="QLineEdit" name="lineEdit_10"/>
-                                      </item>
-                                      <item row="7" column="0">
-                                       <widget class="QLabel" name="label_16">
-                                        <property name="text">
-                                         <string>Ingrediente 4</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="8" column="1">
-                                       <widget class="QLineEdit" name="lineEdit_11"/>
-                                      </item>
-                                      <item row="8" column="0">
-                                       <widget class="QLabel" name="label_29">
-                                        <property name="text">
-                                         <string>Proveedor</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="9" column="1">
-                                       <widget class="QLineEdit" name="lineEdit_12"/>
-                                      </item>
-                                      <item row="9" column="0">
-                                       <widget class="QLabel" name="label_30">
-                                        <property name="text">
-                                         <string>Ingrediente 5</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="10" column="0">
                                        <widget class="QLabel" name="label_31">
                                         <property name="text">
                                          <string>Cuantos ingredientes tiene tu producto de mas</string>
                                         </property>
                                        </widget>
                                       </item>
-                                      <item row="10" column="1">
+                                      <item row="3" column="1">
                                        <widget class="QSpinBox" name="spinBox"/>
                                       </item>
-                                      <item row="14" column="0">
+                                      <item row="4" column="0">
+                                       <widget class="QLabel" name="label_32">
+                                        <property name="text">
+                                         <string>Porcenaje de Produccion</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="4" column="1">
+                                       <widget class="QDoubleSpinBox" name="doubleSpinBox">
+                                        <property name="stepType">
+                                         <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                                        </property>
+                                        <property name="value">
+                                         <double>10.000000000000000</double>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="5" column="0">
+                                       <widget class="QLabel" name="label_33">
+                                        <property name="text">
+                                         <string>Porcentaje de perdida</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="5" column="1">
+                                       <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+                                      </item>
+                                      <item row="6" column="0">
+                                       <widget class="QLabel" name="label_34">
+                                        <property name="text">
+                                         <string>Porcentaje de Ganancia</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="6" column="1">
+                                       <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+                                        <property name="maximum">
+                                         <double>0.000000000000000</double>
+                                        </property>
+                                        <property name="stepType">
+                                         <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                                        </property>
+                                        <property name="value">
+                                         <double>0.000000000000000</double>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item row="7" column="0">
                                        <widget class="QPushButton" name="pushButton_5">
                                         <property name="styleSheet">
                                          <string notr="true">QPushButton{
@@ -1751,50 +1725,21 @@ QPushButton:hover{
                                         </property>
                                        </widget>
                                       </item>
-                                      <item row="11" column="1">
-                                       <widget class="QDoubleSpinBox" name="doubleSpinBox">
-                                        <property name="stepType">
-                                         <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+                                      <item row="7" column="1">
+                                       <widget class="QPushButton" name="pushButton_3">
+                                        <property name="styleSheet">
+                                         <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
                                         </property>
-                                        <property name="value">
-                                         <double>10.000000000000000</double>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="11" column="0">
-                                       <widget class="QLabel" name="label_32">
                                         <property name="text">
-                                         <string>Porcenaje de Produccion</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="12" column="1">
-                                       <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
-                                      </item>
-                                      <item row="12" column="0">
-                                       <widget class="QLabel" name="label_33">
-                                        <property name="text">
-                                         <string>Porcentaje de perdida</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="13" column="1">
-                                       <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
-                                        <property name="maximum">
-                                         <double>0.000000000000000</double>
-                                        </property>
-                                        <property name="stepType">
-                                         <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
-                                        </property>
-                                        <property name="value">
-                                         <double>0.000000000000000</double>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item row="13" column="0">
-                                       <widget class="QLabel" name="label_34">
-                                        <property name="text">
-                                         <string>Porcentaje de Ganancia</string>
+                                         <string>Agregar a la base de datos</string>
                                         </property>
                                        </widget>
                                       </item>
@@ -1834,7 +1779,7 @@ QPushButton:hover{
                                         <rect>
                                          <x>0</x>
                                          <y>0</y>
-                                         <width>610</width>
+                                         <width>86</width>
                                          <height>86</height>
                                         </rect>
                                        </property>
@@ -1890,36 +1835,51 @@ QPushButton:hover{
             <widget class="QWidget" name="stk_Atencion_salon">
              <layout class="QVBoxLayout" name="verticalLayout_44">
               <item>
-               <widget class="QFrame" name="frame_18">
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
+               <widget class="QScrollArea" name="scrollArea_9">
+                <property name="widgetResizable">
+                 <bool>true</bool>
                 </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_45">
-                 <item>
-                  <widget class="QFrame" name="frame_16">
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_13">
-                    <item>
-                     <widget class="QFrame" name="frame_19">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_46">
-                       <item>
-                        <widget class="QFrame" name="frame_37">
-                         <property name="styleSheet">
-                          <string notr="true">QPushButton{
+                <widget class="QWidget" name="scrollAreaWidgetContents_8">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>760</width>
+                   <height>525</height>
+                  </rect>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_26">
+                  <item>
+                   <widget class="QFrame" name="frame_18">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_45">
+                     <item>
+                      <widget class="QFrame" name="frame_16">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_13">
+                        <item>
+                         <widget class="QFrame" name="frame_19">
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_46">
+                           <item>
+                            <widget class="QFrame" name="frame_37">
+                             <property name="styleSheet">
+                              <string notr="true">QPushButton{
 	border-radius:30px;
 	border: 2px solid #efb810;
 	padding:7px 0;
@@ -1928,35 +1888,35 @@ QPushButton:hover{
 QPushButton:hover{
 	background-color: rgba(239,184,16,.5)
 }</string>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_17">
-                          <item>
-                           <widget class="QLabel" name="label_52">
-                            <property name="text">
-                             <string>MESA Nº:</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QLabel" name="label_53">
-                            <property name="text">
-                             <string>TOTAL DE LA MESA:</string>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QFrame" name="frame_38">
-                         <property name="styleSheet">
-                          <string notr="true">*{
+                             </property>
+                             <property name="frameShape">
+                              <enum>QFrame::StyledPanel</enum>
+                             </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Raised</enum>
+                             </property>
+                             <layout class="QHBoxLayout" name="horizontalLayout_17">
+                              <item>
+                               <widget class="QLabel" name="label_52">
+                                <property name="text">
+                                 <string>MESA Nº:</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QLabel" name="label_53">
+                                <property name="text">
+                                 <string>TOTAL DE LA MESA:</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QFrame" name="frame_38">
+                             <property name="styleSheet">
+                              <string notr="true">*{
 	padding:13px;
 }
 
@@ -1975,180 +1935,94 @@ QDateEdit{
 	background-color:rgba(255,255,255,.3);
 	color:#000
 }</string>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Raised</enum>
-                         </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_47">
-                          <item>
-                           <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0,0,0" rowminimumheight="0,0,0,0,0" columnminimumwidth="0,0,0,0,0,0,0,0">
-                            <item row="3" column="3">
-                             <widget class="QLineEdit" name="lineEdit_27"/>
-                            </item>
-                            <item row="4" column="7">
-                             <widget class="QLineEdit" name="lineEdit_33"/>
-                            </item>
-                            <item row="1" column="1">
-                             <widget class="QLineEdit" name="lineEdit_24"/>
-                            </item>
-                            <item row="0" column="3">
-                             <widget class="QLabel" name="label_5">
-                              <property name="text">
-                               <string>ESPECIFICACION</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="5">
-                             <widget class="QLabel" name="label_50">
-                              <property name="text">
-                               <string>VALOR</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="3" column="5">
-                             <widget class="QLineEdit" name="lineEdit_28"/>
-                            </item>
-                            <item row="1" column="4">
-                             <spacer name="horizontalSpacer">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>40</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                            <item row="1" column="2">
-                             <spacer name="horizontalSpacer_2">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>40</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                            <item row="4" column="1">
-                             <widget class="QLineEdit" name="lineEdit_30"/>
-                            </item>
-                            <item row="1" column="5">
-                             <widget class="QLineEdit" name="lineEdit"/>
-                            </item>
-                            <item row="3" column="1">
-                             <widget class="QLineEdit" name="lineEdit_26"/>
-                            </item>
-                            <item row="1" column="7">
-                             <widget class="QLineEdit" name="lineEdit_25"/>
-                            </item>
-                            <item row="4" column="3">
-                             <widget class="QLineEdit" name="lineEdit_31"/>
-                            </item>
-                            <item row="0" column="7">
-                             <widget class="QLabel" name="label_51">
-                              <property name="text">
-                               <string>TOTAL</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="2" column="5">
-                             <widget class="Line" name="line_3">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="1" column="6">
-                             <spacer name="horizontalSpacer_3">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>40</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                            <item row="3" column="7">
-                             <widget class="QLineEdit" name="lineEdit_29"/>
-                            </item>
-                            <item row="4" column="5">
-                             <widget class="QLineEdit" name="lineEdit_32"/>
-                            </item>
-                            <item row="0" column="1">
-                             <widget class="QLabel" name="label_2">
-                              <property name="text">
-                               <string>CANT</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="1" column="3">
-                             <widget class="QLineEdit" name="lineEdit_23"/>
-                            </item>
-                            <item row="2" column="1">
-                             <widget class="Line" name="line_2">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="2" column="7">
-                             <widget class="Line" name="line_4">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="2" column="3">
-                             <widget class="Line" name="line">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="1" column="0">
-                             <widget class="QLabel" name="label_54">
-                              <property name="text">
-                               <string>1</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="3" column="0">
-                             <widget class="QLabel" name="label_55">
-                              <property name="text">
-                               <string>2</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="4" column="0">
-                             <widget class="QLabel" name="label_56">
-                              <property name="text">
-                               <string>3</string>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </item>
-                         </layout>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_34">
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton{
+                             </property>
+                             <property name="frameShape">
+                              <enum>QFrame::StyledPanel</enum>
+                             </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Raised</enum>
+                             </property>
+                             <layout class="QVBoxLayout" name="verticalLayout_47">
+                              <item>
+                               <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0,0">
+                                <item row="2" column="1">
+                                 <widget class="Line" name="line_2">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="1" column="2">
+                                 <spacer name="horizontalSpacer_2">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
+                                   <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                 </spacer>
+                                </item>
+                                <item row="1" column="1">
+                                 <widget class="QLineEdit" name="lineEdit_24"/>
+                                </item>
+                                <item row="0" column="5">
+                                 <widget class="QLabel" name="label_50">
+                                  <property name="text">
+                                   <string>VALOR</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="1" column="0">
+                                 <widget class="QLabel" name="label_54">
+                                  <property name="text">
+                                   <string>1</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="1" column="5">
+                                 <widget class="QLineEdit" name="lineEdit"/>
+                                </item>
+                                <item row="2" column="7">
+                                 <widget class="Line" name="line_4">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="0" column="7">
+                                 <widget class="QLabel" name="label_51">
+                                  <property name="text">
+                                   <string>TOTAL</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="1" column="4">
+                                 <spacer name="horizontalSpacer">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
+                                   <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                 </spacer>
+                                </item>
+                                <item row="2" column="5">
+                                 <widget class="Line" name="line_3">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="1" column="9">
+                                 <widget class="QPushButton" name="pushButton_38">
+                                  <property name="styleSheet">
+                                   <string notr="true">QPushButton{
 	border-radius:30px;
 	border: 2px solid #efb810;
 	padding:7px 0;
@@ -2157,163 +2031,404 @@ QDateEdit{
 QPushButton:hover{
 	background-color: rgba(239,184,16,.5)
 }</string>
-                      </property>
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_48">
-                       <item>
-                        <widget class="QPushButton" name="pushButton_8">
-                         <property name="text">
-                          <string>SALON</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="pushButton_22">
-                         <property name="text">
-                          <string>CAMBIAR DE MESA</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="pushButton_23">
-                         <property name="text">
-                          <string>IMPRIMIR</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="pushButton_9">
-                         <property name="text">
-                          <string>TICKET DE COBRO</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QFrame" name="frame_17">
-                   <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                   </property>
-                   <layout class="QHBoxLayout" name="horizontalLayout_16">
-                    <item>
-                     <widget class="QFrame" name="frame_35">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_49">
-                       <item>
-                        <layout class="QGridLayout" name="gridLayout_5">
-                         <item row="1" column="0">
-                          <widget class="QPushButton" name="pushButton_11">
-                           <property name="text">
-                            <string>ESPECIALES</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="0">
-                          <widget class="QPushButton" name="pushButton_10">
-                           <property name="text">
-                            <string>SENCILLOS</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="1">
-                          <widget class="QPushButton" name="pushButton_13">
-                           <property name="text">
-                            <string>PASTAS</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="1">
-                          <widget class="QPushButton" name="pushButton_12">
-                           <property name="text">
-                            <string>BANDEJAS</string>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_36">
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_50">
-                       <item>
-                        <layout class="QGridLayout" name="gridLayout_6">
-                         <item row="1" column="0">
-                          <widget class="QPushButton" name="pushButton_15">
-                           <property name="text">
-                            <string>B. RES</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="0">
-                          <widget class="QPushButton" name="pushButton_14">
-                           <property name="text">
-                            <string>B. CERDO</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="1">
-                          <widget class="QPushButton" name="pushButton_16">
-                           <property name="text">
-                            <string>B.CHCICHARRON</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="2">
-                          <widget class="QPushButton" name="pushButton_19">
-                           <property name="text">
-                            <string>B. POLLO</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="1">
-                          <widget class="QPushButton" name="pushButton_20">
-                           <property name="text">
-                            <string>B.ROBALO</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="2">
-                          <widget class="QPushButton" name="pushButton_21">
-                           <property name="text">
-                            <string>B.MUZLO</string>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
+                                  </property>
+                                  <property name="text">
+                                   <string>agregar Producto</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="1" column="7">
+                                 <widget class="QLineEdit" name="lineEdit_25"/>
+                                </item>
+                                <item row="1" column="3">
+                                 <widget class="QLineEdit" name="lineEdit_23"/>
+                                </item>
+                                <item row="0" column="1">
+                                 <widget class="QLabel" name="label_2">
+                                  <property name="text">
+                                   <string>CANT</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="1" column="6">
+                                 <spacer name="horizontalSpacer_3">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
+                                   <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                 </spacer>
+                                </item>
+                                <item row="2" column="3">
+                                 <widget class="Line" name="line">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="0" column="3">
+                                 <widget class="QLabel" name="label_5">
+                                  <property name="text">
+                                   <string>ESPECIFICACION</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item row="1" column="8">
+                                 <spacer name="horizontalSpacer_4">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
+                                   <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                 </spacer>
+                                </item>
+                               </layout>
+                              </item>
+                              <item>
+                               <widget class="QTableWidget" name="tableWidget"/>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_34">
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_48">
+                           <item>
+                            <widget class="QPushButton" name="pushButton_8">
+                             <property name="text">
+                              <string>SALON</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="pushButton_22">
+                             <property name="text">
+                              <string>CAMBIAR DE MESA</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="pushButton_23">
+                             <property name="text">
+                              <string>IMPRIMIR</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="pushButton_9">
+                             <property name="text">
+                              <string>TICKET DE COBRO</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="frame_17">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_16">
+                        <item>
+                         <widget class="QFrame" name="frame_35">
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_49">
+                           <item>
+                            <layout class="QGridLayout" name="gridLayout_5">
+                             <item row="1" column="0">
+                              <widget class="QPushButton" name="pushButton_11">
+                               <property name="text">
+                                <string>ESPECIALES</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="0" column="0">
+                              <widget class="QPushButton" name="pushButton_10">
+                               <property name="text">
+                                <string>SENCILLOS</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="1" column="1">
+                              <widget class="QPushButton" name="pushButton_13">
+                               <property name="text">
+                                <string>PASTAS</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item row="0" column="1">
+                              <widget class="QPushButton" name="pushButton_12">
+                               <property name="text">
+                                <string>BANDEJAS</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_36">
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_50">
+                           <item>
+                            <widget class="QStackedWidget" name="stackedWidget_3">
+                             <property name="styleSheet">
+                              <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                             </property>
+                             <property name="currentIndex">
+                              <number>3</number>
+                             </property>
+                             <widget class="QWidget" name="page">
+                              <layout class="QHBoxLayout" name="horizontalLayout_18">
+                               <item>
+                                <layout class="QGridLayout" name="gridLayout_6">
+                                 <item row="1" column="0">
+                                  <widget class="QPushButton" name="pushButton_15">
+                                   <property name="text">
+                                    <string>B. RES</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="0">
+                                  <widget class="QPushButton" name="pushButton_14">
+                                   <property name="text">
+                                    <string>B. CERDO</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="1">
+                                  <widget class="QPushButton" name="pushButton_16">
+                                   <property name="text">
+                                    <string>B.CHCICHARRON</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="2">
+                                  <widget class="QPushButton" name="pushButton_19">
+                                   <property name="text">
+                                    <string>B. POLLO</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="1">
+                                  <widget class="QPushButton" name="pushButton_20">
+                                   <property name="text">
+                                    <string>B.ROBALO</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="2">
+                                  <widget class="QPushButton" name="pushButton_21">
+                                   <property name="text">
+                                    <string>B.MUZLO</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                              </layout>
+                             </widget>
+                             <widget class="QWidget" name="page_4">
+                              <layout class="QHBoxLayout" name="horizontalLayout_24">
+                               <item>
+                                <layout class="QGridLayout" name="gridLayout_8">
+                                 <item row="0" column="1">
+                                  <widget class="QPushButton" name="pushButton_31">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="0">
+                                  <widget class="QPushButton" name="pushButton_30">
+                                   <property name="text">
+                                    <string>pasta bolognesa</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="0">
+                                  <widget class="QPushButton" name="pushButton_32">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="1">
+                                  <widget class="QPushButton" name="pushButton_33">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                              </layout>
+                             </widget>
+                             <widget class="QWidget" name="page_6">
+                              <layout class="QHBoxLayout" name="horizontalLayout_25">
+                               <item>
+                                <layout class="QGridLayout" name="gridLayout_9">
+                                 <item row="0" column="1">
+                                  <widget class="QPushButton" name="pushButton_34">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="1">
+                                  <widget class="QPushButton" name="pushButton_35">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="0">
+                                  <widget class="QPushButton" name="pushButton_36">
+                                   <property name="text">
+                                    <string>especiales</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="0">
+                                  <widget class="QPushButton" name="pushButton_37">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                              </layout>
+                             </widget>
+                             <widget class="QWidget" name="page_3">
+                              <layout class="QHBoxLayout" name="horizontalLayout_23">
+                               <item>
+                                <layout class="QGridLayout" name="gridLayout_7">
+                                 <item row="1" column="0">
+                                  <widget class="QPushButton" name="pushButton_26">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="1" column="1">
+                                  <widget class="QPushButton" name="pushButton_27">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="0">
+                                  <widget class="QPushButton" name="pushButton_24">
+                                   <property name="text">
+                                    <string>S. Res</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="0" column="1">
+                                  <widget class="QPushButton" name="pushButton_25">
+                                   <property name="text">
+                                    <string>S. Cerdo</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="2" column="0">
+                                  <widget class="QPushButton" name="pushButton_28">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item row="2" column="1">
+                                  <widget class="QPushButton" name="pushButton_29">
+                                   <property name="text">
+                                    <string>PushButton</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                              </layout>
+                             </widget>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
                </widget>
               </item>
              </layout>
@@ -2330,15 +2445,15 @@ QPushButton:hover{
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>1080</width>
-                   <height>429</height>
+                   <width>1030</width>
+                   <height>344</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_37">
                   <item>
                    <widget class="QTabWidget" name="tabWidget_2">
                     <property name="currentIndex">
-                     <number>1</number>
+                     <number>0</number>
                     </property>
                     <widget class="QWidget" name="tab_4">
                      <attribute name="title">
@@ -2387,13 +2502,6 @@ QDateEdit{
                            <layout class="QVBoxLayout" name="verticalLayout_43">
                             <item>
                              <layout class="QGridLayout" name="gridLayout_4">
-                              <item row="1" column="4">
-                               <widget class="QLabel" name="label_47">
-                                <property name="text">
-                                 <string>Otro Campo adicional</string>
-                                </property>
-                               </widget>
-                              </item>
                               <item row="1" column="0">
                                <widget class="QLabel" name="label_43">
                                 <property name="text">
@@ -2417,13 +2525,6 @@ QDateEdit{
                               </item>
                               <item row="0" column="3">
                                <widget class="QLineEdit" name="lineEdit_20"/>
-                              </item>
-                              <item row="1" column="5">
-                               <widget class="QPushButton" name="pushButton_6">
-                                <property name="text">
-                                 <string>+</string>
-                                </property>
-                               </widget>
                               </item>
                               <item row="1" column="1">
                                <widget class="QLineEdit" name="lineEdit_18">
@@ -2540,8 +2641,8 @@ QDateEdit{
                           <rect>
                            <x>0</x>
                            <y>0</y>
-                           <width>1044</width>
-                           <height>367</height>
+                           <width>86</width>
+                           <height>86</height>
                           </rect>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_41">
@@ -2555,8 +2656,8 @@ QDateEdit{
                               <rect>
                                <x>0</x>
                                <y>0</y>
-                               <width>1026</width>
-                               <height>349</height>
+                               <width>87</width>
+                               <height>84</height>
                               </rect>
                              </property>
                              <layout class="QVBoxLayout" name="verticalLayout_42">
@@ -2616,35 +2717,6 @@ QPushButton:hover{
                                    </property>
                                   </widget>
                                  </item>
-                                 <item>
-                                  <widget class="QComboBox" name="comboBox_6">
-                                   <item>
-                                    <property name="text">
-                                     <string>ArriendoServicios</string>
-                                    </property>
-                                   </item>
-                                   <item>
-                                    <property name="text">
-                                     <string>Alimentos</string>
-                                    </property>
-                                   </item>
-                                   <item>
-                                    <property name="text">
-                                     <string>Fechas</string>
-                                    </property>
-                                   </item>
-                                   <item>
-                                    <property name="text">
-                                     <string>Citas</string>
-                                    </property>
-                                   </item>
-                                   <item>
-                                    <property name="text">
-                                     <string>Inventario</string>
-                                    </property>
-                                   </item>
-                                  </widget>
-                                 </item>
                                 </layout>
                                </widget>
                               </item>
@@ -2697,7 +2769,7 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>600</width>
+                      <width>429</width>
                       <height>1233</height>
                      </rect>
                     </property>
