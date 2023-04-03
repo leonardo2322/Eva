@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>403</width>
-    <height>303</height>
+    <height>336</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -41,16 +41,37 @@ color:#fff;
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout" stretch="9,0,0,0,0">
+          <layout class="QHBoxLayout" name="horizontalLayout" stretch="9,0,0,0,0,0">
+           <property name="spacing">
+            <number>7</number>
+           </property>
            <property name="sizeConstraint">
             <enum>QLayout::SetMinAndMaxSize</enum>
            </property>
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_8">
              <item>
-              <widget class="QPushButton" name="pushButton_4">
+              <widget class="QPushButton" name="imgPaper">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>60</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="text">
                 <string/>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -59,16 +80,22 @@ color:#fff;
            <item>
             <widget class="QLabel" name="label">
              <property name="text">
-              <string>ISeleccione y introduzca los campos</string>
+              <string>ISeleccione y Rellene los campos</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="btn_minimize">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
-               <width>50</width>
-               <height>16777215</height>
+               <width>30</width>
+               <height>30</height>
               </size>
              </property>
              <property name="styleSheet">
@@ -83,16 +110,22 @@ QPushButton:hover{
 }</string>
              </property>
              <property name="text">
-              <string>_</string>
+              <string/>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="btn_reduce">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
-               <width>50</width>
-               <height>16777215</height>
+               <width>30</width>
+               <height>30</height>
               </size>
              </property>
              <property name="styleSheet">
@@ -107,7 +140,37 @@ QPushButton:hover{
 }</string>
              </property>
              <property name="text">
-              <string>{}</string>
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_maximize">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+             </property>
+             <property name="text">
+              <string/>
              </property>
              <property name="iconSize">
               <size>
@@ -118,11 +181,17 @@ QPushButton:hover{
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="btn_close">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
-               <width>50</width>
-               <height>16777215</height>
+               <width>30</width>
+               <height>30</height>
               </size>
              </property>
              <property name="styleSheet">
@@ -137,7 +206,7 @@ QPushButton:hover{
 }</string>
              </property>
              <property name="text">
-              <string>x</string>
+              <string/>
              </property>
             </widget>
            </item>
@@ -191,6 +260,12 @@ QPushButton:hover{
           </item>
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
+            <property name="styleSheet">
+             <string notr="true">QLineEdit{
+	border:none;
+	border-bottom: 2px solid #efb810
+}</string>
+            </property>
             <property name="currentIndex">
              <number>0</number>
             </property>
@@ -447,24 +522,6 @@ QPushButton:hover{
            </property>
            <property name="text">
             <string>Guardar</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btn_limpiar">
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	border-radius:30px;
-	border: 2px solid #efb810;
-	padding:7px 0;
-}
-
-QPushButton:hover{
-	background-color: rgba(239,184,16,.5)
-}</string>
-           </property>
-           <property name="text">
-            <string>Limpiar</string>
            </property>
           </widget>
          </item>

@@ -1,8 +1,9 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QSizeGrip,QHeaderView
+from PyQt5.QtWidgets import QApplication, QMainWindow, QSizeGrip
 from PyQt5.QtCore import QPropertyAnimation,QEasingCurve
 from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
+from Dialogs.QinsertGastoIngresos import Dialog
 
 class Eva(QMainWindow):
     def __init__(self):
@@ -29,7 +30,9 @@ class Eva(QMainWindow):
         self.load.show()
         
 ################################   Buttoms Event    ###################################
+        self.load.btn_insert.clicked.connect(lambda: self.EjecutionDialog(Dialog))
 
+    
         # self.load.btn_costosygastos.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.stk_CostosGastos))
         
         # self.load.btn_show_home.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.homeStkInventary))
@@ -74,7 +77,7 @@ class Eva(QMainWindow):
 
         iconBtnHome = QtGui.QIcon()
         iconBtnHome.addPixmap(QtGui.QPixmap("iconos/icons/editar.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.load.btn_show_home.setIcon(iconBtnHome)
+        self.load.btn_insert.setIcon(iconBtnHome)
 
         self.load.lbl_user_text.setPixmap(QtGui.QPixmap("iconos/icons/user.svg"))
 
@@ -233,8 +236,11 @@ class Eva(QMainWindow):
             self.animation.setEasingCurve(QEasingCurve.InCubic)
             self.animation.start()
 
-    
-        
+    def EjecutionDialog(self,dialog):
+        dialogo = dialog()
+        dialogo.exec_()
+
+
     def ReduceWindow(self):
         self.showNormal()
         self.load.btn_reduce.hide()

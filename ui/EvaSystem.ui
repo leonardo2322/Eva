@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>588</width>
+    <width>596</width>
     <height>487</height>
    </rect>
   </property>
@@ -166,7 +166,7 @@ QPushButton:hover{
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
-               <widget class="QPushButton" name="btn_show_home">
+               <widget class="QPushButton" name="btn_insert">
                 <property name="styleSheet">
                  <string notr="true">border-radius:30px;</string>
                 </property>
@@ -639,9 +639,8 @@ QPushButton:hover{
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>3</number>
+             <number>0</number>
             </property>
-            <widget class="QWidget" name="Domicilios_stk"/>
             <widget class="QWidget" name="stk_Proveedores">
              <layout class="QVBoxLayout" name="verticalLayout_26">
               <item>
@@ -674,8 +673,8 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>367</width>
-                      <height>468</height>
+                      <width>332</width>
+                      <height>343</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_28">
@@ -698,8 +697,8 @@ QPushButton:hover{
                             <rect>
                              <x>0</x>
                              <y>0</y>
-                             <width>331</width>
-                             <height>432</height>
+                             <width>296</width>
+                             <height>307</height>
                             </rect>
                            </property>
                            <layout class="QVBoxLayout" name="verticalLayout_30"/>
