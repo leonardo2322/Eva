@@ -3,26 +3,29 @@ import psycopg2 as pg
 class DbUser():
     def __init__(self):
         self.posg = pg
+        self.conexion=None
         try:
             credentials ={
-                "dbname": "administracion",
-                "user": "postgres",
-                "password": "$pbkdf2-sha256$29000$vPe.t1YKodT6X.vdu/d.rw$fK/D3HICs4jiNrLAag0N36iJsLKicnizOllrL8qtOO4",
+                "database": "EvaLibroDiario",
+                "user": "Eva",
+                "password": "leonardo25537/*",
                 "host": "localhost",
                 "port": 5432
             }
-            conexion = self.posg.connect(**credentials)
-            print(conexion)
-            self.query = self.posg.cursor()
+            self.conexion = self.posg.connect(**credentials)
+            print("conexion success")
+            self.conexion.autocommit = True
 
         except self.posg.Error as e:
-            print("ocurrio un error en la conexion", e)
+            print("ocurrio un error en la conexion",e)
         finally:
-            conexion.close()
-
+            self.conexion.close()
+      
+    
 
     def SelectFromDB(self):
-        pass
+        cursor = self.conexion.cursor()
+
 
     def QueryInsert(self):
         pass
@@ -32,3 +35,5 @@ class DbUser():
 
     def QueryUpdate(self):
         pass
+
+DbUser()

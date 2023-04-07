@@ -1,0 +1,51 @@
+- Usuarios: 
+	- id:
+	- nombre:
+	- apellido:
+	- username:
+	- email:
+	- contraseña:
+	- profileImg:
+	- update Contraseña:
+	- role: admin
+	- status: activo - eliminado
+
+
+- Gastos Diarios: 
+	- id:
+	- descripcion:
+	- debe:
+	- haber:
+	- saldoTotal:
+
+- Proveedores: 
+	- id:
+	- empresa
+	- fechaPedido
+	- fechaDeEntrega
+	- metodoPago
+	- Productos
+	- status: true
+
+- inventario: 
+	- id: 
+	- nombreP:
+	- precio:
+	- proveedorId:
+	- peso:
+	- unidadMedida:
+	- status: true
+
+- Recetas: 
+	- id:
+	- inventarioId: 
+	- gramo:
+	- valorKg: (precioI / pesoI) / 1000
+	- valorIngrediente: valorKg * gramo
+	- valorTotal: valorIngrediente
+	- status: true
+
+- valorTotalReceta 
+	- id :
+	- recetaId:
+	- valorTotal

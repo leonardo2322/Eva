@@ -639,7 +639,7 @@ QPushButton:hover{
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="stk_Proveedores">
              <layout class="QVBoxLayout" name="verticalLayout_26">
@@ -652,6 +652,21 @@ QPushButton:hover{
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_27">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
                  <item>
                   <widget class="QScrollArea" name="scrollArea_4">
                    <property name="styleSheet">
@@ -673,8 +688,8 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>332</width>
-                      <height>343</height>
+                      <width>350</width>
+                      <height>361</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_28">
@@ -686,26 +701,7 @@ QPushButton:hover{
                        <property name="frameShadow">
                         <enum>QFrame::Raised</enum>
                        </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_29">
-                        <item>
-                         <widget class="QScrollArea" name="scrollArea_5">
-                          <property name="widgetResizable">
-                           <bool>true</bool>
-                          </property>
-                          <widget class="QWidget" name="scrollAreaWidgetContents_6">
-                           <property name="geometry">
-                            <rect>
-                             <x>0</x>
-                             <y>0</y>
-                             <width>296</width>
-                             <height>307</height>
-                            </rect>
-                           </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_30"/>
-                          </widget>
-                         </widget>
-                        </item>
-                       </layout>
+                       <layout class="QVBoxLayout" name="verticalLayout_29"/>
                       </widget>
                      </item>
                     </layout>
@@ -720,7 +716,6 @@ QPushButton:hover{
             <widget class="QWidget" name="stk_CostosGastos">
              <layout class="QVBoxLayout" name="verticalLayout_10"/>
             </widget>
-            <widget class="QWidget" name="stk_Clientes"/>
             <widget class="QWidget" name="homeStkInventary">
              <layout class="QVBoxLayout" name="verticalLayout_13">
               <item>
@@ -742,8 +737,8 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>467</width>
-                      <height>468</height>
+                      <width>332</width>
+                      <height>343</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -771,7 +766,6 @@ QPushButton:hover{
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="stk_busisness"/>
            </widget>
           </item>
          </layout>
