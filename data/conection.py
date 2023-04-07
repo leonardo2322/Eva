@@ -20,7 +20,7 @@ class DbUser():
             print("ocurrio un error en la conexion",e)
         finally:
             self.conexion.close()
-      
+         
     
 
     def SelectFromDB(self):

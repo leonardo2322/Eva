@@ -50,7 +50,7 @@ class Eva(QMainWindow):
         iconExpand = QtGui.QIcon()
         iconExpand.addPixmap(QtGui.QPixmap("iconos/icons/maximize.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.load.btn_expand.setIcon(iconExpand)
-
+ 
         iconMinimize = QtGui.QIcon()
         iconMinimize.addPixmap(QtGui.QPixmap("iconos/icons/minus.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.load.minimize.setIcon(iconMinimize)

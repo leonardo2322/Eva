@@ -47,7 +47,7 @@ class Dialog(QDialog):
         self.load.btn_gasto.clicked.connect(lambda: self.load.stackedWidget.setCurrentWidget(self.load.GastoStack))
 #################################---Functions----##################################### 
 
-  
+   
     def showMaximizedWindow(self):
         self.showMaximized()
         self.load.btn_maximize.hide()
