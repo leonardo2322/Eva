@@ -1,13 +1,12 @@
-import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QSizeGrip
+from PyQt5.QtWidgets import  QMainWindow, QSizeGrip, QMessageBox
 from PyQt5.QtCore import QPropertyAnimation,QEasingCurve
 from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
 from Dialogs.QinsertGastoIngresos import Dialog
 
 class Eva(QMainWindow):
-    def __init__(self):
-        super(Eva,self).__init__()
+    def __init__(self,parent = None):
+        super(Eva,self).__init__(parent)
         self.load = loadUi('ui/EvaSystem.ui',self)
 ############################## hide Buttons ###########################################    
         self.load.btn_reduce.hide()
@@ -253,12 +252,17 @@ class Eva(QMainWindow):
         self.showMaximized()
         self.load.btn_expand.hide()
         self.load.btn_reduce.show()
-
+    def mensagges(self, mensajeInf):
+        self.msj = QMessageBox()
+        self.msj.setWindowTitle('Informacio Del sistema')
+        self.msj.setText(mensajeInf)
+        self.msj.setIcon(QMessageBox.Information)
+        self.msj.exec_()
         
-if __name__=="__main__":
-    app = QApplication(sys.argv)
+# if __name__=="__main__":
+#     app = QApplication(sys.argv)
 
-    ventana= Eva()
-    ventana.show()
+#     ventana= Eva()
+#     ventana.show()
 
-    sys.exit(app.exec_())
+#     sys.exit(app.exec_())
