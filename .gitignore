@@ -5,7 +5,7 @@ __pycache__ /
 
 # Extensiones C
 * .así
-.qt_for_python
+
 # Distribución / embalaje
 .Pitón
 construir /
@@ -50,7 +50,7 @@ cobertura.xml
 .hipótesis /
 .pytest_cache /
 cubrir /
-
+settings.ini
 # Traducciones
 * .mo
 * .olla
