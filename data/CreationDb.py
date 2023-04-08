@@ -8,7 +8,7 @@ class Data():
             credentials ={
                 "database": "EvaLibroDiario",
                 "user": "Eva",
-                "password": "leonardo25537/*",
+                "password": "",
                 "host": "localhost",
                 "port": 5432
             }
