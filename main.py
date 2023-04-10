@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import  QMainWindow, QSizeGrip, QMessageBox
 from PyQt5.QtCore import QPropertyAnimation,QEasingCurve
 from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
-from Dialogs.QinsertGastoIngresos import Dialog
+from DialogsScripts.QinsertGastoIngresos import Dialog
 
 class Eva(QMainWindow):
     def __init__(self,parent = None):
