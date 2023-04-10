@@ -8,9 +8,15 @@ class Data():
         
         try:
             credentials ={
+
                 "database": config("DATABASE"),
                 "user":config("USER") ,
                 "password": config("SECRET_KEY") ,
+
+                "database": "EvaLibroDiario",
+                "user": "Eva",
+                "password": "",
+
                 "host": "localhost",
                 "port": 5432
             }
@@ -175,5 +181,6 @@ class Data():
                 print("finally ejecucion")
                 self.conexion.close()
                 print('Database connection closed.')
+
 
 Data()
