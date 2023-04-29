@@ -13,10 +13,6 @@ class Data():
                 "user":config("USER") ,
                 "password": config("SECRET_KEY") ,
 
-                "database": "EvaLibroDiario",
-                "user": "Eva",
-                "password": "",
-
                 "host": "localhost",
                 "port": 5432
             }

@@ -1,18 +1,19 @@
 import sys
 from PyQt5.QtWidgets import (QApplication,
         QDialog)
-from PyQt5 import QtGui,uic
+from PyQt5 import QtGui
 
 from PyQt5.uic import loadUi 
 from main import Eva
 from passlib.hash import pbkdf2_sha256
-
+from data.conection import DbUser
 
 class InitSesion(QDialog):
     def __init__(self):
         super().__init__()
-
+        self.db = DbUser()
         self.ui = loadUi('ui/initsesion.ui', self)
+        self.idUser = ''
         self.ui.btn_sesion_destroy.clicked.connect(lambda:self.close())
         iconBtnDelete = QtGui.QIcon()
         iconBtnDelete.addPixmap(QtGui.QPixmap("iconos/icons/x.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -39,17 +40,18 @@ class InitSesion(QDialog):
         usuario = self.ui.Input_user.text().strip()
         password = self.ui.Input_pass.text().strip()
         if len(usuario) > 0 and len(password) > 0:
+            query = self.db.SelectFromDB(name = usuario)
             try:
-                if usuario == "leo":
-                    print("entramos")
+                if usuario == query[1] and password == query[2]:
+                    self.idUser = query[0]
                     self.ui.hide()
-                    Eva()
+                    Eva(self.idUser)
 
                    
                 else:
-                    Eva.mensagges(self, 'el usuario es incorrecto')       
-            except Exception as e:
-                print(e)                
+                    Eva.mensagges(self, 'el usuario es incorrecto o la contraseña')       
+            except :
+                print('en exeption')                
         else:
             Eva.mensagges(self,'No hay datos Introduce tus datos')
 

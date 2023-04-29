@@ -3,11 +3,15 @@ from PyQt5.QtCore import QPropertyAnimation,QEasingCurve
 from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
 from DialogsScripts.QinsertGastoIngresos import Dialog
+from datetime import datetime
+
 
 class Eva(QMainWindow):
-    def __init__(self,parent = None):
+    def __init__(self,*args, parent = None):
         super(Eva,self).__init__(parent)
         self.load = loadUi('ui/EvaSystem.ui',self)
+        self.id = args[0]
+        self.load.fecha_visualized.setText(str(datetime.now()))
 ############################## hide Buttons ###########################################    
         self.load.btn_reduce.hide()
         self.load.btn_menu.hide()
@@ -135,67 +139,21 @@ class Eva(QMainWindow):
         iconBtnSearchTables.addPixmap(QtGui.QPixmap("iconos/icons/search.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
 
         self.load.btn_search_tables.setIcon(iconBtnSearchTables)
-        # self.load.btn_costosygastos.setIcon(iconCostosygastos)
+     
 
-        # iconClientes = QtGui.QIcon()
-        # iconClientes.addPixmap(QtGui.QPixmap("iconos/Clientes.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_clientes.setIcon(iconClientes)
+        icontoolbox = QtGui.QIcon()
+        icontoolbox.addPixmap(QtGui.QPixmap("iconos/icons/chevron-down.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
 
-        # iconProveedores = QtGui.QIcon()
-        # iconProveedores.addPixmap(QtGui.QPixmap("iconos/proveedor.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_proveedor.setIcon(iconProveedores)
-
-        # iconDomicilios = QtGui.QIcon()
-        # iconDomicilios.addPixmap(QtGui.QPixmap("iconos/repartidor.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_domicilios.setIcon(iconDomicilios)
-
-        # icontoolbox = QtGui.QIcon()
-        # icontoolbox.addPixmap(QtGui.QPixmap("iconos/icons/chevron-down.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-
-        # self.load.toolBox.setItemIcon(0,icontoolbox)
-        # self.load.toolBox.setItemIcon(1,icontoolbox)
+        self.load.toolBox.setItemIcon(0,icontoolbox)
+        self.load.toolBox.setItemIcon(1,icontoolbox)
         # self.load.toolBox.setItemIcon(2,icontoolbox)
-        # self.load.toolBox.setItemIcon(3,icontoolbox)
-
-        # iconBtnAdd = QtGui.QIcon()
-        # iconBtnAdd.addPixmap(QtGui.QPixmap("iconos/icons/user-plus.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_user_add.setIcon(iconBtnAdd)
-
-        # iconBtnDelete = QtGui.QIcon()
-        # iconBtnDelete.addPixmap(QtGui.QPixmap("iconos/icons/user-x.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_user_delete.setIcon(iconBtnDelete)
-
-        # iconBtnEdit = QtGui.QIcon()
-        # iconBtnEdit.addPixmap(QtGui.QPixmap("iconos/icons/users.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_user_edit.setIcon(iconBtnEdit)
+        
+       
 
         
-        # iconBtnRestaurant = QtGui.QIcon()
-        # iconBtnRestaurant.addPixmap(QtGui.QPixmap("iconos/utensilios-de-restaurante.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_restaurant.setIcon(iconBtnRestaurant)
-
-        # iconBtnstores = QtGui.QIcon()
-        # iconBtnstores.addPixmap(QtGui.QPixmap("iconos/grow-shop.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_store.setIcon(iconBtnstores)
-
-        # iconBtnFastFood = QtGui.QIcon()
-        # iconBtnFastFood.addPixmap(QtGui.QPixmap("iconos/comida.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_fast_food.setIcon(iconBtnFastFood)
-
-        # iconBtnbusiness = QtGui.QIcon()
-        # iconBtnbusiness.addPixmap(QtGui.QPixmap("iconos/negocios.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_business.setIcon(iconBtnbusiness)
-        
-        # iconBtnSearchCostos = QtGui.QIcon()
-        # iconBtnSearchCostos.addPixmap(QtGui.QPixmap("iconos/icons/search.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_search_in_costos.setIcon(iconBtnSearchCostos)
-
-        # iconBtnbusisness = QtGui.QIcon()
-        # iconBtnbusisness.addPixmap(QtGui.QPixmap("iconos/negocios.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        # self.load.btn_busisness.setIcon(iconBtnbusisness)
+       
 
 
-        # self.load.btn_search_proveedores.setIcon(iconBtnSearchCostos)
 
 ############ Tables Strectchs ##########################3
 
@@ -236,7 +194,7 @@ class Eva(QMainWindow):
             self.animation.start()
 
     def EjecutionDialog(self,dialog):
-        dialogo = dialog()
+        dialogo = dialog(self.id,self.mensagges)
         dialogo.exec_()
 
 
@@ -252,9 +210,11 @@ class Eva(QMainWindow):
         self.showMaximized()
         self.load.btn_expand.hide()
         self.load.btn_reduce.show()
+
+        
     def mensagges(self, mensajeInf):
         self.msj = QMessageBox()
-        self.msj.setWindowTitle('Informacio Del sistema')
+        self.msj.setWindowTitle('Informacion Del sistema')
         self.msj.setText(mensajeInf)
         self.msj.setIcon(QMessageBox.Information)
         self.msj.exec_()
