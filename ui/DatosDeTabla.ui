@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>403</width>
-    <height>348</height>
+    <height>354</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -375,7 +375,11 @@ QPushButton:hover{
                  </widget>
                 </item>
                 <item row="4" column="1">
-                 <widget class="QLineEdit" name="Inp_valor"/>
+                 <widget class="QLineEdit" name="Inp_valor">
+                  <property name="placeholderText">
+                   <string>Introduzca el monto</string>
+                  </property>
+                 </widget>
                 </item>
                 <item row="5" column="0">
                  <widget class="QLabel" name="label_6">
@@ -385,7 +389,11 @@ QPushButton:hover{
                  </widget>
                 </item>
                 <item row="5" column="1">
-                 <widget class="QLineEdit" name="Inp_desc"/>
+                 <widget class="QLineEdit" name="Inp_desc">
+                  <property name="placeholderText">
+                   <string>Describa su insercion</string>
+                  </property>
+                 </widget>
                 </item>
                 <item row="3" column="1">
                  <widget class="QComboBox" name="Cb_divisa">
@@ -442,31 +450,39 @@ QPushButton:hover{
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="0">
+                <item row="4" column="0">
                  <widget class="QLabel" name="valorLabel">
                   <property name="text">
                    <string>Valor</string>
                   </property>
                  </widget>
                 </item>
-                <item row="3" column="1">
-                 <widget class="QLineEdit" name="valorLineEdit"/>
+                <item row="4" column="1">
+                 <widget class="QLineEdit" name="Inp_valorGas">
+                  <property name="placeholderText">
+                   <string>Introduzca el monto</string>
+                  </property>
+                 </widget>
                 </item>
-                <item row="4" column="0">
+                <item row="6" column="0">
                  <widget class="QLabel" name="descripcionLabel">
                   <property name="text">
                    <string>Descripcion</string>
                   </property>
                  </widget>
                 </item>
-                <item row="4" column="1">
-                 <widget class="QLineEdit" name="descripcionLineEdit"/>
+                <item row="6" column="1">
+                 <widget class="QLineEdit" name="Inp_descGas">
+                  <property name="placeholderText">
+                   <string>Describa su insercion</string>
+                  </property>
+                 </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QDateTimeEdit" name="dateTimeEdit_2"/>
+                 <widget class="QDateTimeEdit" name="date_timeGas"/>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QComboBox" name="comboBox_3">
+                 <widget class="QComboBox" name="Cb_tipoDePagoGas">
                   <item>
                    <property name="text">
                     <string>Efectivo</string>
@@ -485,7 +501,7 @@ QPushButton:hover{
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QComboBox" name="comboBox_4">
+                 <widget class="QComboBox" name="Cb_cateGas">
                   <item>
                    <property name="text">
                     <string>Compras</string>
@@ -524,6 +540,37 @@ QPushButton:hover{
                   <item>
                    <property name="text">
                     <string>Ahorro</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>Divisa</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QComboBox" name="Cb_divisaGas">
+                  <item>
+                   <property name="text">
+                    <string>Peso$</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Bolivares Bsf</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Euros</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Dollar$</string>
                    </property>
                   </item>
                  </widget>

@@ -2,6 +2,9 @@ import psycopg2 as pg
 from decouple import config
 from data.methods import methodsUSER as method, methodINSERT as ins
 from datetime import datetime 
+import re
+
+patron = re.compile('([0-9]+)')
 class DbUser():
     def __init__(self):
         self.posg = pg
@@ -40,13 +43,26 @@ class DbUser():
 
     def QueryInsert(self,  type = ins['ing'], datos = [],*args):
         if type == ins['ing']:
-            print(str(datos[0]['fecha']).split()[::-1])
-            # try:
-            #     self.cursor.execute("""INSERT INTO ingresosdiarios (fecha, tipodepago, categoria, valor, descripcion, iduser) values ('{}', '{}', '{}', {}, '{}', {})""".format(datos[0]['fecha']))
-            # except:
-            #     pass
+            
+            try:
+                self.cursor.execute("""INSERT INTO ingresosdiarios (fecha, tipodepago, categoria,divisa, valor, descripcion, iduser) values ('{}', '{}', '{}','{}', {}, '{}', {})""".format(datos[0]['fecha'], datos[0]['tipodepago'], datos[0]['categoria'],datos[0]['divisa'], datos[0]['valor'], datos[0]['descripcion'], datos[0]['iduser'] ))
+                print('insertion success')
+                return 'ok'
+            except Exception as e :
+                print(e)
+                return 'error'
+        
         elif type == ins['gas']:
             print('gas')
+            try:
+                self.cursor.execute("""INSERT INTO gastosdiarios (fecha, tipodepago, categoria,divisa, valor, descripcion, iduser) values ('{}', '{}', '{}','{}', {}, '{}', {})""".format(datos[0]['fecha'], datos[0]['tipodepago'], datos[0]['categoria'],datos[0]['divisa'], datos[0]['valor'], datos[0]['descripcion'], datos[0]['iduser'] ))
+                print('insertion success')
+                return 'ok'
+            except Exception as e :
+                print(e)
+                return 'error'
+        else :
+            return 'error'
     def QueryDelete(self):
         pass
 

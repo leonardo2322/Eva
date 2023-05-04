@@ -2,9 +2,8 @@ from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi 
 from PyQt5 import QtGui
 from data.conection import DbUser as db
-from data.methods import  methodINSERT
+from data.methods import  methodINSERT,  recogDate
 from datetime import datetime
-import re
 
 class Dialog(QDialog):
     def __init__(self,*args, parent=None):
@@ -12,6 +11,7 @@ class Dialog(QDialog):
         self.load = loadUi("ui/DatosDeTabla.ui",self)
         self.load.btn_reduce.hide()
         self.load.date_time.setDateTime(datetime.now())
+        self.load.date_timeGas.setDateTime(datetime.now())
         self.id = args[0]
         self.database = db()
         self.messageError = args[1]
@@ -60,27 +60,45 @@ class Dialog(QDialog):
         if type == 'ing':
             self.load.stackedWidget.setCurrentWidget(self.load.IngresoStack), 
             self.active = methodINSERT[type]
-            print(self.active)
         elif type == 'gas':
             self.load.stackedWidget.setCurrentWidget(self.load.GastoStack)
             self.active = methodINSERT[type]
-            print(self.active)
 
     def QueryInsert(self):
         if self.active == methodINSERT['ing']:
-            reg = re.compile("[0-9]+,\s[0-9]+,\s[0-9]+,\s[0-9]+,\s[0-9]+,\s[0-9]+,\s[0-9]+")
-            fecha = str(self.load.date_time.dateTime())
-            result = reg.findall(fecha)
-            data = [{'tipodepago':self.load.Cb_tipoPago.currentText(), 'categoria':self.load.Cb_categoria.currentText(),'divisa': self.load.Cb_divisa.currentText(),'fecha': result[0], 'valor':self.load.Inp_valor.text(), 'descripcion':self.load.Inp_desc.text()}]
+            fechaT = recogDate(self.load.date_time.dateTime())
+
+            data = [{'tipodepago':self.load.Cb_tipoPago.currentText(), 'categoria':self.load.Cb_categoria.currentText(),'divisa': self.load.Cb_divisa.currentText(),'fecha': fechaT, 'valor':self.load.Inp_valor.text(), 'descripcion':self.load.Inp_desc.text(),'iduser':int(self.id) }]
             
             try:
                 query = self.database.QueryInsert( datos = data )
+                if query == 'ok':
+                    self.messageError('Se han introducidos los datos')
+                else :
+                    self.messageError('verifica algo ocurrio mal asegurate de introducir todos los valores')
 
             except  Exception as e:
                 self.messageError('ocurrio un error verifica que has hecho')
                 print(e)
+        elif self.active == methodINSERT['gas']:
+            fecha = recogDate(self.load.date_timeGas.dateTime())
+            data =  [{
+                'tipodepago': self.load.Cb_tipoDePagoGas.currentText(), 'categoria':self.load.Cb_cateGas.currentText(),
+                'divisa': self.load.Cb_divisaGas.currentText(), 'fecha': fecha, 'valor': self.load.Inp_valorGas.text(), 'descripcion': self.load.Inp_descGas.text(), 'iduser': int(self.id)
+            }]
+
+            try:
+                database = self.database.QueryInsert( datos= data, type=methodINSERT['gas'] )
+                if database == 'ok':
+                    self.messageError('Se han introducidos los datos')
+                else :
+                    self.messageError('verifica algo ocurrio mal asegurate de introducir todos los valores')
+            except Exception as e:
+                print(e)
         else:
             self.messageError('ocurrio algo verifica que has hecho')
+
+
     def showMaximizedWindow(self):
         self.showMaximized()
         self.load.btn_maximize.hide()

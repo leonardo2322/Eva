@@ -50,8 +50,8 @@ class InitSesion(QDialog):
                    
                 else:
                     Eva.mensagges(self, 'el usuario es incorrecto o la contraseña')       
-            except :
-                print('en exeption')                
+            except Exception as e:
+                print('en exeption',e)                
         else:
             Eva.mensagges(self,'No hay datos Introduce tus datos')
 

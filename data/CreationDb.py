@@ -48,6 +48,7 @@ class Data():
             Fecha timestamp,
             TipoDePago varchar,
             Categoria varchar,
+            divisa varchar,
             Valor decimal,
             Descripcion varchar,
             idUser integer REFERENCES Usuarios(idUser) ON UPDATE CASCADE ON DELETE RESTRICT,
@@ -59,6 +60,7 @@ class Data():
             Fecha timestamp,
             TipoDePago varchar,
             Categoria varchar,
+            divisa varchar,
             Valor decimal,
             Descripcion varchar,
             idUser integer REFERENCES Usuarios(idUser) ON UPDATE CASCADE  ON DELETE RESTRICT,
@@ -160,6 +162,10 @@ class Data():
 
             )
             
+            """,
+            """
+            INSERT INTO usuarios (nombre,password,email,status) 
+            VALUES ('leo','1234', 'leonardo23@gmail.com', True)
             """
 
             

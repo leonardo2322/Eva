@@ -4,14 +4,16 @@ from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
 from DialogsScripts.QinsertGastoIngresos import Dialog
 from datetime import datetime
-
+from DialogsScripts.Update import UpdateTable
+from DialogsScripts.Delete import DeleteVTable
 
 class Eva(QMainWindow):
     def __init__(self,*args, parent = None):
         super(Eva,self).__init__(parent)
         self.load = loadUi('ui/EvaSystem.ui',self)
         self.id = args[0]
-        self.load.fecha_visualized.setText(str(datetime.now()))
+        horaYfecha =  str(datetime.now().ctime()) 
+        self.load.fecha_visualized.setText(horaYfecha)
 ############################## hide Buttons ###########################################    
         self.load.btn_reduce.hide()
         self.load.btn_menu.hide()
@@ -25,16 +27,17 @@ class Eva(QMainWindow):
         self.load.btn_close.setIcon(iconClose)
 
         self.load.btn_close.clicked.connect(lambda:self.close())
-        self.load.btn_expand.clicked.connect(self.btnExpandWindow)
-        self.load.minimize.clicked.connect(self.btnMinimizeWindow)
-        self.load.btn_reduce.clicked.connect(self.ReduceWindow)
+        self.load.btn_expand.clicked.connect(lambda:self.btnExpandWindow(self,self.load.btn_expand,self.load.btn_reduce))
+        self.load.minimize.clicked.connect(lambda:self.btnMinimizeWindow(self))
+        self.load.btn_reduce.clicked.connect(lambda: self.ReduceWindow(self,self.load.btn_expand ,self.load.btn_reduce))
         self.load.btn_menu.clicked.connect(self.MenuHideAndShow)
         self.load.slide_close_btn.clicked.connect(self.MenuHideAndShow)
         self.load.show()
         
 ################################   Buttoms Event    ###################################
         self.load.btn_insert.clicked.connect(lambda: self.EjecutionDialog(Dialog))
-
+        self.load.btn_update.clicked.connect(lambda: self.EjecutionDialog(UpdateTable))
+        self.load.btn_delete.clicked.connect(lambda: self.EjecutionDialog(DeleteVTable))
     
         # self.load.btn_costosygastos.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.stk_CostosGastos))
         
@@ -194,22 +197,22 @@ class Eva(QMainWindow):
             self.animation.start()
 
     def EjecutionDialog(self,dialog):
-        dialogo = dialog(self.id,self.mensagges)
+        dialogo = dialog(self.id,self.mensagges,self.ReduceWindow, self.btnMinimizeWindow,self.btnExpandWindow)
         dialogo.exec_()
 
 
-    def ReduceWindow(self):
-        self.showNormal()
-        self.load.btn_reduce.hide()
-        self.load.btn_expand.show()
+    def ReduceWindow(self,window, btnExpand, btnReduce):
+        window.showNormal()
+        btnReduce.hide()
+        btnExpand.show()
 
-    def btnMinimizeWindow(self):
-        self.showMinimized()
+    def btnMinimizeWindow(self, window):
+        window.showMinimized()
 
-    def btnExpandWindow(self):
-        self.showMaximized()
-        self.load.btn_expand.hide()
-        self.load.btn_reduce.show()
+    def btnExpandWindow(self,window, btnExpand, btnReduce):
+        window.showMaximized()
+        btnExpand.hide()
+        btnReduce.show()
 
         
     def mensagges(self, mensajeInf):
