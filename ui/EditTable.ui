@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>331</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -422,7 +422,7 @@ QPushButton:hover{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="BtnEditSearch">
            <property name="text">
             <string>Buscar</string>
            </property>

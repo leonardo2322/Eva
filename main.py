@@ -6,6 +6,7 @@ from DialogsScripts.QinsertGastoIngresos import Dialog
 from datetime import datetime
 from DialogsScripts.Update import UpdateTable
 from DialogsScripts.Delete import DeleteVTable
+from DialogsScripts.userAdd import WindowUserAdd
 
 class Eva(QMainWindow):
     def __init__(self,*args, parent = None):
@@ -28,7 +29,7 @@ class Eva(QMainWindow):
 
         self.load.btn_close.clicked.connect(lambda:self.close())
         self.load.btn_expand.clicked.connect(lambda:self.btnExpandWindow(self,self.load.btn_expand,self.load.btn_reduce))
-        self.load.minimize.clicked.connect(lambda:self.btnMinimizeWindow(self))
+        self.load.minimize.clicked.connect(self.showMinimized)
         self.load.btn_reduce.clicked.connect(lambda: self.ReduceWindow(self,self.load.btn_expand ,self.load.btn_reduce))
         self.load.btn_menu.clicked.connect(self.MenuHideAndShow)
         self.load.slide_close_btn.clicked.connect(self.MenuHideAndShow)
@@ -38,7 +39,7 @@ class Eva(QMainWindow):
         self.load.btn_insert.clicked.connect(lambda: self.EjecutionDialog(Dialog))
         self.load.btn_update.clicked.connect(lambda: self.EjecutionDialog(UpdateTable))
         self.load.btn_delete.clicked.connect(lambda: self.EjecutionDialog(DeleteVTable))
-    
+        self.load.btn_user_add.clicked.connect(lambda: self.EjecutionDialog(WindowUserAdd))
         # self.load.btn_costosygastos.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.stk_CostosGastos))
         
         # self.load.btn_show_home.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.homeStkInventary))
@@ -197,7 +198,7 @@ class Eva(QMainWindow):
             self.animation.start()
 
     def EjecutionDialog(self,dialog):
-        dialogo = dialog(self.id,self.mensagges,self.ReduceWindow, self.btnMinimizeWindow,self.btnExpandWindow)
+        dialogo = dialog(self.id,self.mensagges,self.ReduceWindow, self.btnExpandWindow)
         dialogo.exec_()
 
 
@@ -206,8 +207,7 @@ class Eva(QMainWindow):
         btnReduce.hide()
         btnExpand.show()
 
-    def btnMinimizeWindow(self, window):
-        window.showMinimized()
+
 
     def btnExpandWindow(self,window, btnExpand, btnReduce):
         window.showMaximized()

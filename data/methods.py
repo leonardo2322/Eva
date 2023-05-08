@@ -1,15 +1,17 @@
 import re
 
-
-methodsUSER = {
-         'USER' : 'ST',
-         'ID' : 'id'
-          }
-
 methodINSERT = {
     'ing' : 'INGRESO',
     'gas' : 'GASTO'
 }
+
+methodsUSER = {
+         'USER' : 'ST',
+         'ID' : 'id',
+         'ing': methodINSERT
+          }
+
+
 
 def formatDate(fecha):
     fechaFormat = str(fecha).split()[::-1]

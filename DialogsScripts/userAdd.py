@@ -1,11 +1,11 @@
-from PyQt5.QtWidgets import  QMainWindow
+from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi 
 
-class WindowUserAdd(QMainWindow):
-    def __init__(self,parent=None):
-        super(WindowUserAdd,self).__init__()
+class WindowUserAdd(QDialog):
+    def __init__(self,*args, parent=None):
+        super(WindowUserAdd,self).__init__(parent)
         # self.parent = parent
-        self.UI = loadUi("QdialogsUi/tableUserCreate.ui",self)
+        self.UI = loadUi("ui/userAdd.ui",self)
         self.UI.show()
 
         self.UI.closed.clicked.connect(lambda:self.close())

@@ -9,6 +9,7 @@ class Dialog(QDialog):
     def __init__(self,*args, parent=None):
         super(Dialog,self).__init__(parent)
         self.load = loadUi("ui/DatosDeTabla.ui",self)
+        self.load.show()
         self.load.btn_reduce.hide()
         self.load.date_time.setDateTime(datetime.now())
         self.load.date_timeGas.setDateTime(datetime.now())
