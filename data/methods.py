@@ -31,3 +31,5 @@ def recogDate(fecha):
     result = reg.findall(Date)
     fechaT = formatDate(result[0])
     return fechaT
+
+

@@ -31,7 +31,7 @@ class DbUser():
          
     
 
-    def SelectFromDB(self, name=None, selection = method['USER'], tableSearch=None, *args):
+    def SelectFromDB(self, name=None, selection = method['USER'], tableSearch=None,SelectTable=None, *args):
         if selection == method['USER'] and name is not None:
             if self.cursor.closed == True:
                 self.conection()
@@ -62,9 +62,31 @@ class DbUser():
             finally:
                     self.cursor.close()
                     self.conexion.close()
-          
-                
-
+        elif selection == method['ing']['ing']:
+            try:
+                query = """ SELECT * FROM {} """.format(SelectTable)
+                self.cursor.execute(query)
+                result = self.cursor.fetchall()
+                data = []
+                names = ['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']
+                for res in result:
+                    d = {}
+                    for i in range(0,len(res)):
+                        stre = names[i]
+                        
+                        d['{}'.format(stre)] = res[i]
+                    
+                    
+                        
+                    data.append(d)
+                        
+                return data
+            except self.posg.Error as e:
+                    print("ocurrio un error en la conexion",e)
+                    return 'error'
+            finally:
+                    self.cursor.close()
+                    self.conexion.close()
 
     def QueryInsert(self,  type = ins['ing'], datos = [],*args):
         if type == ins['ing']:

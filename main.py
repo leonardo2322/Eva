@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import  QMainWindow, QSizeGrip, QMessageBox
+from PyQt5.QtWidgets import  QMainWindow, QSizeGrip, QMessageBox,QTableWidgetItem
 from PyQt5.QtCore import QPropertyAnimation,QEasingCurve
 from PyQt5 import QtGui
 from PyQt5.uic import loadUi 
@@ -7,7 +7,8 @@ from datetime import datetime
 from DialogsScripts.Update import UpdateTable
 from DialogsScripts.Delete import DeleteVTable
 from DialogsScripts.userAdd import WindowUserAdd
-
+from data.conection import DbUser as db
+from data.methods import methodsUSER 
 class Eva(QMainWindow):
     def __init__(self,*args, parent = None):
         super(Eva,self).__init__(parent)
@@ -15,6 +16,10 @@ class Eva(QMainWindow):
         self.id = args[0]
         horaYfecha =  str(datetime.now().ctime()) 
         self.load.fecha_visualized.setText(horaYfecha)
+
+        self.db = db()
+
+        
 ############################## hide Buttons ###########################################    
         self.load.btn_reduce.hide()
         self.load.btn_menu.hide()
@@ -40,6 +45,8 @@ class Eva(QMainWindow):
         self.load.btn_update.clicked.connect(lambda: self.EjecutionDialog(UpdateTable))
         self.load.btn_delete.clicked.connect(lambda: self.EjecutionDialog(DeleteVTable))
         self.load.btn_user_add.clicked.connect(lambda: self.EjecutionDialog(WindowUserAdd))
+
+        self.load.Ingresosbtn_stk_ing.clicked.connect(lambda:self.Tables(self.load.Tabla_Ingresos,8))
         # self.load.btn_costosygastos.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.stk_CostosGastos))
         
         # self.load.btn_show_home.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.homeStkInventary))
@@ -162,6 +169,7 @@ class Eva(QMainWindow):
 ############ Tables Strectchs ##########################3
 
         # self.load.table_proveedor.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        # self.load.Tabla_Ingresos.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
         # self.load.Table_inventary_home.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
@@ -176,7 +184,8 @@ class Eva(QMainWindow):
 
 
 #################  functions section  ##############################
-
+    
+        
     def MenuHideAndShow(self):
         if True:
             widt = self.load.Slide_bar.width()
@@ -221,11 +230,24 @@ class Eva(QMainWindow):
         self.msj.setText(mensajeInf)
         self.msj.setIcon(QMessageBox.Information)
         self.msj.exec_()
-        
-# if __name__=="__main__":
-#     app = QApplication(sys.argv)
 
-#     ventana= Eva()
-#     ventana.show()
 
-#     sys.exit(app.exec_())
+    def Tables(self,tabla,columns):
+        self.db.conection()
+        self.data = self.db.SelectFromDB( selection = methodsUSER['ing']['ing'], SelectTable='ingresosdiarios')
+        stylesheet = "::section{Background-color:rgb(24,24,36)}"
+        tabla.horizontalHeader().setStyleSheet(stylesheet)
+        tabla.verticalHeader().setStyleSheet(stylesheet)
+        tabla.setColumnCount(columns)
+        for rang in range(0,columns):
+            tabla.setColumnWidth(rang,100)
+        tabla.setHorizontalHeaderLabels(self.data[0].keys())
+        tabla.setRowCount(len(self.data))
+        names = ['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']
+        row = 0 
+
+        for e in self.data:
+            for i in range(0,len(e)):
+                tabla.setItem(row, i, QTableWidgetItem(str(e[names[i]])))
+            row +=1
+
