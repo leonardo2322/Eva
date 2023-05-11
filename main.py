@@ -16,7 +16,7 @@ class Eva(QMainWindow):
         self.id = args[0]
         horaYfecha =  str(datetime.now().ctime()) 
         self.load.fecha_visualized.setText(horaYfecha)
-
+        self.load.user_lbl.setText(args[1])
         self.db = db()
 
         
@@ -45,8 +45,18 @@ class Eva(QMainWindow):
         self.load.btn_update.clicked.connect(lambda: self.EjecutionDialog(UpdateTable))
         self.load.btn_delete.clicked.connect(lambda: self.EjecutionDialog(DeleteVTable))
         self.load.btn_user_add.clicked.connect(lambda: self.EjecutionDialog(WindowUserAdd))
-
-        self.load.Ingresosbtn_stk_ing.clicked.connect(lambda:self.Tables(self.load.Tabla_Ingresos,8))
+################################   Buttoms ingresos stk    ###################################
+        self.load.Ingresosbtn_stk_ing.clicked.connect(lambda:self.Tables(self.load.Tabla_Ingresos,8,'ingresosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
+        self.load.gastosbtn_stk_ing.clicked.connect(lambda:self.Tables(self.load.Tabla_gastos,8,'gastosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
+        self.load.balancebtn_stk_ing.clicked.connect(lambda: self.Tables(self.load.Tabla_balance,6,'DetallesIngGastos',names=['ID','cant Gastos','cant Ingresos',' Balance', 'IDgasto', 'IDingreso']))
+################################   Buttoms gastos stk    ###################################
+        self.load.ingresobtn_stk_gas.clicked.connect(lambda: self.Tables(self.load.Tabla_Ingresos,8,'ingresosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
+        self.load.balancebtn_stk_gas.clicked.connect(lambda: self.Tables(self.load.Tabla_balance,6,'DetallesIngGastos',names=['ID','cant Gastos','cant Ingresos',' Balance', 'IDgasto', 'IDingreso']))
+        self.load.gastosbtn_stk_gas.clicked.connect(lambda:self.Tables(self.load.Tabla_gastos,8,'gastosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
+################################   Buttoms balance stk    ###################################  
+        self.load.balancebtn_stk_bal.clicked.connect(lambda: self.Tables(self.load.Tabla_balance,6,'DetallesIngGastos',names=['ID','cant Gastos','cant Ingresos',' Balance', 'IDgasto', 'IDingreso']))
+        self.load.gastosbtn_stk_bal.clicked.connect(lambda:self.Tables(self.load.Tabla_gastos,8,'gastosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
+        self.load.Ingresosbtn_stk_bal.clicked.connect(lambda: self.Tables(self.load.Tabla_Ingresos,8,'ingresosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
         # self.load.btn_costosygastos.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.stk_CostosGastos))
         
         # self.load.btn_show_home.clicked.connect(lambda:self.load.stackedWidget.setCurrentWidget(self.load.homeStkInventary))
@@ -232,9 +242,17 @@ class Eva(QMainWindow):
         self.msj.exec_()
 
 
-    def Tables(self,tabla,columns):
+    def Tables(self,tabla,columns,tableselect,names=None):
+        if tableselect == 'gastosdiarios':
+            self.load.stackedWidget.setCurrentWidget(self.load.stk_Gastos)
+        elif tableselect == 'ingresosdiarios':
+            self.load.stackedWidget.setCurrentWidget(self.load.stk_Ingresos)
+        else:
+            self.load.stackedWidget.setCurrentWidget(self.load.stk_Balance)
         self.db.conection()
-        self.data = self.db.SelectFromDB( selection = methodsUSER['ing']['ing'], SelectTable='ingresosdiarios')
+        self.data = self.db.SelectFromDB( selection = methodsUSER['ing']['ing'], SelectTable=tableselect,names=names)
+      
+
         stylesheet = "::section{Background-color:rgb(24,24,36)}"
         tabla.horizontalHeader().setStyleSheet(stylesheet)
         tabla.verticalHeader().setStyleSheet(stylesheet)
@@ -243,11 +261,11 @@ class Eva(QMainWindow):
             tabla.setColumnWidth(rang,100)
         tabla.setHorizontalHeaderLabels(self.data[0].keys())
         tabla.setRowCount(len(self.data))
-        names = ['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']
+        name = names
         row = 0 
-
+        
         for e in self.data:
             for i in range(0,len(e)):
-                tabla.setItem(row, i, QTableWidgetItem(str(e[names[i]])))
+                tabla.setItem(row, i, QTableWidgetItem(str(e[name[i]])))
             row +=1
 

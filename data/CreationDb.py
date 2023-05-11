@@ -73,7 +73,8 @@ class Data():
             cantidadIngresos decimal,
             saldo decimal,
             idGastos integer REFERENCES GastosDiarios(idGastos) ON UPDATE CASCADE  ON DELETE RESTRICT,
-            idIngresos integer REFERENCES IngresosDiarios(idIngresos) ON UPDATE CASCADE  ON DELETE RESTRICT
+            idIngresos integer REFERENCES IngresosDiarios(idIngresos) ON UPDATE CASCADE  ON DELETE RESTRICT,
+            primary key(idDetailIngGasto)
             )
             """
             ,

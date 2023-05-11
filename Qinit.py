@@ -44,8 +44,9 @@ class InitSesion(QDialog):
             try:
                 if usuario == query[1] and password == query[2]:
                     self.idUser = query[0]
+                    
                     self.ui.hide()
-                    Eva(self.idUser)
+                    Eva(self.idUser,usuario)
 
                    
                 else:

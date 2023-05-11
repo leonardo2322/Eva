@@ -89,7 +89,7 @@ class Dialog(QDialog):
             }]
 
             try:
-                database = self.database.QueryInsert( datos= data, type=methodINSERT['gas'] )
+                database = self.database.QueryInsert( datos= data, types=methodINSERT['gas'] )
                 if database == 'ok':
                     self.messageError('Se han introducidos los datos')
                 else :
