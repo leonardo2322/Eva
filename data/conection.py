@@ -47,7 +47,7 @@ class DbUser():
         
         print(data)
 
-    def SelectFromDB(self, name=None, selection = method['USER'], tableSearch=None,SelectTable=None,names=None, *args):
+    def SelectFromDB(self, name=None, selection = None , tableSearch=None,SelectTable=None,names=None, ID=None, *args,**kwargs):
         if selection == method['USER'] and name is not None:
             if self.cursor.closed == True:
                 self.conection()
@@ -89,11 +89,7 @@ class DbUser():
                     d = {}
                     for i in range(0,len(res)):
                         stre = names[i]
-                        
-                        d['{}'.format(stre)] = res[i]
-                    
-                    
-                        
+                        d['{}'.format(stre)] = res[i]                                       
                     data.append(d)
                         
                 return data
@@ -103,6 +99,18 @@ class DbUser():
             finally:
                     self.cursor.close()
                     self.conexion.close()
+        elif selection == method['search']:
+            query = """ SELECT * FROM {} WHERE {} = {} """.format(SelectTable,kwargs['ide'],ID)
+            self.cursor.execute(query)
+            result = self.cursor.fetchone()
+            return result
+
+
+        elif selection == 'balance':
+            query = "SELECT * FROM {} ORDER BY {} DESC LIMIT 1".format(SelectTable, ID)
+            self.cursor.execute(query)
+            result = self.cursor.fetchone()
+            return result
 
     def QueryInsert(self,  types = ins['ing'], datos = [],*args):
         if types == ins['ing']:
@@ -134,6 +142,7 @@ class DbUser():
         else :
             return 'error'
     def QueryDelete(self, tabla, id, idTabla):
+        print(id)
         try:
             query = """ DELETE FROM {} WHERE {} = {} """.format(tabla,idTabla,id)
             self.cursor.execute(query)
@@ -146,6 +155,14 @@ class DbUser():
             self.conexion.close()
           
 
-    def QueryUpdate(self):
-        pass
-
+    def QueryUpdate(self, Id, idtable,idID,data = []):
+        try:
+            query ="UPDATE {} SET fecha ='{}', tipodepago='{}' , categoria='{}', divisa='{}',valor={},descripcion='{}' WHERE {} = {} ".format(idtable, data[0],data[1],data[2],data[3],data[4],data[5],idID,Id)
+            self.cursor.execute(query)
+            return 'ok'
+        except self.posg.Error as e:
+            print(e)
+            return 'error'
+        finally:
+            self.cursor.close()
+            self.conexion.close()

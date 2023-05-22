@@ -9,6 +9,7 @@ methodsUSER = {
          'USER' : 'ST',
          'ID' : 'id',
          'ing': methodINSERT
+         ,'search': 'SEARCH'
           }
 
 
@@ -26,6 +27,7 @@ def formatDate(fecha):
     return fechaYhora
 
 def recogDate(fecha):
+    print(fecha)
     reg = re.compile("[0-9]+,\s[0-9]+,\s[0-9]+,\s[0-9]+,\s[0-9]+,\s[0-9]+,\s[0-9]+")
     Date = str(fecha)
     result = reg.findall(Date)

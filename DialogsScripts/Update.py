@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi 
-from PyQt5 import QtGui
+from PyQt5 import QtGui,QtCore
 from data.conection import DbUser as db
-
+from data.methods import methodsUSER,recogDate
 class UpdateTable(QDialog):
     def __init__(self,*args, parent = None ): 
         super(UpdateTable,self).__init__(parent)
@@ -12,6 +12,11 @@ class UpdateTable(QDialog):
         self.messages = args[1]
         self.ReduceWindow = args[2]
         self.btnExpandWindow = args[3]
+        self.IDEdit = None
+        self.table = None
+        self.db = db()
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setWindowOpacity(1)
 ########################### icons ################################################
         iconBtnClose = QtGui.QIcon()
         iconBtnClose.addPixmap(QtGui.QPixmap("iconos/icons/x.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -52,3 +57,45 @@ class UpdateTable(QDialog):
         self.load.btn_reduce.hide()
         self.load.btn_maximize.clicked.connect(lambda: self.btnExpandWindow(self,self.load.btn_maximize,self.load.btn_reduce))
         self.load.btn_reduce.clicked.connect(lambda: self.ReduceWindow(self,self.load.btn_maximize,self.load.btn_reduce ))
+
+        self.load.BtnEditSearch.clicked.connect(self.SearchID)
+        self.load.BtnEditSave.clicked.connect(self.UpdateData)
+################################ Functions #########################################################
+    def UpdateData(self):
+        if len(self.load.InpEditFecha.text()) > 0 and len(self.load.InpEditTipodepago.text()) > 0 and len(self.load.InpEditCategoria.text()) >0 and len(self.load.InpEditDivisa.text()) and len(self.load.InpEditValor.text()) > 0 and len(self.load.InpEditDescripcion.text()) > 0 and self.IDEdit is not None:
+                data = [self.load.InpEditFecha.text(),self.load.InpEditTipodepago.text(),self.load.InpEditCategoria.text(),self.load.InpEditDivisa.text(),int(self.load.InpEditValor.text()),self.load.InpEditDescripcion.text()] 
+                if self.table == 'ingresosdiarios':
+                      result = self.db.QueryUpdate( self.IDEdit,self.table,'idingresos', data=data)
+                      if result == 'ok':
+                            self.messages('actualizacion exitosa')
+                      else:
+                            self.messages('ocurrio un error')
+                elif self.table == 'gastosdiarios':
+                      result = self.db.QueryUpdate( self.IDEdit,self.table,'idgastos', data=data)
+                      if result == 'ok':
+                            self.messages('actualizacion exitosa')
+                      else:
+                            self.messages('ocurrio un error')
+        else:
+              self.messages('busca el elemento a editar')
+
+
+    def SearchID(self):
+        id = self.load.Inp_edit_ID.text()
+        tabla = self.load.Cb_Desc_search.currentText()
+        if len(id) > 0:
+                if tabla == 'ingresosdiarios':
+                        result = self.db.SelectFromDB(selection=methodsUSER['search'], SelectTable=tabla, ID=id,**{'ide':'idingresos'} )
+                elif tabla == 'gastosdiarios':
+                        result = self.db.SelectFromDB(selection=methodsUSER['search'], SelectTable=tabla, ID=id,**{'ide':'idgastos'} )
+                self.IDEdit = result[0]
+                self.table = tabla
+                fecha = str(result[1])
+                self.load.InpEditFecha.setText(fecha)
+                self.load.InpEditTipodepago.setText(result[2])
+                self.load.InpEditCategoria.setText(result[3])
+                self.load.InpEditDivisa.setText(result[4])
+                self.load.InpEditValor.setText(str(result[5]))
+                self.load.InpEditDescripcion.setText(result[6])
+        else:
+             self.messages('indtroduce un id para proceder con la busqueda')

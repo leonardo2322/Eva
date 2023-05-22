@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi 
-from PyQt5 import QtGui
+from PyQt5 import QtGui,QtCore
 from data.conection import DbUser as db
 from data.methods import  methodINSERT,  recogDate
 from datetime import datetime
@@ -10,6 +10,8 @@ class Dialog(QDialog):
         super(Dialog,self).__init__(parent)
         self.load = loadUi("ui/DatosDeTabla.ui",self)
         self.load.show()
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setWindowOpacity(1)
         self.load.btn_reduce.hide()
         self.load.date_time.setDateTime(datetime.now())
         self.load.date_timeGas.setDateTime(datetime.now())
@@ -78,9 +80,8 @@ class Dialog(QDialog):
                 else :
                     self.messageError('verifica algo ocurrio mal asegurate de introducir todos los valores')
 
-            except  Exception as e:
+            except :
                 self.messageError('ocurrio un error verifica que has hecho')
-                print(e)
         elif self.active == methodINSERT['gas']:
             fecha = recogDate(self.load.date_timeGas.dateTime())
             data =  [{

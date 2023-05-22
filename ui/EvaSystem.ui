@@ -10,14 +10,26 @@
     <height>485</height>
    </rect>
   </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
   <property name="windowTitle">
-   <string>Eva System</string>
+   <string/>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
 	border:none;
 }
 </string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonFollowStyle</enum>
   </property>
   <widget class="QWidget" name="cnt_principal">
    <property name="styleSheet">
@@ -74,7 +86,7 @@ color:#fff;</string>
         <number>0</number>
        </property>
        <item>
-        <widget class="QFrame" name="frame_2">
+        <widget class="QFrame" name="Frame_Superior">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -82,6 +94,9 @@ color:#fff;</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <property name="topMargin">
+           <number>18</number>
+          </property>
           <item>
            <widget class="QLabel" name="label">
             <property name="font">
@@ -154,7 +169,7 @@ QPushButton:hover{
                <x>0</x>
                <y>0</y>
                <width>192</width>
-               <height>305</height>
+               <height>296</height>
               </rect>
              </property>
              <attribute name="icon">
@@ -204,7 +219,7 @@ QPushButton:hover{
               <item>
                <widget class="QPushButton" name="btn_todo">
                 <property name="text">
-                 <string>Tarea</string>
+                 <string>Inventario</string>
                 </property>
                </widget>
               </item>
@@ -230,7 +245,7 @@ QPushButton:hover{
                <x>0</x>
                <y>0</y>
                <width>192</width>
-               <height>305</height>
+               <height>296</height>
               </rect>
              </property>
              <attribute name="icon">
@@ -650,7 +665,7 @@ QPushButton:hover{
 }</string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="stk_Gastos">
              <layout class="QVBoxLayout" name="verticalLayout_26">
@@ -777,7 +792,14 @@ QPushButton:hover{
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QTableWidget" name="Tabla_gastos"/>
+                         <widget class="QTableWidget" name="Tabla_gastos">
+                          <property name="textElideMode">
+                           <enum>Qt::ElideMiddle</enum>
+                          </property>
+                          <property name="gridStyle">
+                           <enum>Qt::DotLine</enum>
+                          </property>
+                         </widget>
                         </item>
                        </layout>
                       </widget>
@@ -994,8 +1016,100 @@ QPushButton:hover{
                         <enum>QFrame::Raised</enum>
                        </property>
                        <layout class="QVBoxLayout" name="verticalLayout_9">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item>
-                         <widget class="QTableWidget" name="Tabla_balance"/>
+                         <layout class="QGridLayout" name="gridLayout">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <item row="1" column="2">
+                           <widget class="QLabel" name="BalanceQuantity">
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_2">
+                            <property name="text">
+                             <string>INGRESOS</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="1">
+                           <widget class="QLabel" name="GastosQuantity">
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="2">
+                           <widget class="QLabel" name="label_5">
+                            <property name="text">
+                             <string>SALDO</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="IngresosQuantity">
+                            <property name="styleSheet">
+                             <string notr="true"/>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                            <property name="textFormat">
+                             <enum>Qt::RichText</enum>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QLabel" name="label_4">
+                            <property name="text">
+                             <string>EGRESOS</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="1">
+                           <widget class="QLabel" name="ComoVas">
+                            <property name="text">
+                             <string/>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
                         </item>
                        </layout>
                       </widget>
@@ -1005,6 +1119,74 @@ QPushButton:hover{
                   </widget>
                  </item>
                 </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="stk_inventary">
+             <layout class="QVBoxLayout" name="verticalLayout_10">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QScrollArea" name="scrollArea_3">
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_3">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>368</width>
+                   <height>377</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                  <item>
+                   <widget class="QFrame" name="frame_14">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frame_16">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frame_15">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
                </widget>
               </item>
              </layout>
@@ -1168,7 +1350,6 @@ QPushButton:hover{
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../../DomiGPS/iconosPrincipales.qrc"/>
   <include location="../../DomiGPS/icons.qrc"/>
  </resources>
  <connections/>

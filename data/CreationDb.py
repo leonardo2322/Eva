@@ -17,13 +17,14 @@ class Data():
                 "port": 5432
             }
             self.conexion = self.posg.connect(**credentials)
-            print("conexion success")
-            self.FullData()
-            
+            Creation = self.FullData()
+            if Creation == 'succes':
+                return "ok"
+         
             
 
         except (Exception, self.posg.DatabaseError) as error:
-            print("ocurrio un error en la conexion",error)
+            return error
         finally:
             if self.conexion is not None:
                 print("finally conexion")
@@ -177,8 +178,10 @@ class Data():
             self.conexion.commit()
             cursor.close()
             print("table created success")
+            return "succes"
         except self.posg.Error as e:
              print(e)
+             return "error"
         finally:
             if self.conexion is not None:
                 print("finally ejecucion")
@@ -186,4 +189,3 @@ class Data():
                 print('Database connection closed.')
 
 
-Data()

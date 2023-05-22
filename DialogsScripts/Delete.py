@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi 
-from PyQt5 import QtGui
+from PyQt5 import QtGui,QtCore
 from data.conection import DbUser as db
 from data.methods import methodsUSER
 
@@ -8,6 +8,8 @@ class DeleteVTable(QDialog):
     def __init__(self,*args, parent = None ): 
         super(DeleteVTable,self).__init__(parent)
         self.load = loadUi('ui/TableDelete.ui',self)
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setWindowOpacity(1)
         self.load.show()
         self.id = args[0]
         self.messages = args[1]
@@ -62,7 +64,7 @@ class DeleteVTable(QDialog):
 
         if desc.__len__() > 0:
             if self.tablaDelete == 'ingresosdiarios':
-                result = self.db.QueryDelete(self.tablaDelete, self.idDelete, 'idIngresos')
+                result = self.db.QueryDelete(self.tablaDelete, self.idDelete, 'idingresos')
                 if result == 'success':
                     self.messages('eliminacion Exitosa')
                     self.load.Lbl_RSearch.setText('')
