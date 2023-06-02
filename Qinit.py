@@ -23,7 +23,7 @@ class InitSesion(QDialog):
         iconBtnDelete.addPixmap(QtGui.QPixmap("iconos/icons/x.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.ui.btn_sesion_destroy.setIcon(iconBtnDelete)
         
-
+        self.ui.Frame_Top.mouseMoveEvent = self.MoveWindow
         iconReduce = QtGui.QIcon()
         iconReduce.addPixmap(QtGui.QPixmap("iconos/icons/minus.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.ui.btn_sesion_minimize.setIcon(iconReduce)
@@ -62,9 +62,19 @@ class InitSesion(QDialog):
             Eva.mensagges(self,'No hay datos Introduce tus datos')
 
 
+    def mousePressEvent(self, event):
+        self.clickPosition = event.globalPos()
 
-
-
+    def MoveWindow(self, event):
+        try:
+            if self.isMaximized() == False and event.buttons() ==QtCore.Qt.LeftButton:
+                
+                self.move(self.pos()+ event.globalPos() - self.clickPosition)
+                self.clickPosition= event.globalPos()
+                event.accept()
+       
+        except Exception as e:
+            Eva.mensagges(self, 'para mover la pantalla preciona la parte superior izquierda')
 
 if __name__=='__main__':
     app = QApplication(sys.argv)

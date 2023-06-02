@@ -16,6 +16,7 @@ class DeleteVTable(QDialog):
         self.db = db()
         self.idDelete = None
         self.tablaDelete = None
+        self.delete_top.mouseMoveEvent = self.MoveWindow
 ################################ icons      #########################################################
         iconBtnClose = QtGui.QIcon()
         iconBtnClose.addPixmap(QtGui.QPixmap("iconos/icons/x.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -32,7 +33,7 @@ class DeleteVTable(QDialog):
         iconMinimize = QtGui.QIcon()
         iconMinimize.addPixmap(QtGui.QPixmap("iconos/icons/minus.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.load.btn_minimize.setIcon(iconMinimize)
-
+        self.load.Btn_cancel_D.setIcon(iconBtnClose)
 ################################ btn events actions #########################################################
         self.load.btn_minimize.clicked.connect(self.showMinimized)
         self.load.btn_close.clicked.connect(lambda: self.close())
@@ -64,7 +65,7 @@ class DeleteVTable(QDialog):
 
         if desc.__len__() > 0:
             if self.tablaDelete == 'ingresosdiarios':
-                result = self.db.QueryDelete(self.tablaDelete, self.idDelete, 'idingresos')
+                result = self.db.QueryDelete(self.tablaDelete, self.idDelete, 'idingresos',self.id)
                 if result == 'success':
                     self.messages('eliminacion Exitosa')
                     self.load.Lbl_RSearch.setText('')
@@ -72,7 +73,7 @@ class DeleteVTable(QDialog):
                 else:
                     self.messages('Sucedio algo puede ser que no existe el elemento que deseas eliminar, debes buscar el elemento')
             elif self.tablaDelete == 'gastosdiarios':
-                result = self.db.QueryDelete(self.tablaDelete, self.idDelete,'idGastos')
+                result = self.db.QueryDelete(self.tablaDelete, self.idDelete,'idGastos',self.id)
                 if result == 'success':
                     self.messages('eliminacion Exitosa')
                     self.load.Lbl_RSearch.setText('')
@@ -81,3 +82,16 @@ class DeleteVTable(QDialog):
                     self.messages('Sucedio algo puede ser que no existe el elemento que deseas eliminar, debes buscar el elemento')
         else:
              self.messages('Introduce la descripcion y busca el elemento a eliminar')
+
+    def mousePressEvent(self, event):
+        self.clickPosition = event.globalPos()
+
+    def MoveWindow(self, event):
+        try:
+            if self.isMaximized() == False and event.buttons() ==QtCore.Qt.LeftButton:
+                
+                self.move(self.pos()+ event.globalPos() - self.clickPosition)
+                self.clickPosition= event.globalPos()
+                event.accept()
+        except Exception as e:
+             self.messages('para mover la pantalla preciona la parte superior izquierda')

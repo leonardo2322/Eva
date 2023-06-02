@@ -19,6 +19,7 @@ class Dialog(QDialog):
         self.database = db()
         self.messageError = args[1]
         self.active = methodINSERT['ing']
+        self.top_data.mouseMoveEvent = self.MoveWindow
 #################################---Icons----########################################        
         iconBtnClose = QtGui.QIcon()
         iconBtnClose.addPixmap(QtGui.QPixmap("iconos/icons/x.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -46,6 +47,8 @@ class Dialog(QDialog):
         iconSave.addPixmap(QtGui.QPixmap("iconos/icons/save.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
 
         self.load.btn_guardar.setIcon(iconSave)
+
+        self.load.btn_cancelar.setIcon(iconBtnClose)
 #################################---Events Clicked----############################### 
 
         self.load.btn_reduce.clicked.connect(self.ReduceWindow)
@@ -80,7 +83,8 @@ class Dialog(QDialog):
                 else :
                     self.messageError('verifica algo ocurrio mal asegurate de introducir todos los valores')
 
-            except :
+            except Exception as e:
+                print(e)
                 self.messageError('ocurrio un error verifica que has hecho')
         elif self.active == methodINSERT['gas']:
             fecha = recogDate(self.load.date_timeGas.dateTime())
@@ -113,3 +117,16 @@ class Dialog(QDialog):
         self.load.btn_maximize.show()
     
     
+    def mousePressEvent(self, event):
+        self.clickPosition = event.globalPos()
+
+    def MoveWindow(self, event):
+        try:
+
+            if self.isMaximized() == False and event.buttons() ==QtCore.Qt.LeftButton:
+                
+                self.move(self.pos()+ event.globalPos() - self.clickPosition)
+                self.clickPosition= event.globalPos()
+                event.accept()
+        except Exception as e:
+            self.messageError('para mover la pantalla preciona la parte superior izquierda')

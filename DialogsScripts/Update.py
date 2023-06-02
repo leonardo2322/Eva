@@ -17,6 +17,7 @@ class UpdateTable(QDialog):
         self.db = db()
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setWindowOpacity(1)
+        self.update_top.mouseMoveEvent = self.MoveWindow
 ########################### icons ################################################
         iconBtnClose = QtGui.QIcon()
         iconBtnClose.addPixmap(QtGui.QPixmap("iconos/icons/x.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -49,7 +50,7 @@ class UpdateTable(QDialog):
         iconBtnSearchTables.addPixmap(QtGui.QPixmap("iconos/icons/search.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
 
         self.load.BtnEditSearch.setIcon(iconBtnSearchTables)
-
+        self.load.BtnEditCancel.setIcon(iconBtnClose)
 ################################ btn events #########################################################
         self.load.btn_close.clicked.connect(lambda: self.close())
         self.load.BtnEditCancel.clicked.connect(lambda: self.close())
@@ -99,3 +100,16 @@ class UpdateTable(QDialog):
                 self.load.InpEditDescripcion.setText(result[6])
         else:
              self.messages('indtroduce un id para proceder con la busqueda')
+    def mousePressEvent(self, event):
+        self.clickPosition = event.globalPos()
+
+    def MoveWindow(self, event):
+        try:
+              
+            if self.isMaximized() == False and event.buttons() ==QtCore.Qt.LeftButton:
+                
+                self.move(self.pos()+ event.globalPos() - self.clickPosition)
+                self.clickPosition= event.globalPos()
+                event.accept()
+        except Exception as e:
+              self.messages('para mover la pantalla preciona la parte superior izquierda')

@@ -19,7 +19,7 @@ class Eva(QMainWindow):
         self.load.user_lbl.setText(str(args[1]).capitalize())
         self.db = db()
         self.load.stackedWidget.setCurrentWidget(self.load.stk_Ingresos)
-        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setWindowOpacity(1)
         self.Frame_Superior.mouseMoveEvent = self.MoveWindow
 ############################## hide Buttons ###########################################    
@@ -127,7 +127,7 @@ class Eva(QMainWindow):
         iconBtntodo = QtGui.QIcon()
         iconBtntodo.addPixmap(QtGui.QPixmap("iconos/icons/lista.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
 
-        self.load.btn_todo.setIcon(iconBtntodo)
+        self.load.btn_Inventary.setIcon(iconBtntodo)
 
         iconBtnTrans = QtGui.QIcon()
         iconBtnTrans.addPixmap(QtGui.QPixmap("iconos/icons/trans.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -175,6 +175,7 @@ class Eva(QMainWindow):
 
         self.load.toolBox.setItemIcon(0,icontoolbox)
         self.load.toolBox.setItemIcon(1,icontoolbox)
+        self.load.toolBox.setItemIcon(2,icontoolbox)
         # self.load.toolBox.setItemIcon(2,icontoolbox)
         
        
@@ -202,37 +203,79 @@ class Eva(QMainWindow):
 
 
 #################  functions section  ##############################
+    def mousePressEvent(self, event):
+        self.clickPosition = event.globalPos()
 
     def MoveWindow(self, event):
-        if self.isMaximized() == False and event.buttons() ==QtCore.Qt.LeftButton:
-            self.move(self.pos()+ event.globalPos() - self.clickPosition)
+        try:
+            if self.isMaximized() == False and event.buttons() ==QtCore.Qt.LeftButton:
+                self.move(self.pos()+ event.globalPos() - self.clickPosition)
+                self.clickPosition= event.globalPos()
+                event.accept()
+            if event.globalPos().y() <= 10:
+                self.showMaximized()
+                self.load.btn_expand.hide()
+                self.load.btn_reduce.show()
+            else:
+                self.showNormal()
+                self.load.btn_expand.show()
+                self.load.btn_reduce.hide()
+        except Exception as e:
+            self.mensagges('para mover la pantalla preciona la parte superior izquierda')
 
     def Balance(self):
         self.load.stackedWidget.setCurrentWidget(self.load.stk_Balance)
         
         self.db.conection()
         data = self.db.SelectFromDB( selection='balance', SelectTable='DetallesIngGastos', ID='idDetailIngGasto')
-        if data[2] > 0:
-            self.load.IngresosQuantity.setStyleSheet("color: #008000; font-size:24px")
-        else:
-            self.load.IngresosQuantity.setStyleSheet("color: #ff0000; font-size:24px")
-        self.load.GastosQuantity.setStyleSheet("color: #ff0000; font-size:24px")
+        print(data)
+        try:
+            if data[2] > 0:
+                self.load.IngresosQuantity.setStyleSheet("color: #008000; font-size:24px")
+            else:
+                self.load.IngresosQuantity.setStyleSheet("color: #ff0000; font-size:24px")
+            self.load.GastosQuantity.setStyleSheet("color: #ff0000; font-size:24px")
 
-        if data[3] > 0:
-            self.load.BalanceQuantity.setStyleSheet("color: #008000; font-size:24px")
-        else:
-            self.load.BalanceQuantity.setStyleSheet("color: #ff0000; font-size:24px")
+            if data[3] > 0  and data[2] > data[1]:
+                self.load.BalanceQuantity.setStyleSheet("color: #008000; font-size:24px")
+            else:
+                self.load.BalanceQuantity.setStyleSheet("color: #ff0000; font-size:24px")
+        except Exception as e:
+            self.mensagges(str(e))
+        try:
+            self.load.IngresosQuantity.setText(str(data[2]))
+            self.load.GastosQuantity.setText(str(data[1]))
+            if data[2] < data[1] and data[3] == 0:
+                self.load.BalanceQuantity.setText(str(data[3]))
+                self.load.BalanceQuantity.setStyleSheet("color: #ff7f50; font-size:24px")
+                self.load.ComoVas.setStyleSheet("color: #ff7f50; font-size:24px")
+                self.load.ComoVas.setText('Puede que no estes haciendo lo necesario para crecer')
+            elif data[2] > data[1] and data[3] > 0:
+                self.load.ComoVas.setStyleSheet('color: #008000; font-size:24px')
+                self.load.ComoVas.setText('Vas bien sigue asi')
+                self.load.BalanceQuantity.setStyleSheet("color: #008000; font-size:24px")
+                self.load.BalanceQuantity.setText(str(data[3]))
+            elif data[2] < data[1] and data[3] < 0:
+                self.load.ComoVas.setStyleSheet("color: #ff0000; font-size:24px")
+                self.load.ComoVas.setText('Revisa Tus Gastos algo no pinta Muy bien') 
+                self.load.BalanceQuantity.setText(str(data[3]))  
+                self.load.BalanceQuantity.setStyleSheet("color: #ff0000; font-size:24px")
+            elif data[2] == data[1] and data[3] == 0:
+                self.load.BalanceQuantity.setText(str(data[3]))
+                self.load.ComoVas.setText('Vas a la par Vamooos Echale mas ganas')
+                self.load.BalanceQuantity.setStyleSheet("color: #ff7f50; font-size:24px")
+                self.load.ComoVas.setStyleSheet("color: #ff7f50; font-size:24px")
+            else:
+                print('en ninguno')
+                
 
-        self.load.IngresosQuantity.setText(str(data[2]))
-        self.load.GastosQuantity.setText(str(data[1]))
-        self.load.BalanceQuantity.setText(str(data[3]))
+         
+         
+                
 
-        if data[2] > data[1]:
-            self.load.ComoVas.setStyleSheet('color: #008000; font-size:24px')
-            self.load.ComoVas.setText('Vas bien sigue asi')
-        else:
-            self.load.ComoVas.setStyleSheet("color: #ff0000; font-size:24px")
-            self.load.ComoVas.setText('Revisa Tus Gastos algo no pinta Muy bien')
+                
+        except Exception as e:
+            self.mensagges('asegurate de introcucir valores en las tablas'+str(e))
         
     def MenuHideAndShow(self):
         if True:

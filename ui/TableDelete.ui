@@ -53,7 +53,7 @@ QPushButton:hover{
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QFrame" name="frame">
+       <widget class="QFrame" name="delete_top">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
@@ -68,7 +68,7 @@ QPushButton:hover{
           <number>0</number>
          </property>
          <property name="topMargin">
-          <number>0</number>
+          <number>17</number>
          </property>
          <property name="rightMargin">
           <number>0</number>

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>403</width>
-    <height>354</height>
+    <height>378</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,602 +35,677 @@ color:#fff;
     <number>0</number>
    </property>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout_5">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout" stretch="9,0,0,0,0,0">
-           <property name="spacing">
-            <number>7</number>
-           </property>
-           <property name="sizeConstraint">
-            <enum>QLayout::SetMinAndMaxSize</enum>
-           </property>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_8">
-             <item>
-              <widget class="QPushButton" name="imgPaper">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>60</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QPushButton{
+    <widget class="QFrame" name="top_data">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>22</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="vertical">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout" stretch="9,0,0,0,0,0">
+              <property name="spacing">
+               <number>7</number>
+              </property>
+              <property name="sizeConstraint">
+               <enum>QLayout::SetMinAndMaxSize</enum>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_8">
+                <item>
+                 <widget class="QPushButton" name="imgPaper">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>60</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>50</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
 border:none;
 }</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>50</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="shortcut">
+                   <string/>
+                  </property>
+                  <property name="autoDefault">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string>Seleccione y Rellene los campos</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_minimize">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_reduce">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_maximize">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>10</width>
+                  <height>10</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_close">
+                <property name="minimumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>30</width>
+                  <height>30</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QFrame" name="verticalFrame_5">
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <property name="leftMargin">
+                <number>9</number>
                </property>
-               <property name="text">
-                <string/>
+               <property name="topMargin">
+                <number>9</number>
                </property>
-               <property name="iconSize">
-                <size>
-                 <width>50</width>
-                 <height>50</height>
-                </size>
+               <property name="rightMargin">
+                <number>9</number>
                </property>
-               <property name="shortcut">
-                <string/>
+               <property name="bottomMargin">
+                <number>9</number>
                </property>
-               <property name="autoDefault">
-                <bool>true</bool>
+               <item>
+                <widget class="QPushButton" name="btn_ingreso">
+                 <property name="text">
+                  <string>Ingreso</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btn_gasto">
+                 <property name="text">
+                  <string>Gasto</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QStackedWidget" name="stackedWidget">
+               <property name="styleSheet">
+                <string notr="true">QLineEdit{
+	border:none;
+	border-bottom: 2px solid #efb810
+}</string>
                </property>
+               <property name="currentIndex">
+                <number>1</number>
+               </property>
+               <widget class="QWidget" name="IngresoStack">
+                <property name="statusTip">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <layout class="QFormLayout" name="formLayout_2">
+                   <property name="leftMargin">
+                    <number>9</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>9</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_2">
+                     <property name="text">
+                      <string>Fecha</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QDateTimeEdit" name="date_time"/>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_3">
+                     <property name="text">
+                      <string>Tipo De pago</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QComboBox" name="Cb_tipoPago">
+                     <item>
+                      <property name="text">
+                       <string>tarjeta</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>transferencia</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>efectivo</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_4">
+                     <property name="text">
+                      <string>Categoria</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QComboBox" name="Cb_categoria">
+                     <item>
+                      <property name="text">
+                       <string>venta</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>otros</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>pago Fiado</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="4" column="0">
+                    <widget class="QLabel" name="label_5">
+                     <property name="text">
+                      <string>Valor</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1">
+                    <widget class="QLineEdit" name="Inp_valor">
+                     <property name="placeholderText">
+                      <string>Introduzca el monto</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="0">
+                    <widget class="QLabel" name="label_6">
+                     <property name="text">
+                      <string>Descripcion</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="5" column="1">
+                    <widget class="QLineEdit" name="Inp_desc">
+                     <property name="placeholderText">
+                      <string>Describa su insercion</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="QComboBox" name="Cb_divisa">
+                     <item>
+                      <property name="text">
+                       <string>Pesos $</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Dollar $</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Bolivares BFS</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QLabel" name="label_7">
+                     <property name="text">
+                      <string>Divisa</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="GastoStack">
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <item>
+                  <layout class="QFormLayout" name="formLayout">
+                   <property name="horizontalSpacing">
+                    <number>0</number>
+                   </property>
+                   <property name="verticalSpacing">
+                    <number>0</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="fechaLabel">
+                     <property name="text">
+                      <string>Fecha</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="cuentaLabel">
+                     <property name="text">
+                      <string>Tipo De pago</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="categoriaLabel">
+                     <property name="text">
+                      <string>Categoria</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="0">
+                    <widget class="QLabel" name="valorLabel">
+                     <property name="text">
+                      <string>Valor</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="4" column="1">
+                    <widget class="QLineEdit" name="Inp_valorGas">
+                     <property name="placeholderText">
+                      <string>Introduzca el monto</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="0">
+                    <widget class="QLabel" name="descripcionLabel">
+                     <property name="text">
+                      <string>Descripcion</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="6" column="1">
+                    <widget class="QLineEdit" name="Inp_descGas">
+                     <property name="placeholderText">
+                      <string>Describa su insercion</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QDateTimeEdit" name="date_timeGas"/>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QComboBox" name="Cb_tipoDePagoGas">
+                     <item>
+                      <property name="text">
+                       <string>Efectivo</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Tarjeta</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Transferencia</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QComboBox" name="Cb_cateGas">
+                     <item>
+                      <property name="text">
+                       <string>Compras</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Transporte</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Arriendo</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Salarios</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Servicios</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Materia Prima</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Inversion</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Ahorro</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QLabel" name="label_8">
+                     <property name="text">
+                      <string>Divisa</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="QComboBox" name="Cb_divisaGas">
+                     <item>
+                      <property name="text">
+                       <string>Peso$</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Bolivares Bsf</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Euros</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Dollar$</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
             </layout>
-           </item>
-           <item>
-            <widget class="QLabel" name="label">
-             <property name="text">
-              <string>Seleccione y Rellene los campos</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="btn_minimize">
-             <property name="minimumSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
-	border-radius:30px;
-	border: 2px solid #efb810;
-	padding:7px 0;
-}
-
-QPushButton:hover{
-	background-color: rgba(239,184,16,.5)
-}</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="btn_reduce">
-             <property name="minimumSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
-	border-radius:30px;
-	border: 2px solid #efb810;
-	padding:7px 0;
-}
-
-QPushButton:hover{
-	background-color: rgba(239,184,16,.5)
-}</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="btn_maximize">
-             <property name="minimumSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
-	border-radius:30px;
-	border: 2px solid #efb810;
-	padding:7px 0;
-}
-
-QPushButton:hover{
-	background-color: rgba(239,184,16,.5)
-}</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>10</width>
-               <height>10</height>
-              </size>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="btn_close">
-             <property name="minimumSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>30</width>
-               <height>30</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
-	border-radius:30px;
-	border: 2px solid #efb810;
-	padding:7px 0;
-}
-
-QPushButton:hover{
-	background-color: rgba(239,184,16,.5)
-}</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QFrame" name="verticalFrame_5">
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	border-radius:30px;
-	border: 2px solid #efb810;
-	padding:7px 0;
-}
-
-QPushButton:hover{
-	background-color: rgba(239,184,16,.5)
-}</string>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_7">
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="leftMargin">
+           <number>9</number>
+          </property>
+          <property name="topMargin">
+           <number>9</number>
+          </property>
+          <property name="rightMargin">
+           <number>9</number>
+          </property>
+          <property name="bottomMargin">
+           <number>9</number>
+          </property>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_6">
-            <property name="leftMargin">
-             <number>9</number>
-            </property>
-            <property name="topMargin">
-             <number>9</number>
-            </property>
-            <property name="rightMargin">
-             <number>9</number>
-            </property>
-            <property name="bottomMargin">
-             <number>9</number>
-            </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
             <item>
-             <widget class="QPushButton" name="btn_ingreso">
+             <widget class="QPushButton" name="btn_guardar">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+              </property>
               <property name="text">
-               <string>Ingreso</string>
+               <string>Guardar</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="btn_gasto">
+             <widget class="QPushButton" name="btn_cancelar">
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	border-radius:30px;
+	border: 2px solid #efb810;
+	padding:7px 0;
+}
+
+QPushButton:hover{
+	background-color: rgba(239,184,16,.5)
+}</string>
+              </property>
               <property name="text">
-               <string>Gasto</string>
+               <string>Cancelar</string>
               </property>
              </widget>
             </item>
            </layout>
           </item>
-          <item>
-           <widget class="QStackedWidget" name="stackedWidget">
-            <property name="styleSheet">
-             <string notr="true">QLineEdit{
-	border:none;
-	border-bottom: 2px solid #efb810
-}</string>
-            </property>
-            <property name="currentIndex">
-             <number>0</number>
-            </property>
-            <widget class="QWidget" name="IngresoStack">
-             <property name="statusTip">
-              <string/>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_9">
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <item>
-               <layout class="QFormLayout" name="formLayout_2">
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_2">
-                  <property name="text">
-                   <string>Fecha</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QDateTimeEdit" name="date_time"/>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="label_3">
-                  <property name="text">
-                   <string>Tipo De pago</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QComboBox" name="Cb_tipoPago">
-                  <item>
-                   <property name="text">
-                    <string>tarjeta</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>transferencia</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>efectivo</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="label_4">
-                  <property name="text">
-                   <string>Categoria</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QComboBox" name="Cb_categoria">
-                  <item>
-                   <property name="text">
-                    <string>venta</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>otros</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>pago Fiado</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item row="4" column="0">
-                 <widget class="QLabel" name="label_5">
-                  <property name="text">
-                   <string>Valor</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="1">
-                 <widget class="QLineEdit" name="Inp_valor">
-                  <property name="placeholderText">
-                   <string>Introduzca el monto</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="0">
-                 <widget class="QLabel" name="label_6">
-                  <property name="text">
-                   <string>Descripcion</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="5" column="1">
-                 <widget class="QLineEdit" name="Inp_desc">
-                  <property name="placeholderText">
-                   <string>Describa su insercion</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QComboBox" name="Cb_divisa">
-                  <item>
-                   <property name="text">
-                    <string>Pesos $</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Dollar $</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Bolivares BFS</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="label_7">
-                  <property name="text">
-                   <string>Divisa</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </widget>
-            <widget class="QWidget" name="GastoStack">
-             <layout class="QVBoxLayout" name="verticalLayout_10">
-              <item>
-               <layout class="QFormLayout" name="formLayout">
-                <item row="0" column="0">
-                 <widget class="QLabel" name="fechaLabel">
-                  <property name="text">
-                   <string>Fecha</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="cuentaLabel">
-                  <property name="text">
-                   <string>Tipo De pago</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="categoriaLabel">
-                  <property name="text">
-                   <string>Categoria</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="0">
-                 <widget class="QLabel" name="valorLabel">
-                  <property name="text">
-                   <string>Valor</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="1">
-                 <widget class="QLineEdit" name="Inp_valorGas">
-                  <property name="placeholderText">
-                   <string>Introduzca el monto</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="0">
-                 <widget class="QLabel" name="descripcionLabel">
-                  <property name="text">
-                   <string>Descripcion</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="1">
-                 <widget class="QLineEdit" name="Inp_descGas">
-                  <property name="placeholderText">
-                   <string>Describa su insercion</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QDateTimeEdit" name="date_timeGas"/>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QComboBox" name="Cb_tipoDePagoGas">
-                  <item>
-                   <property name="text">
-                    <string>Efectivo</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Tarjeta</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Transferencia</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QComboBox" name="Cb_cateGas">
-                  <item>
-                   <property name="text">
-                    <string>Compras</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Transporte</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Arriendo</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Salarios</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Servicios</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Materia Prima</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Inversion</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Ahorro</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QLabel" name="label_8">
-                  <property name="text">
-                   <string>Divisa</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="3" column="1">
-                 <widget class="QComboBox" name="Cb_divisaGas">
-                  <item>
-                   <property name="text">
-                    <string>Peso$</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Bolivares Bsf</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Euros</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Dollar$</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </widget>
-           </widget>
-          </item>
          </layout>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QPushButton" name="btn_guardar">
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	border-radius:30px;
-	border: 2px solid #efb810;
-	padding:7px 0;
-}
-
-QPushButton:hover{
-	background-color: rgba(239,184,16,.5)
-}</string>
-           </property>
-           <property name="text">
-            <string>Guardar</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btn_cancelar">
-           <property name="styleSheet">
-            <string notr="true">QPushButton{
-	border-radius:30px;
-	border: 2px solid #efb810;
-	padding:7px 0;
-}
-
-QPushButton:hover{
-	background-color: rgba(239,184,16,.5)
-}</string>
-           </property>
-           <property name="text">
-            <string>Cancelar</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

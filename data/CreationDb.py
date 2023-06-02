@@ -3,6 +3,7 @@ from decouple import config
 
 class Data():
     def __init__(self):
+        super(Data,self)
         self.posg = pg
         self.conexion=None
         
@@ -17,9 +18,8 @@ class Data():
                 "port": 5432
             }
             self.conexion = self.posg.connect(**credentials)
-            Creation = self.FullData()
-            if Creation == 'succes':
-                return "ok"
+            self.FullData()
+            
          
             
 
@@ -35,6 +35,7 @@ class Data():
         try:
 
             commands = ("""
+            
             CREATE TABLE  Usuarios (
             idUser serial,
             nombre varchar, 
@@ -73,8 +74,9 @@ class Data():
             cantidadGastos decimal,
             cantidadIngresos decimal,
             saldo decimal,
-            idGastos integer REFERENCES GastosDiarios(idGastos) ON UPDATE CASCADE  ON DELETE RESTRICT,
-            idIngresos integer REFERENCES IngresosDiarios(idIngresos) ON UPDATE CASCADE  ON DELETE RESTRICT,
+            description varchar,
+            fecha timestamp,
+            idUser integer REFERENCES Usuarios(idUser) ON UPDATE CASCADE  ON DELETE RESTRICT,
             primary key(idDetailIngGasto)
             )
             """
@@ -178,10 +180,9 @@ class Data():
             self.conexion.commit()
             cursor.close()
             print("table created success")
-            return "succes"
+            return
         except self.posg.Error as e:
              print(e)
-             return "error"
         finally:
             if self.conexion is not None:
                 print("finally ejecucion")

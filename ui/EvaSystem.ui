@@ -17,9 +17,10 @@
    <string/>
   </property>
   <property name="styleSheet">
-   <string notr="true">*{
-	border:none;
-}
+   <string notr="true">background-color: rgb(24,24,36);
+border:none;
+
+
 </string>
   </property>
   <property name="iconSize">
@@ -34,7 +35,8 @@
   <widget class="QWidget" name="cnt_principal">
    <property name="styleSheet">
     <string notr="true">background-color: rgb(24,24,36);
-color:#fff;</string>
+color:#fff;
+</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
@@ -161,7 +163,7 @@ QPushButton:hover{
 }</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page1Options">
              <property name="geometry">
@@ -169,7 +171,7 @@ QPushButton:hover{
                <x>0</x>
                <y>0</y>
                <width>192</width>
-               <height>296</height>
+               <height>269</height>
               </rect>
              </property>
              <attribute name="icon">
@@ -177,7 +179,7 @@ QPushButton:hover{
                <normaloff>:/icons/chevron-down.svg</normaloff>:/icons/chevron-down.svg</iconset>
              </attribute>
              <attribute name="label">
-              <string>Opciones</string>
+              <string>Opciones Libro diario</string>
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_4">
               <item>
@@ -217,16 +219,30 @@ QPushButton:hover{
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="btn_todo">
+               <widget class="QPushButton" name="btn_trans">
                 <property name="text">
-                 <string>Inventario</string>
+                 <string>Transacciones</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="page">
+             <attribute name="label">
+              <string>Opciones</string>
+             </attribute>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <widget class="QPushButton" name="btnStk_divisas">
+                <property name="text">
+                 <string>Divisas</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="btn_trans">
+               <widget class="QPushButton" name="btn_Inventary">
                 <property name="text">
-                 <string>Transacciones</string>
+                 <string>Inventario</string>
                 </property>
                </widget>
               </item>
@@ -245,7 +261,7 @@ QPushButton:hover{
                <x>0</x>
                <y>0</y>
                <width>192</width>
-               <height>296</height>
+               <height>269</height>
               </rect>
              </property>
              <attribute name="icon">
@@ -665,7 +681,7 @@ QPushButton:hover{
 }</string>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>4</number>
             </property>
             <widget class="QWidget" name="stk_Gastos">
              <layout class="QVBoxLayout" name="verticalLayout_26">
@@ -747,8 +763,8 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>350</width>
-                      <height>304</height>
+                      <width>69</width>
+                      <height>69</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_28">
@@ -882,8 +898,8 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>350</width>
-                      <height>304</height>
+                      <width>69</width>
+                      <height>69</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -954,8 +970,8 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>350</width>
-                      <height>359</height>
+                      <width>154</width>
+                      <height>90</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1183,6 +1199,192 @@ QPushButton:hover{
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
                     </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+            <widget class="QWidget" name="stk_Divisas">
+             <layout class="QVBoxLayout" name="verticalLayout_16">
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>Precios registrados</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tableWidget"/>
+              </item>
+              <item>
+               <widget class="QScrollArea" name="scrollArea_5">
+                <property name="widgetResizable">
+                 <bool>true</bool>
+                </property>
+                <widget class="QWidget" name="scrollAreaWidgetContents_4">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>0</y>
+                   <width>350</width>
+                   <height>142</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_17">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QFrame" name="frame_2">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_18">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <layout class="QGridLayout" name="gridLayout_2">
+                       <property name="horizontalSpacing">
+                        <number>6</number>
+                       </property>
+                       <item row="2" column="2">
+                        <widget class="QCheckBox" name="checkBox_3">
+                         <property name="text">
+                          <string>Pesos</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="0">
+                        <widget class="QLabel" name="label_8">
+                         <property name="text">
+                          <string>Ultimo precio establecido</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="6" column="0">
+                        <widget class="QPushButton" name="pushButton">
+                         <property name="text">
+                          <string>Guardar</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="1">
+                        <widget class="QLabel" name="label_10">
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QCheckBox" name="checkBox">
+                         <property name="text">
+                          <string>Dollar</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="1">
+                        <widget class="QCheckBox" name="checkBox_2">
+                         <property name="text">
+                          <string>Bolivares</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QLabel" name="label_11">
+                         <property name="text">
+                          <string>Elige moneda oficial</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="4" column="0">
+                        <widget class="QLabel" name="label_6">
+                         <property name="text">
+                          <string>Divisa</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="5" column="0">
+                        <widget class="QLabel" name="label_7">
+                         <property name="text">
+                          <string>Precio</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="5" column="1">
+                        <widget class="QLineEdit" name="lineEdit"/>
+                       </item>
+                       <item row="4" column="1">
+                        <widget class="QComboBox" name="comboBox">
+                         <item>
+                          <property name="text">
+                           <string>Dollar</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Pesos</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Bolivares</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Euros</string>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item row="2" column="3">
+                        <widget class="QCheckBox" name="checkBox_4">
+                         <property name="text">
+                          <string>Euros</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="6" column="1">
+                        <widget class="QPushButton" name="pushButton_2">
+                         <property name="text">
+                          <string>Establecer</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                  </layout>

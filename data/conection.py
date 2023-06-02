@@ -11,7 +11,8 @@ class DbUser():
         self.posg = pg
         self.conexion=None
         self.conection()
-        # self.cursor = None
+        self.cursor = None
+        self.name = None
     def conection(self):
         try:
             credentials ={
@@ -29,31 +30,41 @@ class DbUser():
         except self.posg.Error as e:
             print("ocurrio un error en la conexion",e)
          
-    def SumaTotalIngGas(self):
+    def SumaTotalIngGas(self,id,desc):
         query = (""" SELECT SUM(valor) FROM ingresosdiarios """,
-                 """ SELECT MAX(idIngresos) FROM ingresosdiarios """,
+                 
                 """SELECT SUM(valor) FROM gastosdiarios""",
-                """ SELECT MAX(idGastos) FROM gastosdiarios """ )
+                )
         data = []
-        for i in query:
-            self.cursor.execute(i)
-            result = self.cursor.fetchone()
-            if result not in data:
-                data.append(result[0])
         
-        saldo = data[0] - data[2]
-        self.cursor.execute("""INSERT INTO DetallesIngGastos (cantidadGastos, cantidadIngresos, saldo, idGastos, idIngresos)
-                              VALUES({},{},{},{},{})  """.format(data[2],data[0],saldo,data[3],data[1]))
-        
-        print(data)
-
+        try:
+            for i in query:
+                self.cursor.execute(i)
+                result = self.cursor.fetchone()
+                print(result)
+                if result not in data:
+                    data.append(result[0])
+            if data[1] == None :
+                 data[1] = 0
+                 saldo = data[0] 
+            elif  data[0] == None:
+                 data[0] = 0
+                 saldo = data[1]
+            else:
+                 saldo = data[0] - data[1]
+            self.cursor.execute("""INSERT INTO DetallesIngGastos (cantidadGastos, cantidadIngresos, saldo,description, iduser)
+                VALUES({},{},{},'{}',{})  """.format(data[1],data[0],saldo,desc,id))
+        except self.posg.Error as e:
+            print(e)
+            return e
     def SelectFromDB(self, name=None, selection = None , tableSearch=None,SelectTable=None,names=None, ID=None, *args,**kwargs):
         if selection == method['USER'] and name is not None:
-            if self.cursor.closed == True:
+            
                 self.conection()
-            else:
+            
                 try:
                     self.cursor.execute("SELECT * FROM usuarios WHERE nombre = '{}' ".format(name))  
+                    
                     query = self.cursor.fetchone()
                     return query
                 except self.posg.Error as e:
@@ -65,6 +76,7 @@ class DbUser():
         
             try:
                 query =   """ SELECT * FROM {} WHERE descripcion = '{}' """.format(tableSearch,name)
+                self.name = name
                 self.cursor.execute(query)
                 result = self.cursor.fetchall()
                 if result.__len__() > 0:
@@ -114,38 +126,37 @@ class DbUser():
 
     def QueryInsert(self,  types = ins['ing'], datos = [],*args):
         if types == ins['ing']:
-            if self.cursor.closed == True:
-                self.conection()
-            else:
-            
-                try:
+            self.conection()
+
+            try:
                     self.cursor.execute("""INSERT INTO ingresosdiarios (fecha, tipodepago, categoria,divisa, valor, descripcion, iduser) values ('{}', '{}', '{}','{}', {}, '{}', {})""".format(datos[0]['fecha'], datos[0]['tipodepago'], datos[0]['categoria'],datos[0]['divisa'], datos[0]['valor'], datos[0]['descripcion'], datos[0]['iduser'] ))
                     print('insertion success')
-                    self.SumaTotalIngGas()
+                    self.SumaTotalIngGas(datos[0]['iduser'],datos[0]['descripcion'])
+
                     return 'ok'
-                except self.posg.Error as e :
+            except self.posg.Error as e :
                     print(e)
                     return 'error'
         
         elif types == ins['gas']:
-            if self.cursor.closed == True:
                 self.conection()
-            else:
                 try:
                     self.cursor.execute("""INSERT INTO gastosdiarios (fecha, tipodepago, categoria,divisa, valor, descripcion, iduser) values ('{}', '{}', '{}','{}', {}, '{}', {})""".format(datos[0]['fecha'], datos[0]['tipodepago'], datos[0]['categoria'],datos[0]['divisa'], datos[0]['valor'], datos[0]['descripcion'], datos[0]['iduser'] ))
                     print('insertion success')
-                    self.SumaTotalIngGas()
+                    self.SumaTotalIngGas(datos[0]['iduser'], datos[0]['descripcion'])
                     return 'ok'
                 except Exception as e :
                     print(e)
                     return 'error'
         else :
             return 'error'
-    def QueryDelete(self, tabla, id, idTabla):
-        print(id)
+    def QueryDelete(self, tabla, id, idTabla,userId):
         try:
             query = """ DELETE FROM {} WHERE {} = {} """.format(tabla,idTabla,id)
             self.cursor.execute(query)
+            query2 = """ DELETE FROM detallesinggastos WHERE description = '{}' """.format(self.name)
+            self.cursor.execute(query2)
+            self.SumaTotalIngGas(userId, 'eliminaciones')
             return 'success'
         except self.posg.Error as e :
             print("ocurrio un error en la conexion",e)
@@ -166,3 +177,4 @@ class DbUser():
         finally:
             self.cursor.close()
             self.conexion.close()
+

@@ -35,7 +35,7 @@ color:#fff;
     <number>0</number>
    </property>
    <item>
-    <widget class="QFrame" name="frame">
+    <widget class="QFrame" name="update_top">
      <property name="styleSheet">
       <string notr="true">QPushButton{
 	border-radius:30px;
@@ -58,6 +58,9 @@ QLineEdit{
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="topMargin">
+       <number>17</number>
+      </property>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0,0,0,0">
         <property name="spacing">
