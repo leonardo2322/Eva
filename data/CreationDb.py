@@ -44,7 +44,8 @@ class Data():
             status boolean,
             primary key(idUser)
             )
-            """,
+            """
+            ,
               """ CREATE TABLE  IngresosDiarios (
             idIngresos serial,
             Fecha timestamp,
@@ -79,10 +80,18 @@ class Data():
             idUser integer REFERENCES Usuarios(idUser) ON UPDATE CASCADE  ON DELETE RESTRICT,
             primary key(idDetailIngGasto)
             )
+            ""","""
+            CREATE TABLE divisas(
+            idDivisa serial,
+            fecha timestamp,
+            nombre varchar,
+            valor decimal,
+            idUser integer REFERENCES Usuarios(idUser) ON UPDATE CASCADE  ON DELETE RESTRICT,
+            primary key(idDivisa)
+            )
+            
             """
             ,
-
-
              """
             CREATE TABLE  Proveedores (
                 idProveedor serial,

@@ -28,7 +28,7 @@ class InitSesion(QDialog):
         iconReduce.addPixmap(QtGui.QPixmap("iconos/icons/minus.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.ui.btn_sesion_minimize.setIcon(iconReduce)
 
-
+        self.ui.btn_sesion_minimize.clicked.connect(self.showMinimized)
         self.ui.lbl_paper.setPixmap(QtGui.QPixmap("iconos/remove_paper.png"))
 
         self.ui.btn_init_sesion.clicked.connect(self.InitSesion)
@@ -51,7 +51,8 @@ class InitSesion(QDialog):
                     
                     self.ui.hide()
                     Eva(self.idUser,usuario)
-
+                else:
+                    Eva.mensagges(self, 'el usuario es incorrecto o la contraseña')
                    
                 
                           

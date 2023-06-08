@@ -18,6 +18,7 @@ class Eva(QMainWindow):
         self.load.fecha_visualized.setText(horaYfecha)
         self.load.user_lbl.setText(str(args[1]).capitalize())
         self.db = db()
+        self.ValorDivisa = None
         self.load.stackedWidget.setCurrentWidget(self.load.stk_Ingresos)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.setWindowOpacity(1)
@@ -26,6 +27,10 @@ class Eva(QMainWindow):
         self.load.btn_reduce.hide()
         self.load.btn_menu.hide()
 #################   Deberia Funcionar en windows   ########################################
+#################################--- divisas checked---#############################
+        self.db.conection()
+        self.db.Selectionfromdivisa()
+#################################---Icons----######################################## 
         self.gripSize = 5
         self.grip = QSizeGrip(self)
         self.grip.resize(self.gripSize, self.gripSize)
@@ -36,7 +41,7 @@ class Eva(QMainWindow):
 
         self.load.btn_close.clicked.connect(lambda:self.close())
         self.load.btn_expand.clicked.connect(lambda:self.btnExpandWindow(self,self.load.btn_expand,self.load.btn_reduce))
-        self.load.minimize.clicked.connect(self.showMinimized)
+        self.load.minimize.clicked.connect(lambda: self.showMinimized())
         self.load.btn_reduce.clicked.connect(lambda: self.ReduceWindow(self,self.load.btn_expand ,self.load.btn_reduce))
         self.load.btn_menu.clicked.connect(self.MenuHideAndShow)
         self.load.slide_close_btn.clicked.connect(self.MenuHideAndShow)
@@ -47,18 +52,24 @@ class Eva(QMainWindow):
         self.load.btn_update.clicked.connect(lambda: self.EjecutionDialog(UpdateTable))
         self.load.btn_delete.clicked.connect(lambda: self.EjecutionDialog(DeleteVTable))
         self.load.btn_user_add.clicked.connect(lambda: self.EjecutionDialog(WindowUserAdd))
+
+        self.load.btn_guardar_divisa.clicked.connect(self.saveDivisa)
 ################################   Buttoms ingresos stk    ###################################
         self.load.Ingresosbtn_stk_ing.clicked.connect(lambda:self.Tables(self.load.Tabla_Ingresos,8,'ingresosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
 
         self.load.gastosbtn_stk_ing.clicked.connect(lambda:self.Tables(self.load.Tabla_gastos,8,'gastosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
 
         self.load.balancebtn_stk_ing.clicked.connect(self.Balance)
+
+        self.load.btn_trans.clicked.connect(self.Balance)
 ################################   Buttoms gastos stk    ###################################
         self.load.ingresobtn_stk_gas.clicked.connect(lambda: self.Tables(self.load.Tabla_Ingresos,8,'ingresosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
 
         self.load.balancebtn_stk_gas.clicked.connect(self.Balance)
 
         self.load.gastosbtn_stk_gas.clicked.connect(lambda:self.Tables(self.load.Tabla_gastos,8,'gastosdiarios',names=['ID','Fecha','T_de_pago','Categoria', 'Divisa', 'Valor','Descripcion','Usuario']))
+        
+        self.load.btnStk_divisas.clicked.connect(self.Divisa)
 ################################   Buttoms balance stk    ###################################  
         self.load.balancebtn_stk_bal.clicked.connect(self.Balance)
 
@@ -203,6 +214,9 @@ class Eva(QMainWindow):
 
 
 #################  functions section  ##############################
+
+    def Divisa(self):
+        self.Tables(self.load.TableDivisas,5,'divisas',names=['ID','Fecha','Divisa','Valor', 'Usuario'])
     def mousePressEvent(self, event):
         self.clickPosition = event.globalPos()
 
@@ -328,6 +342,8 @@ class Eva(QMainWindow):
             self.load.stackedWidget.setCurrentWidget(self.load.stk_Gastos)
         elif tableselect == 'ingresosdiarios':
             self.load.stackedWidget.setCurrentWidget(self.load.stk_Ingresos)
+        elif tableselect == 'divisas':
+            self.load.stackedWidget.setCurrentWidget(self.load.stk_Divisas)
         else:
             self.load.stackedWidget.setCurrentWidget(self.load.stk_Balance)
 
@@ -345,7 +361,6 @@ class Eva(QMainWindow):
             tabla.setRowCount(len(self.data))
             name = names
             row = 0 
-            
             for e in self.data:
                 for i in range(0,len(e)):
                     tabla.setItem(row, i, QTableWidgetItem(str(e[name[i]])))
@@ -353,3 +368,11 @@ class Eva(QMainWindow):
 
         except Exception as e:
             self.mensagges('No deben de haber datos en base de datos verifica y intentalo nuevamente')
+    
+
+    def saveDivisa(self):
+        self.db.conection()
+        divisa = self.load.Cb_Divisa_nombre.currentText()
+        valor = self.load.InpValorDivisa.text()
+        self.db.Selectionfromdivisa()
+        result = self.db.QueryInsert(types='divisa',**{'div':divisa,'val':valor,'id': self.id})

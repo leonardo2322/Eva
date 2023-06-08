@@ -132,7 +132,7 @@ border:none;
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="btn_minimize">
+               <widget class="QPushButton" name="btn_minimize_dats">
                 <property name="minimumSize">
                  <size>
                   <width>30</width>
@@ -329,7 +329,7 @@ QPushButton:hover{
 }</string>
                </property>
                <property name="currentIndex">
-                <number>1</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="IngresoStack">
                 <property name="statusTip">
@@ -453,17 +453,22 @@ QPushButton:hover{
                     <widget class="QComboBox" name="Cb_divisa">
                      <item>
                       <property name="text">
-                       <string>Pesos $</string>
+                       <string>Pesos</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Dollar $</string>
+                       <string>Dollar</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Bolivares BFS</string>
+                       <string>Bolivares</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Euros</string>
                       </property>
                      </item>
                     </widget>
@@ -615,12 +620,12 @@ QPushButton:hover{
                     <widget class="QComboBox" name="Cb_divisaGas">
                      <item>
                       <property name="text">
-                       <string>Peso$</string>
+                       <string>Pesos</string>
                       </property>
                      </item>
                      <item>
                       <property name="text">
-                       <string>Bolivares Bsf</string>
+                       <string>Bolivares</string>
                       </property>
                      </item>
                      <item>
@@ -630,7 +635,7 @@ QPushButton:hover{
                      </item>
                      <item>
                       <property name="text">
-                       <string>Dollar$</string>
+                       <string>Dollar</string>
                       </property>
                      </item>
                     </widget>

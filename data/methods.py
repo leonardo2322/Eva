@@ -34,3 +34,12 @@ def recogDate(fecha):
     return fechaT
 
 
+def current_date_format(date):
+    months = ("Enero","Febrero","Marzo","Abril","Mayo", "Junio", "Julio","Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre")
+    day = date.day
+    month = date.month #months[date.month - 1]
+    year = date.year
+    hour = date.hour
+    minute = date.minute
+    message = "{}/{}/{} {}:{}".format(day,month,year,hour,minute)
+    return message

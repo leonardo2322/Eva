@@ -20,10 +20,13 @@ class Dialog(QDialog):
         self.messageError = args[1]
         self.active = methodINSERT['ing']
         self.top_data.mouseMoveEvent = self.MoveWindow
+#################################--- divisas checked---#############################
+        self.database.conection()
+        self.database.Selectionfromdivisa()
 #################################---Icons----########################################        
         iconBtnClose = QtGui.QIcon()
         iconBtnClose.addPixmap(QtGui.QPixmap("iconos/icons/x.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-
+        self.load.stackedWidget.setCurrentWidget(self.load.IngresoStack)
         self.load.btn_close.setIcon(iconBtnClose)
         
         iconExpand = QtGui.QIcon()
@@ -33,7 +36,7 @@ class Dialog(QDialog):
 
         iconMinimize = QtGui.QIcon()
         iconMinimize.addPixmap(QtGui.QPixmap("iconos/icons/minus.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.load.btn_minimize.setIcon(iconMinimize)
+        self.load.btn_minimize_dats.setIcon(iconMinimize)
 
         iconReduce = QtGui.QIcon()
         iconReduce.addPixmap(QtGui.QPixmap("iconos/icons/minimize-2.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -54,7 +57,7 @@ class Dialog(QDialog):
         self.load.btn_reduce.clicked.connect(self.ReduceWindow)
         self.load.btn_close.clicked.connect(lambda: self.close())
         self.load.btn_maximize.clicked.connect(self.showMaximizedWindow)
-        self.load.btn_minimize.clicked.connect(lambda: self.showMinimized())
+        self.load.btn_minimize_dats.clicked.connect( lambda: self.showMinimized())
         self.load.btn_cancelar.clicked.connect(lambda: self.close())
         self.load.btn_guardar.clicked.connect(lambda: self.QueryInsert())
 

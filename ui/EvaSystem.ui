@@ -228,6 +228,14 @@ QPushButton:hover{
              </layout>
             </widget>
             <widget class="QWidget" name="page">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>192</width>
+               <height>269</height>
+              </rect>
+             </property>
              <attribute name="label">
               <string>Opciones</string>
              </attribute>
@@ -236,6 +244,13 @@ QPushButton:hover{
                <widget class="QPushButton" name="btnStk_divisas">
                 <property name="text">
                  <string>Divisas</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton_3">
+                <property name="text">
+                 <string>Caja</string>
                 </property>
                </widget>
               </item>
@@ -678,6 +693,10 @@ QPushButton:hover{
 
 QPushButton:hover{
 	background-color: rgba(239,184,16,.5)
+}
+QLineEdit{
+	border:none;
+	border-bottom: 2px solid #efb810
 }</string>
             </property>
             <property name="currentIndex">
@@ -763,7 +782,7 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>69</width>
+                      <width>83</width>
                       <height>69</height>
                      </rect>
                     </property>
@@ -898,7 +917,7 @@ QPushButton:hover{
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>69</width>
+                      <width>83</width>
                       <height>69</height>
                      </rect>
                     </property>
@@ -1166,8 +1185,8 @@ QPushButton:hover{
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>368</width>
-                   <height>377</height>
+                   <width>83</width>
+                   <height>60</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_11">
@@ -1217,7 +1236,7 @@ QPushButton:hover{
                </widget>
               </item>
               <item>
-               <widget class="QTableWidget" name="tableWidget"/>
+               <widget class="QTableWidget" name="TableDivisas"/>
               </item>
               <item>
                <widget class="QScrollArea" name="scrollArea_5">
@@ -1229,8 +1248,8 @@ QPushButton:hover{
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>350</width>
-                   <height>142</height>
+                   <width>333</width>
+                   <height>151</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_17">
@@ -1274,14 +1293,24 @@ QPushButton:hover{
                       <number>0</number>
                      </property>
                      <item>
-                      <layout class="QGridLayout" name="gridLayout_2">
-                       <property name="horizontalSpacing">
-                        <number>6</number>
+                      <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,5,0,0">
+                       <property name="bottomMargin">
+                        <number>0</number>
                        </property>
-                       <item row="2" column="2">
-                        <widget class="QCheckBox" name="checkBox_3">
+                       <property name="spacing">
+                        <number>9</number>
+                       </property>
+                       <item row="3" column="1">
+                        <widget class="QLabel" name="label_10">
                          <property name="text">
-                          <string>Pesos</string>
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="6" column="0">
+                        <widget class="QPushButton" name="btn_guardar_divisa">
+                         <property name="text">
+                          <string>Guardar</string>
                          </property>
                         </widget>
                        </item>
@@ -1292,41 +1321,6 @@ QPushButton:hover{
                          </property>
                         </widget>
                        </item>
-                       <item row="6" column="0">
-                        <widget class="QPushButton" name="pushButton">
-                         <property name="text">
-                          <string>Guardar</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="3" column="1">
-                        <widget class="QLabel" name="label_10">
-                         <property name="text">
-                          <string/>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="2" column="0">
-                        <widget class="QCheckBox" name="checkBox">
-                         <property name="text">
-                          <string>Dollar</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="2" column="1">
-                        <widget class="QCheckBox" name="checkBox_2">
-                         <property name="text">
-                          <string>Bolivares</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="1" column="1">
-                        <widget class="QLabel" name="label_11">
-                         <property name="text">
-                          <string>Elige moneda oficial</string>
-                         </property>
-                        </widget>
-                       </item>
                        <item row="4" column="0">
                         <widget class="QLabel" name="label_6">
                          <property name="text">
@@ -1334,18 +1328,14 @@ QPushButton:hover{
                          </property>
                         </widget>
                        </item>
-                       <item row="5" column="0">
-                        <widget class="QLabel" name="label_7">
-                         <property name="text">
-                          <string>Precio</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="5" column="1">
-                        <widget class="QLineEdit" name="lineEdit"/>
-                       </item>
                        <item row="4" column="1">
-                        <widget class="QComboBox" name="comboBox">
+                        <widget class="QComboBox" name="Cb_Divisa_nombre">
+                         <property name="maximumSize">
+                          <size>
+                           <width>100</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
                          <item>
                           <property name="text">
                            <string>Dollar</string>
@@ -1368,17 +1358,80 @@ QPushButton:hover{
                          </item>
                         </widget>
                        </item>
-                       <item row="2" column="3">
-                        <widget class="QCheckBox" name="checkBox_4">
+                       <item row="5" column="0">
+                        <widget class="QLabel" name="label_7">
                          <property name="text">
-                          <string>Euros</string>
+                          <string>Precio</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="5" column="1">
+                        <widget class="QLineEdit" name="InpValorDivisa">
+                         <property name="maximumSize">
+                          <size>
+                           <width>100</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="cursorPosition">
+                          <number>0</number>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                          </property>
                         </widget>
                        </item>
                        <item row="6" column="1">
                         <widget class="QPushButton" name="pushButton_2">
+                         <property name="maximumSize">
+                          <size>
+                           <width>100</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
                          <property name="text">
                           <string>Establecer</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="1">
+                        <widget class="QRadioButton" name="QRB_bolivares">
+                         <property name="maximumSize">
+                          <size>
+                           <width>100</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="text">
+                          <string>Bolivares</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="2">
+                        <widget class="QRadioButton" name="QRB_Euros">
+                         <property name="text">
+                          <string>Euros</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="3">
+                        <widget class="QRadioButton" name="QRB_Pesos">
+                         <property name="text">
+                          <string>Pesos</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="1" column="1">
+                        <widget class="QLabel" name="label_11">
+                         <property name="text">
+                          <string>Elige moneda oficial</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="2" column="0">
+                        <widget class="QRadioButton" name="QRB_Dollar">
+                         <property name="text">
+                          <string>Dollar</string>
                          </property>
                         </widget>
                        </item>
